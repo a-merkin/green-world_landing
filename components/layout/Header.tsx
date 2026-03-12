@@ -1,8 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { navLinks } from "@/lib/constants";
+import { useTranslation } from "@/lib/i18n/useTranslation";
 
 export default function Header() {
+  const { t, locale, setLocale } = useTranslation();
+
+  const toggleLocale = () => setLocale(locale === "en" ? "ru" : "en");
+
   return (
     <header className="absolute top-0 left-0 right-0 z-50 flex h-24 items-center justify-between px-20">
       <Link href="/">
@@ -22,13 +29,16 @@ export default function Header() {
             href={link.href}
             className="transition-opacity hover:opacity-70"
           >
-            {link.label}
+            {t.header.nav[link.key]}
           </Link>
         ))}
       </nav>
 
-      <button className="flex items-center gap-1.5 font-[family-name:var(--font-roboto)] text-base leading-none text-[#4F5E4A]">
-        <span>Ru</span>
+      <button
+        onClick={toggleLocale}
+        className="flex items-center gap-1.5 font-[family-name:var(--font-roboto)] text-base leading-none text-[#4F5E4A] cursor-pointer"
+      >
+        <span>{t.header.localeSwitcherLabel}</span>
         <Image
           src="/images/chevron-down.svg"
           alt=""

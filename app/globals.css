@@ -10,6 +10,11 @@
   --font-roboto: var(--font-roboto);
 }
 
+/* Display font — LTC Metropolitan W00 (add @font-face when font file is available) */
+:root {
+  --font-display: "LTC Metropolitan W00", "Georgia", "Times New Roman", serif;
+}
+
 body {
   background: var(--color-light);
   color: var(--color-black);

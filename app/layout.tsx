@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Roboto } from "next/font/google";
+import LocaleProvider from "@/lib/i18n/LocaleProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -13,9 +14,9 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Green World — Свежие томаты из Азербайджана",
+  title: "Green World — Fresh Tomatoes from Azerbaijan",
   description:
-    "Современное тепличное хозяйство на Абшеронском полуострове. Качественные томаты без ГМО.",
+    "Modern greenhouse farm on the Absheron Peninsula. Premium GMO-free tomatoes.",
 };
 
 export default function RootLayout({
@@ -24,9 +25,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${roboto.variable} antialiased`}>
-        {children}
+        <LocaleProvider>{children}</LocaleProvider>
       </body>
     </html>
   );
