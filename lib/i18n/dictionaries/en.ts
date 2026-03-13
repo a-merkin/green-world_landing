@@ -61,7 +61,7 @@ const en: Dictionary = {
   partners: {
     sectionLabel: "Partners",
     description:
-      "Our project was implemented in close collaboration with {growGroup} — a leader in creating high-tech greenhouses and the operator of the complex. The company is the official distributor of {richel} and {stolze} in Azerbaijan.",
+      "Our project was implemented in collaboration with {growGroup}, a national leader in high-tech greenhouse construction and management. The company is the official distributor of {richel} and {stolze} in Azerbaijan.",
     growGroup: "Grow Group Azerbaijan",
     richel: "RICHEL",
     stolze: "STOLZE",

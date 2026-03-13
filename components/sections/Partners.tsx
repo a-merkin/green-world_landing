@@ -66,6 +66,33 @@ export default function Partners() {
             </div>
           ))}
         </div>
+
+        {/* Description */}
+        <p className="ml-[712px] mt-[20px] w-[870px] text-justify font-[family-name:var(--font-roboto)] text-[21px] font-normal leading-[1.15] text-[#333]">
+          {t.partners.description
+            .split(/(\{growGroup\}|\{richel\}|\{stolze\})/)
+            .map((part, i) => {
+              if (part === "{growGroup}")
+                return (
+                  <span key={i} className="font-semibold">
+                    {t.partners.growGroup}
+                  </span>
+                );
+              if (part === "{richel}")
+                return (
+                  <span key={i} className="font-semibold">
+                    {t.partners.richel}
+                  </span>
+                );
+              if (part === "{stolze}")
+                return (
+                  <span key={i} className="font-semibold">
+                    {t.partners.stolze}
+                  </span>
+                );
+              return part;
+            })}
+        </p>
       </div>
     </section>
   );
