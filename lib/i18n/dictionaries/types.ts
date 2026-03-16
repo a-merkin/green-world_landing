@@ -48,6 +48,33 @@ export interface Dictionary {
     richel: string;
     stolze: string;
   };
+  aboutPage: {
+    title: string;
+    mission: {
+      label: string;
+      heading: string;
+      text: string;
+    };
+    greenhouse: {
+      label: string;
+      heading: string;
+      details: string;
+      richel: string;
+      stolze: string;
+      priva: string;
+    };
+    products: {
+      label: string;
+      heading: string;
+      text: string;
+      cards: { name: string }[];
+    };
+    experts: {
+      label: string;
+      heading: string;
+      text: string;
+    };
+  };
   footer: {
     decorativeLines: string[];
     contactUs: string;

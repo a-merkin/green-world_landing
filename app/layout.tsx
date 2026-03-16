@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Roboto } from "next/font/google";
+import { Inter, Roboto, Cormorant_Infant } from "next/font/google";
 import LocaleProvider from "@/lib/i18n/LocaleProvider";
 import "./globals.css";
 
@@ -11,6 +11,12 @@ const inter = Inter({
 const roboto = Roboto({
   variable: "--font-roboto",
   subsets: ["latin", "cyrillic"],
+});
+
+const cormorantInfant = Cormorant_Infant({
+  variable: "--font-cormorant-infant",
+  subsets: ["latin", "cyrillic"],
+  weight: ["500"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${roboto.variable} antialiased`}>
+      <body className={`${inter.variable} ${roboto.variable} ${cormorantInfant.variable} antialiased`}>
         <LocaleProvider>{children}</LocaleProvider>
       </body>
     </html>

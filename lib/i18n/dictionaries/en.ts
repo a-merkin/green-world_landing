@@ -3,7 +3,7 @@ import type { Dictionary } from "./types";
 const en: Dictionary = {
   header: {
     nav: {
-      about: "About",
+      about: "About Us",
       products: "Products",
       gallery: "Gallery",
       contacts: "Contacts",
@@ -65,6 +65,38 @@ const en: Dictionary = {
     growGroup: "Grow Group Azerbaijan",
     richel: "RICHEL",
     stolze: "STOLZE",
+  },
+  aboutPage: {
+    title: "about  us",
+    mission: {
+      label: "Mission",
+      heading: "We aim to contribute to the country's food security while supplying both local and international markets with clean,",
+      text: "high-quality tomatoes. Our goal is to consistently produce premium sort of vegetables that meets global standards and customer expectations.",
+    },
+    greenhouse: {
+      label: "Greenhouse",
+      heading: "Our facility was built by two leading European companies — RICHEL (France) and STOLZE (Netherlands).",
+      details: "RICHEL provided a modern, high-volume greenhouse structure designed to perform efficiently in both hot and dry climates.\nSTOLZE supplied the engineering systems, including heating, ventilation and irrigation.\nAll processes are fully automated through the PRIVA climate control system, ensuring ideal growing conditions and maximum yield 24/7.",
+      richel: "RICHEL",
+      stolze: "STOLZE",
+      priva: "PRIVA",
+    },
+    products: {
+      label: "Products",
+      heading: "We grow several categories of tomatoes:",
+      text: "these are cluster tomatoes, premium pink tomatoes, plum tomatoes and mini tomatoes (cherry). All varieties enjoy strong demand in local and export markets. With planned expansion, we intend to broaden our assortment and export volumes based on partner needs.",
+      cards: [
+        { name: "Cluster tomatoes" },
+        { name: "Pink tomatoes" },
+        { name: "Plum tomatoes" },
+        { name: "\u00ABCherry\u00BB tomatoes" },
+      ],
+    },
+    experts: {
+      label: "Experts",
+      heading: "Professional approach",
+      text: "Our agronomists have many years of experience and regularly undergo training in the Netherlands, Spain and other European countries. International experts visit the facility several times a year to provide monitoring, evaluation and technical consulting.",
+    },
   },
   footer: {
     decorativeLines: ["Fresh Juicy", "Bright & Tasty"],
