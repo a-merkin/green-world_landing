@@ -65,6 +65,20 @@ export default function Footer() {
         className="pointer-events-none absolute right-20 top-[101px]"
       />
 
+      {/* Contact button — centered on leaf decoration */}
+      <Link
+        href={`tel:${contacts.mobile.replace(/[\s()-]/g, "")}`}
+        className="absolute right-[224px] top-[245px] z-10 flex size-[73px] items-center justify-center rounded-full bg-[#F0EAE2] transition-opacity hover:opacity-90"
+      >
+        <Image
+          src="/images/phone-icon.svg"
+          alt={t.footer.callAlt}
+          width={33}
+          height={33}
+          className="rotate-90"
+        />
+      </Link>
+
       <div className="relative flex h-[608px] mx-20">
         {/* ===== LEFT COLUMN ===== */}
         <div className="flex w-[49.4%] flex-col border-r border-[#62694C] pr-5">
@@ -96,12 +110,12 @@ export default function Footer() {
               alt=""
               width={76}
               height={79}
-              className="ml-[76px] mb-1"
+              className="relative z-10 ml-[70px] mb-[-29px]"
             />
-            <p className="whitespace-nowrap font-[family-name:var(--font-inter)] text-[92px] font-normal leading-none tracking-[-6.44px] uppercase text-[#F0EAE2]">
+            <p className="whitespace-nowrap font-[family-name:var(--font-inter)] text-[92px] font-normal leading-none tracking-[-1.84px] uppercase text-[#F0EAE2]">
               {t.footer.decorativeLines[0]}
             </p>
-            <p className="whitespace-nowrap font-[family-name:var(--font-inter)] text-[92px] font-normal leading-none tracking-[-6.44px] uppercase text-[#F0EAE2]">
+            <p className="whitespace-nowrap font-[family-name:var(--font-inter)] text-[92px] font-normal leading-none tracking-[-1.84px] uppercase text-[#F0EAE2]">
               {t.footer.decorativeLines[1]}
             </p>
           </div>
@@ -122,27 +136,13 @@ export default function Footer() {
             </span>
           </div>
 
-          {/* CONTACT US + button */}
-          <div className="mt-[175px] flex items-center gap-6">
-            <p className="whitespace-nowrap font-[family-name:var(--font-inter)] text-[92px] font-normal leading-none tracking-[-6.44px] uppercase text-[#C4D99D]">
-              {t.footer.contactUs}
-            </p>
-            <Link
-              href={`tel:${contacts.mobile.replace(/[\s()-]/g, "")}`}
-              className="flex size-[73px] shrink-0 items-center justify-center rounded-full bg-[#F0EAE2] transition-opacity hover:opacity-90"
-            >
-              <Image
-                src="/images/phone-icon.svg"
-                alt={t.footer.callAlt}
-                width={33}
-                height={33}
-                className="rotate-90"
-              />
-            </Link>
-          </div>
+          {/* CONTACT US */}
+          <p className="mt-[175px] whitespace-nowrap font-[family-name:var(--font-inter)] text-[92px] font-normal leading-none tracking-[-1.84px] uppercase text-[#C4D99D]">
+            {t.footer.contactUs}
+          </p>
 
           {/* Contact details grid */}
-          <div className="mt-[40px] grid grid-cols-[auto_1fr] gap-x-[130px] gap-y-[50px]">
+          <div className="mt-[40px] grid grid-cols-[auto_1fr] gap-x-[130px] gap-y-[27px]">
             {/* Mobile */}
             <div>
               <p className="mb-2 font-[family-name:var(--font-inter)] text-base leading-none tracking-[-0.32px] text-[#C4D99D]">

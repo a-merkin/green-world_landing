@@ -29,9 +29,9 @@ export default function Hero() {
         <h1 className="whitespace-nowrap font-[family-name:var(--font-display)] text-[248px] font-normal leading-[0.82] tracking-[-11px] uppercase text-[#4F5E4A]">{"Green wor"}<span className="relative">{"l"}<Image
               src="/images/high-quality-badge.png"
               alt=""
-              width={243}
-              height={125}
-              className="pointer-events-none absolute bottom-[75%] left-0"
+              width={320}
+              height={165}
+              className="pointer-events-none absolute bottom-[65%] left-1/2 -translate-x-1/2"
               priority
             /></span>{"d"}</h1>
 
@@ -45,13 +45,13 @@ export default function Hero() {
                   height={164}
                   className="rotate-[29.39deg]"
                 />
-              </span><span className="absolute left-1/2 top-1/2 block h-[160px] w-[161px] -translate-x-1/2 -translate-y-1/2">
+              </span><span className="absolute left-1/6 top-1/2 block h-[290px] w-[290px] -translate-x-1/2 -translate-y-1/2">
                 <Image
                   src="/images/tomato-main.png"
                   alt="Tomato"
                   fill
                   className="object-cover"
-                  sizes="161px"
+                  sizes="290px"
                   priority
                 />
               </span></span>{"matoes"}</p>

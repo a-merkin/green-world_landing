@@ -108,6 +108,12 @@ export interface Dictionary {
     baku: string;
     zire: string;
   };
+  notFound: {
+    title: string;
+    heading: string;
+    description: string;
+    cta: string;
+  };
   footer: {
     decorativeLines: string[];
     contactUs: string;
