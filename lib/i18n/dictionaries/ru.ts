@@ -58,6 +58,11 @@ const ru: Dictionary = {
     dragHint: "Тяни",
     cta: "Больше фото",
   },
+  galleryPage: {
+    title: "галерея",
+    prev: "Предыдущее фото",
+    next: "Следующее фото",
+  },
   partners: {
     sectionLabel: "Партнеры",
     description:

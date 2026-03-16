@@ -58,6 +58,11 @@ const en: Dictionary = {
     dragHint: "Drag",
     cta: "More photos",
   },
+  galleryPage: {
+    title: "gallery",
+    prev: "Previous photo",
+    next: "Next photo",
+  },
   partners: {
     sectionLabel: "Partners",
     description:

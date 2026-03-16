@@ -41,6 +41,11 @@ export interface Dictionary {
     dragHint: string;
     cta: string;
   };
+  galleryPage: {
+    title: string;
+    prev: string;
+    next: string;
+  };
   partners: {
     sectionLabel: string;
     description: string;

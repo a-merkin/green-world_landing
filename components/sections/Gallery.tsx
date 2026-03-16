@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef, useState } from "react";
 import { useTranslation } from "@/lib/i18n/useTranslation";
 import SectionLabel from "@/components/ui/SectionLabel";
@@ -70,10 +71,13 @@ export default function Gallery() {
           </div>
         </div>
 
-        {/* CTA button — centered */}
-        <button className="mx-auto mt-[30px] flex h-[45px] w-[336px] cursor-pointer items-center justify-center bg-[#4F5E4A] font-[family-name:var(--font-roboto)] text-[20px] font-medium leading-none tracking-[-0.6px] text-[#F0EAE2] transition-opacity hover:opacity-90">
+        {/* CTA button — centered, links to gallery page */}
+        <Link
+          href="/gallery"
+          className="mx-auto mt-[30px] flex h-[45px] w-[336px] items-center justify-center bg-[#4F5E4A] font-[family-name:var(--font-roboto)] text-[20px] font-medium leading-none tracking-[-0.6px] text-[#F0EAE2] transition-opacity hover:opacity-90"
+        >
           {t.gallery.cta}
-        </button>
+        </Link>
       </div>
     </section>
   );
