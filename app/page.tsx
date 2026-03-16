@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex flex-col gap-[160px] pb-[155px]">
+      <main className="flex flex-col gap-[clamp(3.75rem,8.3vw,10rem)] pb-[clamp(3.75rem,8vw,9.7rem)] max-lg:gap-[80px] max-lg:pb-[80px] max-md:gap-[60px] max-md:pb-[60px]">
         <Hero />
         <About />
         <Achievements />

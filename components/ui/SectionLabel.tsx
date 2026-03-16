@@ -23,7 +23,7 @@ export default function SectionLabel({ text, light }: SectionLabelProps) {
   return (
     <div className="flex items-center gap-[6px]">
       <Barcode light={light} />
-      <span className={`font-[family-name:var(--font-roboto)] text-[18px] font-semibold uppercase leading-none tracking-normal ${textColor}`}>
+      <span className={`font-[family-name:var(--font-roboto)] text-[18px] font-semibold uppercase leading-none tracking-normal max-lg:text-sm ${textColor}`}>
         {text}
       </span>
     </div>
