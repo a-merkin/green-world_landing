@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useTranslation } from "@/lib/i18n/useTranslation";
 
 /* ─── All marker positions from Figma (x,y on 1404×698 map) ─── */
@@ -395,9 +396,9 @@ export default function ContactsPageContent() {
                 </button>
                 <p className="font-[family-name:var(--font-roboto)] text-base leading-none text-[#F0EAE2] opacity-70">
                   {ct.form.agree}{" "}
-                  <span className="cursor-pointer border-b border-[#F0EAE2]/70 transition-opacity hover:opacity-100">
+                  <Link href="/privacy" className="cursor-pointer border-b border-[#F0EAE2]/70 transition-opacity hover:opacity-100">
                     {ct.form.privacyPolicy}
-                  </span>
+                  </Link>
                 </p>
               </div>
 
