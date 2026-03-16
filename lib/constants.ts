@@ -12,7 +12,7 @@ export const navLinks = [
   { key: "about" as const, href: "/about" },
   { key: "products" as const, href: "#products" },
   { key: "gallery" as const, href: "/gallery" },
-  { key: "contacts" as const, href: "#contacts" },
+  { key: "contacts" as const, href: "/contacts" },
 ];
 
 // Contact info (non-translatable)

@@ -80,6 +80,34 @@ export interface Dictionary {
       text: string;
     };
   };
+  contactsPage: {
+    title: string;
+    address: string;
+    countries: {
+      russia: string;
+      poland: string;
+      uae: string;
+      belarus: string;
+      ukraine: string;
+    };
+    russiaRegions: string[];
+    form: {
+      forCustomers: string;
+      forSuppliers: string;
+      description: string;
+      companyName: string;
+      email: string;
+      message: string;
+      agree: string;
+      privacyPolicy: string;
+      send: string;
+      sending: string;
+      successMessage: string;
+      errorMessage: string;
+    };
+    baku: string;
+    zire: string;
+  };
   footer: {
     decorativeLines: string[];
     contactUs: string;
