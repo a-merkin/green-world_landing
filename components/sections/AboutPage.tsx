@@ -24,19 +24,19 @@ function ProductCard({
   rotation: number;
 }) {
   return (
-    <div className="relative flex h-[438px] flex-1 flex-col items-center overflow-hidden rounded-[24px]">
+    <div className="relative flex h-[438px] flex-1 min-w-0 flex-col items-center overflow-hidden rounded-[24px] max-lg:h-[184px] max-md:h-[315px] max-md:w-full max-md:flex-none">
       {/* Dark green background with mix-blend-multiply */}
       <div className="absolute inset-0 bg-[#4F5E4A] mix-blend-multiply rounded-[24px]" />
 
       {/* Concentric circles plate — fills ~82% of card width, centered */}
-      <div className="relative mt-[24px] aspect-square w-[81.6%]">
-        <Image src={plateImg} alt="" fill sizes="342px" />
+      <div className="relative mt-[24px] aspect-square w-[81.6%] max-lg:mt-[8px]">
+        <Image src={plateImg} alt="" fill sizes="(max-width: 768px) 266px, (max-width: 1024px) 148px, 342px" />
       </div>
 
       {/* Tomato photo — centered over the plate with rotation and shadow */}
-      <div className="absolute inset-0 flex items-center justify-center pb-[48px]">
+      <div className="absolute inset-0 flex items-center justify-center pb-[48px] max-lg:pb-[24px] max-md:pb-[48px]">
         <div
-          className="relative"
+          className="relative max-w-[80%]"
           style={{
             width: tomatoW,
             height: tomatoH,
@@ -45,12 +45,12 @@ function ProductCard({
               "drop-shadow(0px 16px 35px rgba(0,0,0,0.21)) drop-shadow(0px 64px 64px rgba(0,0,0,0.18))",
           }}
         >
-          <Image src={tomatoImg} alt={name} fill className="object-cover" sizes="273px" />
+          <Image src={tomatoImg} alt={name} fill className="object-cover" sizes="(max-width: 768px) 213px, (max-width: 1024px) 119px, 273px" />
         </div>
       </div>
 
       {/* Label at bottom */}
-      <p className="relative mt-auto mb-[21px] whitespace-nowrap font-[family-name:var(--font-roboto)] text-[32px] font-black leading-[0.85] tracking-[-0.64px] text-[#C4D99D] text-center">
+      <p className="relative mt-auto mb-[21px] whitespace-nowrap font-[family-name:var(--font-roboto)] text-[clamp(0.9375rem,1.67vw,2rem)] font-black leading-[0.85] tracking-[-0.64px] text-[#C4D99D] text-center max-lg:text-[15px] max-lg:mb-[8px] max-md:text-[24px] max-md:mb-[14px]">
         {name}
       </p>
     </div>
@@ -64,7 +64,7 @@ function GreenhouseDetails({ text }: { text: string }) {
   const paragraphs = text.split("\n");
 
   return (
-    <div className="font-[family-name:var(--font-roboto)] text-[21px] font-normal leading-[1.15] text-[#333] text-justify">
+    <div className="font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.09vw,1.3125rem)] font-normal leading-[1.15] text-[#333] text-justify max-lg:text-sm max-md:text-base">
       {paragraphs.map((p, i) => (
         <p key={i} className={i < paragraphs.length - 1 ? "mb-0" : ""}>
           {p.split(/(RICHEL|STOLZE|PRIVA)/).map((part, j) =>
@@ -121,35 +121,35 @@ export default function AboutPageContent() {
   ];
 
   return (
-    <div className="pt-[157px] pb-[160px]">
-      <div className="mx-auto max-w-[1760px]">
+    <div className="pt-[157px] pb-[160px] max-lg:pt-[93px] max-lg:pb-[80px] max-md:pt-[52px] max-md:pb-[60px]">
+      <div className="mx-auto w-full max-w-[1920px] px-20 max-lg:px-5 max-lg:max-w-[768px] max-md:px-[10px] max-md:max-w-none">
         {/* ══════════════════════════════════════════════════
            HERO: Title + two photos
            ══════════════════════════════════════════════════ */}
-        <h1 className="whitespace-pre font-[family-name:var(--font-cormorant-infant)] text-[150px] font-medium leading-none tracking-[-10.5px] uppercase text-[#333]">
+        <h1 className="whitespace-pre font-[family-name:var(--font-cormorant-infant)] text-[clamp(6rem,7.8vw,9.375rem)] font-medium leading-none tracking-[-10.5px] uppercase text-[#333] max-lg:text-[96px] max-lg:tracking-[-6.72px] max-md:text-[65px] max-md:tracking-[-4.55px]">
           {ap.title}
         </h1>
 
         {/* Two photos row */}
-        <div className="mt-[13px] flex gap-[20px]">
-          {/* Left photo — 692px */}
-          <div className="relative h-[610px] w-[692px] shrink-0 overflow-hidden">
+        <div className="mt-[13px] flex gap-[20px] max-md:flex-col">
+          {/* Left photo */}
+          <div className="relative w-[39%] max-w-[692px] shrink-0 aspect-[692/610] overflow-hidden max-lg:w-[39%] max-lg:aspect-[285/252] max-md:w-full max-md:aspect-[300/264] max-md:max-w-none">
             <Image
               src="/images/about-page/hero-left.jpg"
               alt=""
               fill
               className="object-cover"
-              sizes="692px"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 39vw, 692px"
             />
           </div>
           {/* Right photo — fills remaining space */}
-          <div className="relative h-[610px] flex-1 overflow-hidden">
+          <div className="relative flex-1 min-w-0 aspect-[1048/610] overflow-hidden max-lg:aspect-[433/252] max-md:aspect-[300/174]">
             <Image
               src="/images/about-page/hero-right.jpg"
               alt="Our greenhouse"
               fill
               className="object-cover"
-              sizes="1048px"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 1048px"
             />
           </div>
         </div>
@@ -157,20 +157,20 @@ export default function AboutPageContent() {
         {/* ══════════════════════════════════════════════════
            MISSION section
            ══════════════════════════════════════════════════ */}
-        <div className="mt-[37px]">
+        <div className="mt-[37px] max-lg:mt-[25px] max-md:mt-[18px]">
           {/* Row: Label on the left, heading text on the right */}
-          <div className="flex gap-[20px]">
-            {/* Left column — label aligned to 692px width */}
-            <div className="w-[692px] shrink-0">
+          <div className="flex gap-[20px] max-md:flex-col max-md:gap-[8px]">
+            {/* Left column — label */}
+            <div className="w-[39%] max-w-[692px] shrink-0 max-md:w-full max-md:max-w-none">
               <SectionLabel text={ap.mission.label} />
             </div>
             {/* Right column — heading text */}
-            <p className="flex-1 font-[family-name:var(--font-roboto)] text-[38px] font-medium leading-none text-[#333] text-justify">
+            <p className="flex-1 min-w-0 font-[family-name:var(--font-roboto)] text-[clamp(1.4rem,1.98vw,2.375rem)] font-medium leading-none text-[#333] text-justify max-lg:text-[23px] max-md:text-[19px]">
               {ap.mission.heading}
             </p>
           </div>
-          {/* Full-width continuation text — continues directly after heading row */}
-          <p className="font-[family-name:var(--font-roboto)] text-[38px] font-medium leading-none text-[#333] text-justify">
+          {/* Full-width continuation text */}
+          <p className="font-[family-name:var(--font-roboto)] text-[clamp(1.4rem,1.98vw,2.375rem)] font-medium leading-none text-[#333] text-justify max-lg:text-[23px] max-md:text-[19px]">
             {ap.mission.text}
           </p>
         </div>
@@ -178,16 +178,16 @@ export default function AboutPageContent() {
         {/* ══════════════════════════════════════════════════
            GREENHOUSE section
            ══════════════════════════════════════════════════ */}
-        <div className="mt-[120px]">
+        <div className="mt-[120px] max-lg:mt-[80px] max-md:mt-[50px]">
           {/* Row: Label on the left, heading + details on the right */}
-          <div className="flex gap-[20px]">
+          <div className="flex gap-[20px] max-md:flex-col max-md:gap-[8px]">
             {/* Left column — label */}
-            <div className="w-[692px] shrink-0">
+            <div className="w-[39%] max-w-[692px] shrink-0 max-md:w-full max-md:max-w-none">
               <SectionLabel text={ap.greenhouse.label} />
             </div>
-            {/* Right column — heading + details (692px within 1048px column) */}
-            <div className="flex-1">
-              <p className="w-[692px] font-[family-name:var(--font-roboto)] text-[32px] font-medium leading-none text-[#333] text-justify">
+            {/* Right column — heading + details */}
+            <div className="flex-1 min-w-0">
+              <p className="max-w-[692px] font-[family-name:var(--font-roboto)] text-[clamp(1.25rem,1.67vw,2rem)] font-medium leading-none text-[#333] text-justify max-lg:text-[20px] max-md:text-[19px] max-md:max-w-none">
                 {ap.greenhouse.heading.split(/(RICHEL|STOLZE)/).map((part, j) =>
                   ["RICHEL", "STOLZE"].includes(part) ? (
                     <span key={j} className="font-bold">{part}</span>
@@ -196,32 +196,32 @@ export default function AboutPageContent() {
                   )
                 )}
               </p>
-              <div className="mt-[19px] w-[692px]">
+              <div className="mt-[19px] max-w-[692px] max-md:max-w-none">
                 <GreenhouseDetails text={ap.greenhouse.details} />
               </div>
             </div>
           </div>
 
-          {/* Photos row — gap 17px from text block to photos per Figma */}
-          <div className="mt-[17px] flex gap-[20px]">
+          {/* Photos row */}
+          <div className="mt-[17px] flex gap-[20px] max-md:flex-col">
             {/* Left smaller photo */}
-            <div className="relative h-[424px] w-[514px] shrink-0 overflow-hidden">
+            <div className="relative w-[29%] max-w-[514px] shrink-0 aspect-[514/424] overflow-hidden max-lg:w-[39%] max-lg:aspect-[285/186] max-md:w-full max-md:aspect-[300/184] max-md:max-w-none">
               <Image
                 src="/images/about-page/greenhouse-left.jpg"
                 alt=""
                 fill
                 className="object-cover"
-                sizes="514px"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 39vw, 514px"
               />
             </div>
             {/* Right larger photo */}
-            <div className="relative h-[599px] flex-1 overflow-hidden">
+            <div className="relative flex-1 min-w-0 aspect-[1048/599] overflow-hidden max-lg:aspect-[433/283] max-md:aspect-[300/184]">
               <Image
                 src="/images/about-page/greenhouse-right.jpg"
                 alt="Greenhouse interior"
                 fill
                 className="object-cover"
-                sizes="1048px"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 1048px"
               />
             </div>
           </div>
@@ -230,26 +230,26 @@ export default function AboutPageContent() {
         {/* ══════════════════════════════════════════════════
            PRODUCTS section
            ══════════════════════════════════════════════════ */}
-        <div className="mt-[121px]">
+        <div className="mt-[121px] max-lg:mt-[80px] max-md:mt-[50px]">
           {/* Row: Label on the left, heading + description on the right */}
-          <div className="flex gap-[20px]">
+          <div className="flex gap-[20px] max-md:flex-col max-md:gap-[8px]">
             {/* Left column — label */}
-            <div className="w-[692px] shrink-0">
+            <div className="w-[39%] max-w-[692px] shrink-0 max-md:w-full max-md:max-w-none">
               <SectionLabel text={ap.products.label} />
             </div>
             {/* Right column — heading + description */}
-            <div className="flex-1">
-              <p className="font-[family-name:var(--font-roboto)] text-[32px] font-medium leading-none text-[#333] text-justify">
+            <div className="flex-1 min-w-0">
+              <p className="font-[family-name:var(--font-roboto)] text-[clamp(1.25rem,1.67vw,2rem)] font-medium leading-none text-[#333] text-justify max-lg:text-[20px] max-md:text-[19px]">
                 {ap.products.heading}
               </p>
-              <p className="mt-[19px] w-[692px] font-[family-name:var(--font-roboto)] text-[21px] font-normal leading-[1.15] text-[#333] text-justify">
+              <p className="mt-[19px] max-w-[692px] font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.09vw,1.3125rem)] font-normal leading-[1.15] text-[#333] text-justify max-lg:text-sm max-lg:max-w-none max-md:text-base max-md:max-w-none">
                 {ap.products.text}
               </p>
             </div>
           </div>
 
-          {/* Product cards grid — 4 columns, gap 17px from text to cards */}
-          <div className="mt-[17px] flex gap-[28px]">
+          {/* Product cards grid — 4 columns, stacked on mobile */}
+          <div className="mt-[17px] flex gap-[clamp(0.75rem,1.46vw,1.75rem)] max-lg:gap-[10px] max-md:flex-col max-md:gap-[16px]">
             {ap.products.cards.map((card, i) => (
               <ProductCard
                 key={card.name}
@@ -267,44 +267,44 @@ export default function AboutPageContent() {
         {/* ══════════════════════════════════════════════════
            EXPERTS section
            ══════════════════════════════════════════════════ */}
-        <div className="mt-[132px]">
+        <div className="mt-[132px] max-lg:mt-[80px] max-md:mt-[50px]">
           {/* Row: Label on the left, heading + description on the right */}
-          <div className="flex gap-[20px]">
+          <div className="flex gap-[20px] max-md:flex-col max-md:gap-[8px]">
             {/* Left column — label */}
-            <div className="w-[692px] shrink-0">
+            <div className="w-[39%] max-w-[692px] shrink-0 max-md:w-full max-md:max-w-none">
               <SectionLabel text={ap.experts.label} />
             </div>
             {/* Right column — heading + description */}
-            <div className="flex-1">
-              <p className="font-[family-name:var(--font-roboto)] text-[32px] font-medium leading-none text-[#333]">
+            <div className="flex-1 min-w-0">
+              <p className="font-[family-name:var(--font-roboto)] text-[clamp(1.25rem,1.67vw,2rem)] font-medium leading-none text-[#333] max-lg:text-[20px] max-md:text-[19px]">
                 {ap.experts.heading}
               </p>
-              <p className="mt-[19px] w-[692px] font-[family-name:var(--font-roboto)] text-[21px] font-normal leading-[1.15] text-[#333] text-justify">
+              <p className="mt-[19px] max-w-[692px] font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.09vw,1.3125rem)] font-normal leading-[1.15] text-[#333] text-justify max-lg:text-sm max-lg:max-w-none max-md:text-base max-md:max-w-none">
                 {ap.experts.text}
               </p>
             </div>
           </div>
 
-          {/* Photos row — gap 17px from text block to photos per Figma */}
-          <div className="mt-[17px] flex gap-[20px]">
+          {/* Photos row */}
+          <div className="mt-[17px] flex gap-[20px] max-md:flex-col">
             {/* Left photo */}
-            <div className="relative h-[579px] w-[692px] shrink-0 overflow-hidden">
+            <div className="relative w-[39%] max-w-[692px] shrink-0 aspect-[692/579] overflow-hidden max-lg:w-[39%] max-lg:aspect-[285/248] max-md:w-full max-md:aspect-[300/234] max-md:max-w-none">
               <Image
                 src="/images/about-page/experts-left.jpg"
                 alt=""
                 fill
                 className="object-cover"
-                sizes="692px"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 39vw, 692px"
               />
             </div>
             {/* Right photo */}
-            <div className="relative h-[579px] flex-1 overflow-hidden">
+            <div className="relative flex-1 min-w-0 aspect-[1048/579] overflow-hidden max-lg:aspect-[433/248] max-md:aspect-[300/154]">
               <Image
                 src="/images/about-page/experts-right.jpg"
                 alt="Greenhouse team"
                 fill
                 className="object-cover"
-                sizes="1048px"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 1048px"
               />
             </div>
           </div>
