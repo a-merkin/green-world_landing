@@ -125,51 +125,55 @@ export default function Footer() {
         </div>
 
         {/* RIGHT COLUMN */}
-        <div className="flex w-[50.6%] max-lg:w-[60%] flex-col pl-5">
-          {/* Location */}
-          <div className="flex items-center gap-1.5 pt-[30px] max-lg:pt-[23px]">
-            <Image src="/images/location-pin.svg" alt="" width={15} height={15} className="max-lg:w-[13px] max-lg:h-[13px]" />
-            <span className="font-[family-name:var(--font-inter)] text-base leading-none tracking-[-0.32px] text-[#C4D99D] max-lg:font-[family-name:var(--font-roboto)] max-lg:text-sm max-lg:tracking-normal">
-              {t.footer.address}
-            </span>
-          </div>
+        <div className="grid w-[50.6%] max-lg:w-[60%] pl-5 grid-cols-[1fr_auto] items-start">
+          {/* Col 1: Location + CONTACT US + Contact details */}
+          <div>
+            {/* Location */}
+            <div className="flex items-center gap-1.5 pt-[30px] max-lg:pt-[23px]">
+              <Image src="/images/location-pin.svg" alt="" width={15} height={15} className="max-lg:w-[13px] max-lg:h-[13px]" />
+              <span className="font-[family-name:var(--font-inter)] text-base leading-none tracking-[-0.32px] text-[#C4D99D] max-lg:font-[family-name:var(--font-roboto)] max-lg:text-sm max-lg:tracking-normal">
+                {t.footer.address}
+              </span>
+            </div>
 
-          {/* CONTACT US */}
-          <p className="mt-[clamp(80px,9.1vw,175px)] whitespace-nowrap font-[family-name:var(--font-inter)] text-[clamp(2.75rem,4.8vw,5.75rem)] font-normal leading-none tracking-[-0.02em] uppercase text-[#C4D99D] max-lg:mt-[80px] max-lg:text-[44px] max-lg:tracking-[-0.88px]">
-            {t.footer.contactUs}
-          </p>
+            {/* CONTACT US */}
+            <p className="mt-[clamp(80px,9.1vw,175px)] whitespace-nowrap font-[family-name:var(--font-inter)] text-[clamp(2.75rem,4.8vw,5.75rem)] font-normal leading-none tracking-[-0.02em] uppercase text-[#C4D99D] max-lg:mt-[80px] max-lg:text-[44px] max-lg:tracking-[-0.88px]">
+              {t.footer.contactUs}
+            </p>
 
-          {/* Contact details grid */}
-          <div className="mt-[40px] grid grid-cols-[auto_1fr] gap-x-[clamp(2rem,6.8vw,8.125rem)] gap-y-[27px] max-lg:mt-[30px] max-lg:grid-cols-2 max-lg:gap-x-[clamp(1.5rem,5vw,5rem)] max-lg:gap-y-[20px]">
-            {/* Mobile */}
-            <div>
-              <p className="mb-2 font-[family-name:var(--font-inter)] text-base leading-none tracking-[-0.32px] text-[#C4D99D] max-lg:font-[family-name:var(--font-roboto)] max-lg:text-sm max-lg:tracking-normal">
-                {t.footer.labels.mobile}
-              </p>
-              <div className="flex items-center gap-3 max-lg:gap-2">
-                <div className="relative inline-block">
-                  <div className="absolute inset-0 bg-[#C4D99D] opacity-25" />
+            {/* Contact details grid */}
+            <div className="mt-[40px] grid grid-cols-[auto_1fr] gap-x-[clamp(2rem,6.8vw,8.125rem)] gap-y-[27px] max-lg:mt-[30px] max-lg:grid-cols-2 max-lg:gap-x-[clamp(1.5rem,5vw,5rem)] max-lg:gap-y-[20px]">
+              {/* Mobile */}
+              <div>
+                <p className="mb-2 font-[family-name:var(--font-inter)] text-base leading-none tracking-[-0.32px] text-[#C4D99D] max-lg:font-[family-name:var(--font-roboto)] max-lg:text-sm max-lg:tracking-normal">
+                  {t.footer.labels.mobile}
+                </p>
+                <div className="flex items-center gap-3 max-lg:gap-2">
+                  <div className="relative inline-block">
+                    <div className="absolute inset-0 bg-[#C4D99D] opacity-25" />
+                    <a
+                      href={`tel:${contacts.mobile.replace(/[\s()-]/g, "")}`}
+                      className="relative block px-1.5 py-1 font-[family-name:var(--font-roboto)] text-lg font-medium leading-none text-[#C4D99D] whitespace-nowrap max-lg:text-sm"
+                    >
+                      {contacts.mobile}
+                    </a>
+                  </div>
                   <a
-                    href={`tel:${contacts.mobile.replace(/[\s()-]/g, "")}`}
-                    className="relative block px-1.5 py-1 font-[family-name:var(--font-roboto)] text-lg font-medium leading-none text-[#C4D99D] whitespace-nowrap max-lg:text-sm"
+                    href={`https://wa.me/${contacts.mobile.replace(/[\s()-+]/g, "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-opacity hover:opacity-70"
                   >
-                    {contacts.mobile}
+                    <Image src="/images/whatsapp.svg" alt="WhatsApp" width={23} height={23} className="max-lg:w-[18px] max-lg:h-[18px]" />
                   </a>
                 </div>
-                <a
-                  href={`https://wa.me/${contacts.mobile.replace(/[\s()-+]/g, "")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-opacity hover:opacity-70"
-                >
-                  <Image src="/images/whatsapp.svg" alt="WhatsApp" width={23} height={23} className="max-lg:w-[18px] max-lg:h-[18px]" />
-                </a>
               </div>
+              <ContactItem label={t.footer.labels.office} value={contacts.office} href={`tel:${contacts.office.replace(/[\s()-]/g, "")}`} />
+              <ContactItem label={t.footer.labels.email} value={contacts.email} href={`mailto:${contacts.email}`} labelFont="roboto" />
+              <ContactItem label={t.footer.labels.russia} value={contacts.russia} href={`tel:${contacts.russia.replace(/[\s()-]/g, "")}`} />
             </div>
-            <ContactItem label={t.footer.labels.office} value={contacts.office} href={`tel:${contacts.office.replace(/[\s()-]/g, "")}`} />
-            <ContactItem label={t.footer.labels.email} value={contacts.email} href={`mailto:${contacts.email}`} labelFont="roboto" />
-            <ContactItem label={t.footer.labels.russia} value={contacts.russia} href={`tel:${contacts.russia.replace(/[\s()-]/g, "")}`} />
           </div>
+          {/* Col 2: reserved for leaf/button (absolutely positioned at footer level) */}
         </div>
       </div>
 
