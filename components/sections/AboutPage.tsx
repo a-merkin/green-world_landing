@@ -28,24 +28,23 @@ function ProductCard({
       {/* Dark green background with mix-blend-multiply */}
       <div className="absolute inset-0 bg-[#4F5E4A] mix-blend-multiply rounded-[24px]" />
 
-      {/* Concentric circles plate — fills ~82% of card width, centered */}
+      {/* Concentric circles plate + tomato centered on it */}
       <div className="relative mt-[24px] aspect-square w-[81.6%] max-lg:mt-[8px]">
         <Image src={plateImg} alt="" fill sizes="(max-width: 768px) 266px, (max-width: 1024px) 148px, 342px" />
-      </div>
-
-      {/* Tomato photo — centered over the plate with rotation and shadow */}
-      <div className="absolute inset-0 flex items-center justify-center pb-[48px] max-lg:pb-[24px] max-md:pb-[48px]">
-        <div
-          className="relative max-w-[80%]"
-          style={{
-            width: tomatoW,
-            height: tomatoH,
-            transform: `rotate(${rotation}deg)`,
-            filter:
-              "drop-shadow(0px 16px 35px rgba(0,0,0,0.21)) drop-shadow(0px 64px 64px rgba(0,0,0,0.18))",
-          }}
-        >
-          <Image src={tomatoImg} alt={name} fill className="object-cover" sizes="(max-width: 768px) 213px, (max-width: 1024px) 119px, 273px" />
+        {/* Tomato photo — centered on the plate */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div
+            className="relative"
+            style={{
+              width: tomatoW,
+              height: tomatoH,
+              transform: `rotate(${rotation}deg)`,
+              filter:
+                "drop-shadow(0px 16px 35px rgba(0,0,0,0.21)) drop-shadow(0px 64px 64px rgba(0,0,0,0.18))",
+            }}
+          >
+            <Image src={tomatoImg} alt={name} fill className="object-cover" sizes="(max-width: 768px) 213px, (max-width: 1024px) 119px, 273px" />
+          </div>
         </div>
       </div>
 
