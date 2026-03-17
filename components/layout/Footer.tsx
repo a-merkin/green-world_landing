@@ -56,28 +56,6 @@ export default function Footer() {
         sizes="100vw"
       />
 
-      {/* Decorative leaf + Contact button — single unit so button stays centered in circles */}
-      <div className="absolute right-[clamp(20px,5.2vw,100px)] top-[101px] size-[360px] max-lg:right-auto max-lg:left-[calc(50%+60px)] max-lg:top-[60px] max-lg:size-[256px] max-md:left-1/2 max-md:-translate-x-1/2 max-md:top-[294px] max-md:size-[241px]">
-        <Image
-          src="/images/leaf-decoration.svg"
-          alt=""
-          fill
-          className="pointer-events-none"
-        />
-        <Link
-          href={`tel:${contacts.mobile.replace(/[\s()-]/g, "")}`}
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex size-[73px] items-center justify-center rounded-full bg-[#F0EAE2] transition-opacity hover:opacity-90 max-lg:size-[42px] max-md:size-[63px]"
-        >
-          <Image
-            src="/images/phone-icon.svg"
-            alt={t.footer.callAlt}
-            width={33}
-            height={33}
-            className="rotate-90 max-lg:w-[18px] max-lg:h-[18px] max-md:w-[27px] max-md:h-[27px]"
-          />
-        </Link>
-      </div>
-
       {/* ===== DESKTOP + TABLET LAYOUT (unified) ===== */}
       <div className="relative flex h-[608px] mx-20 max-lg:h-[462px] max-lg:mx-5 max-md:hidden">
         {/* LEFT COLUMN */}
@@ -125,55 +103,78 @@ export default function Footer() {
         </div>
 
         {/* RIGHT COLUMN */}
-        <div className="grid w-[50.6%] max-lg:w-[60%] pl-5 grid-cols-[1fr_auto] items-start">
-          {/* Col 1: Location + CONTACT US + Contact details */}
-          <div>
-            {/* Location */}
-            <div className="flex items-center gap-1.5 pt-[30px] max-lg:pt-[23px]">
-              <Image src="/images/location-pin.svg" alt="" width={15} height={15} className="max-lg:w-[13px] max-lg:h-[13px]" />
-              <span className="font-[family-name:var(--font-inter)] text-base leading-none tracking-[-0.32px] text-[#C4D99D] max-lg:font-[family-name:var(--font-roboto)] max-lg:text-sm max-lg:tracking-normal">
-                {t.footer.address}
-              </span>
-            </div>
+        <div className="flex w-[50.6%] max-lg:w-[60%] flex-col pl-5">
+          {/* Location */}
+          <div className="flex items-center gap-1.5 pt-[30px] max-lg:pt-[23px]">
+            <Image src="/images/location-pin.svg" alt="" width={15} height={15} className="max-lg:w-[13px] max-lg:h-[13px]" />
+            <span className="font-[family-name:var(--font-inter)] text-base leading-none tracking-[-0.32px] text-[#C4D99D] max-lg:font-[family-name:var(--font-roboto)] max-lg:text-sm max-lg:tracking-normal">
+              {t.footer.address}
+            </span>
+          </div>
 
-            {/* CONTACT US */}
-            <p className="mt-[clamp(80px,9.1vw,175px)] whitespace-nowrap font-[family-name:var(--font-inter)] text-[clamp(2.75rem,4.8vw,5.75rem)] font-normal leading-none tracking-[-0.02em] uppercase text-[#C4D99D] max-lg:mt-[80px] max-lg:text-[44px] max-lg:tracking-[-0.88px]">
+          {/* CONTACT US + Leaf button — single row, always aligned */}
+          <div className="mt-[clamp(80px,9.1vw,175px)] flex items-center justify-between max-lg:mt-[80px]">
+            <p className="whitespace-nowrap font-[family-name:var(--font-inter)] text-[clamp(2.75rem,4.8vw,5.75rem)] font-normal leading-none tracking-[-0.02em] uppercase text-[#C4D99D] max-lg:text-[44px] max-lg:tracking-[-0.88px]">
               {t.footer.contactUs}
             </p>
 
-            {/* Contact details grid */}
-            <div className="mt-[40px] grid grid-cols-[auto_1fr] gap-x-[clamp(2rem,6.8vw,8.125rem)] gap-y-[27px] max-lg:mt-[30px] max-lg:grid-cols-2 max-lg:gap-x-[clamp(1.5rem,5vw,5rem)] max-lg:gap-y-[20px]">
-              {/* Mobile */}
-              <div>
-                <p className="mb-2 font-[family-name:var(--font-inter)] text-base leading-none tracking-[-0.32px] text-[#C4D99D] max-lg:font-[family-name:var(--font-roboto)] max-lg:text-sm max-lg:tracking-normal">
-                  {t.footer.labels.mobile}
-                </p>
-                <div className="flex items-center gap-3 max-lg:gap-2">
-                  <div className="relative inline-block">
-                    <div className="absolute inset-0 bg-[#C4D99D] opacity-25" />
-                    <a
-                      href={`tel:${contacts.mobile.replace(/[\s()-]/g, "")}`}
-                      className="relative block px-1.5 py-1 font-[family-name:var(--font-roboto)] text-lg font-medium leading-none text-[#C4D99D] whitespace-nowrap max-lg:text-sm"
-                    >
-                      {contacts.mobile}
-                    </a>
-                  </div>
-                  <a
-                    href={`https://wa.me/${contacts.mobile.replace(/[\s()-+]/g, "")}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="transition-opacity hover:opacity-70"
-                  >
-                    <Image src="/images/whatsapp.svg" alt="WhatsApp" width={23} height={23} className="max-lg:w-[18px] max-lg:h-[18px]" />
-                  </a>
-                </div>
+            {/* Leaf + Phone button */}
+            <div className="relative">
+              {/* Leaf — decorative, doesn't affect layout */}
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-[360px] max-lg:size-[256px] pointer-events-none">
+                <Image
+                  src="/images/leaf-decoration.svg"
+                  alt=""
+                  fill
+                />
               </div>
-              <ContactItem label={t.footer.labels.office} value={contacts.office} href={`tel:${contacts.office.replace(/[\s()-]/g, "")}`} />
-              <ContactItem label={t.footer.labels.email} value={contacts.email} href={`mailto:${contacts.email}`} labelFont="roboto" />
-              <ContactItem label={t.footer.labels.russia} value={contacts.russia} href={`tel:${contacts.russia.replace(/[\s()-]/g, "")}`} />
+              {/* Phone button — in flow */}
+              <Link
+                href={`tel:${contacts.mobile.replace(/[\s()-]/g, "")}`}
+                className="relative z-10 flex size-[73px] items-center justify-center rounded-full bg-[#F0EAE2] transition-opacity hover:opacity-90 max-lg:size-[42px]"
+              >
+                <Image
+                  src="/images/phone-icon.svg"
+                  alt={t.footer.callAlt}
+                  width={33}
+                  height={33}
+                  className="rotate-90 max-lg:w-[18px] max-lg:h-[18px]"
+                />
+              </Link>
             </div>
           </div>
-          {/* Col 2: reserved for leaf/button (absolutely positioned at footer level) */}
+
+          {/* Contact details grid */}
+          <div className="mt-[40px] grid grid-cols-[auto_1fr] gap-x-[clamp(2rem,6.8vw,8.125rem)] gap-y-[27px] max-lg:mt-[30px] max-lg:grid-cols-2 max-lg:gap-x-[clamp(1.5rem,5vw,5rem)] max-lg:gap-y-[20px]">
+            {/* Mobile */}
+            <div>
+              <p className="mb-2 font-[family-name:var(--font-inter)] text-base leading-none tracking-[-0.32px] text-[#C4D99D] max-lg:font-[family-name:var(--font-roboto)] max-lg:text-sm max-lg:tracking-normal">
+                {t.footer.labels.mobile}
+              </p>
+              <div className="flex items-center gap-3 max-lg:gap-2">
+                <div className="relative inline-block">
+                  <div className="absolute inset-0 bg-[#C4D99D] opacity-25" />
+                  <a
+                    href={`tel:${contacts.mobile.replace(/[\s()-]/g, "")}`}
+                    className="relative block px-1.5 py-1 font-[family-name:var(--font-roboto)] text-lg font-medium leading-none text-[#C4D99D] whitespace-nowrap max-lg:text-sm"
+                  >
+                    {contacts.mobile}
+                  </a>
+                </div>
+                <a
+                  href={`https://wa.me/${contacts.mobile.replace(/[\s()-+]/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-opacity hover:opacity-70"
+                >
+                  <Image src="/images/whatsapp.svg" alt="WhatsApp" width={23} height={23} className="max-lg:w-[18px] max-lg:h-[18px]" />
+                </a>
+              </div>
+            </div>
+            <ContactItem label={t.footer.labels.office} value={contacts.office} href={`tel:${contacts.office.replace(/[\s()-]/g, "")}`} />
+            <ContactItem label={t.footer.labels.email} value={contacts.email} href={`mailto:${contacts.email}`} labelFont="roboto" />
+            <ContactItem label={t.footer.labels.russia} value={contacts.russia} href={`tel:${contacts.russia.replace(/[\s()-]/g, "")}`} />
+          </div>
         </div>
       </div>
 
@@ -219,6 +220,28 @@ export default function Footer() {
             <ContactItem label={t.footer.labels.russia} value={contacts.russia} href={`tel:${contacts.russia.replace(/[\s()-]/g, "")}`} />
             <ContactItem label={t.footer.labels.email} value={contacts.email} href={`mailto:${contacts.email}`} labelFont="roboto" />
           </div>
+        </div>
+
+        {/* Leaf + Phone button */}
+        <div className="relative mx-auto mt-[30px] size-[241px]">
+          <Image
+            src="/images/leaf-decoration.svg"
+            alt=""
+            fill
+            className="pointer-events-none"
+          />
+          <Link
+            href={`tel:${contacts.mobile.replace(/[\s()-]/g, "")}`}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex size-[63px] items-center justify-center rounded-full bg-[#F0EAE2] transition-opacity hover:opacity-90"
+          >
+            <Image
+              src="/images/phone-icon.svg"
+              alt={t.footer.callAlt}
+              width={27}
+              height={27}
+              className="rotate-90"
+            />
+          </Link>
         </div>
 
         {/* CONTACT US */}
