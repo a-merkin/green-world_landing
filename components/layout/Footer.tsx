@@ -105,18 +105,20 @@ export default function Footer() {
           </div>
 
           {/* Bottom: Decorative text */}
-          <div className="mt-auto overflow-hidden border-t border-[#62694C] pt-5 max-lg:pt-4">
-            <Image
-              src="/images/tomato-icon.png"
-              alt=""
-              width={76}
-              height={79}
-              className="relative z-10 ml-[70px] mb-[-29px] max-lg:w-[26px] max-lg:h-auto max-lg:ml-[21px] max-lg:mb-[-10px]"
-            />
-            <p className="whitespace-nowrap font-[family-name:var(--font-inter)] text-[clamp(2.25rem,4.8vw,5.75rem)] font-normal leading-none tracking-[-0.02em] uppercase text-[#F0EAE2] max-lg:text-[36px] max-lg:tracking-[-0.72px]">
-              {t.footer.decorativeLines[0]}
-            </p>
-            <p className="whitespace-nowrap font-[family-name:var(--font-inter)] text-[clamp(2.25rem,4.8vw,5.75rem)] font-normal leading-none tracking-[-0.02em] uppercase text-[#F0EAE2] max-lg:text-[36px] max-lg:tracking-[-0.72px]">
+          <div className="mt-auto overflow-x-clip overflow-y-visible">
+            <div className="relative border-b border-[#62694C] pb-[0.1em] pt-5 max-lg:pt-4 text-[clamp(2.25rem,4.8vw,5.75rem)] max-lg:text-[36px]">
+              <Image
+                src="/images/tomato-icon.png"
+                alt=""
+                width={76}
+                height={79}
+                className="absolute z-10 left-[0.8em] bottom-[58%] w-[0.83em] h-auto"
+              />
+              <p className="whitespace-nowrap font-[family-name:var(--font-inter)] text-[1em] font-normal leading-none tracking-[-0.02em] uppercase text-[#F0EAE2] max-lg:tracking-[-0.72px]">
+                {t.footer.decorativeLines[0]}
+              </p>
+            </div>
+            <p className="whitespace-nowrap border-b border-[#62694C] pb-[0.1em] pt-[0.1em] font-[family-name:var(--font-inter)] text-[clamp(2.25rem,4.8vw,5.75rem)] font-normal leading-none tracking-[-0.02em] uppercase text-[#F0EAE2] max-lg:text-[36px] max-lg:tracking-[-0.72px]">
               {t.footer.decorativeLines[1]}
             </p>
           </div>
