@@ -10,10 +10,12 @@ type MarkerDef = { x: number; y: number; country: string; regionIndex?: number }
 
 const MAP_W = 1404;
 const MAP_H = 698;
+const MARKER_OFFSET_X = 0;
+const MARKER_OFFSET_Y = 20;
 
 const allMarkers: MarkerDef[] = [
   { x: 770, y: 217.79, country: "ukraine" },
-  { x: 720, y: 194.79, country: "poland" },
+  { x: 720, y: 214.79, country: "poland" },
   { x: 758, y: 187.79, country: "belarus" },
   { x: 830, y: 380.79, country: "uae" },
   { x: 831, y: 222.79, country: "russia", regionIndex: 0 },
@@ -108,7 +110,7 @@ export default function ContactsPageContent() {
         {/* ─── Map + Countries List Section ─── */}
         <div className="relative mx-auto mt-[40px] flex w-full max-w-[1920px] items-start max-lg:mt-[20px] max-lg:px-5 max-md:flex-col max-md:px-[10px]">
           {/* Countries sidebar */}
-          <div className="ml-20 w-[336px] shrink-0 overflow-hidden rounded-[10px] bg-[#4F5E4A] max-lg:ml-0 max-lg:w-[211px] max-md:w-full">
+          <div className="relative z-10 ml-20 w-[336px] shrink-0 overflow-hidden rounded-[10px] bg-[#4F5E4A] max-lg:ml-0 max-lg:w-[211px] max-md:w-full">
             {/* Russia (expandable) */}
             <div className="px-5 pt-[15px] max-lg:px-3 max-lg:pt-[12px]">
               <button
@@ -118,57 +120,50 @@ export default function ContactsPageContent() {
                 <span className="font-[family-name:var(--font-roboto)] text-[clamp(1.5rem,2.5vw,3rem)] font-medium leading-none text-[#C4D99D] max-lg:text-[24px] max-md:text-[22px]">
                   {ct.countries.russia}
                 </span>
-                <Image
-                  src="/images/contacts/chevron-up-active.svg"
-                  alt=""
-                  width={20}
-                  height={10}
-                  className={`transition-transform max-lg:w-[16px] ${russiaOpen ? "" : "rotate-180"}`}
-                />
+                <span className="flex items-center justify-center p-3 -mr-3">
+                  <Image
+                    src="/images/contacts/chevron-up-active.svg"
+                    alt=""
+                    width={20}
+                    height={10}
+                    className={`pointer-events-none transition-transform max-lg:w-[16px] ${russiaOpen ? "" : "rotate-180"}`}
+                  />
+                </span>
               </button>
 
               {/* Region list */}
               {russiaOpen && (
-                <div className="mt-[8px] flex gap-[3px]">
-                  {/* Scrollbar track */}
-                  <div className="relative w-[3px] shrink-0">
-                    <div className="absolute inset-0 bg-[#F0EAE2] opacity-40" />
-                    <div className="absolute left-0 top-0 h-[42%] w-full bg-[#F0EAE2]" />
-                  </div>
-
-                  {/* Regions list */}
-                  <div className="max-h-[299px] flex-1 overflow-y-auto pr-1 scrollbar-hide max-lg:max-h-[198px] max-md:max-h-[234px]">
-                    {ct.russiaRegions.map((region, i) => {
-                      const idx = 4 + i;
-                      const isActive = hoveredMarker === idx || pinnedMarker === idx;
-                      return (
-                        <div
-                          key={region}
-                          className={`flex h-[23px] cursor-pointer items-center px-[14px] font-[family-name:var(--font-roboto)] text-base leading-none transition-colors hover:text-[#C4D99D] max-lg:px-[12px] max-lg:text-sm max-lg:h-[18px] ${
-                            isActive ? "text-[#C4D99D]" : "text-[#F0EAE2]"
-                          } ${i % 2 === 0 ? "bg-[#F0EAE2]/15" : ""}`}
-                          onMouseEnter={() => setHoveredMarker(idx)}
-                          onMouseLeave={() => setHoveredMarker(null)}
-                          onClick={() => setPinnedMarker(pinnedMarker === idx ? null : idx)}
-                        >
-                          {region}
-                        </div>
-                      );
-                    })}
-                  </div>
+                <div className="mt-[8px] max-h-[299px] regions-scrollbar max-lg:max-h-[198px] max-md:max-h-[234px]">
+                  {ct.russiaRegions.map((region, i) => {
+                    const idx = 4 + i;
+                    const isActive = hoveredMarker === idx || pinnedMarker === idx;
+                    return (
+                      <div
+                        key={region}
+                        className={`flex h-[23px] cursor-pointer items-center px-[14px] font-[family-name:var(--font-roboto)] text-base leading-none transition-colors hover:text-[#C4D99D] max-lg:px-[12px] max-lg:text-sm max-lg:h-[18px] ${
+                          isActive ? "text-[#C4D99D]" : "text-[#F0EAE2]"
+                        } ${i % 2 === 0 ? "bg-[#F0EAE2]/15" : ""}`}
+                        onMouseEnter={() => setHoveredMarker(idx)}
+                        onMouseLeave={() => setHoveredMarker(null)}
+                        onClick={() => setPinnedMarker(pinnedMarker === idx ? null : idx)}
+                      >
+                        {region}
+                      </div>
+                    );
+                  })}
                 </div>
               )}
             </div>
 
             {/* Other countries */}
             <div className="mt-[14px] flex flex-col gap-[14px] px-5 pb-[14px] max-lg:mt-[10px] max-lg:gap-[10px] max-lg:px-3 max-lg:pb-[12px] max-md:gap-[12px]">
-              <div className="h-px w-full bg-[#F0EAE2] opacity-30" />
-              {otherCountries.map(({ key, markerIdx }) => {
+              {otherCountries.map(({ key, markerIdx }, i) => {
                 const isActive = hoveredMarker === markerIdx || pinnedMarker === markerIdx;
                 return (
-                  <div key={key}>
+                  <div key={key} className="flex flex-col gap-[14px] max-lg:gap-[10px] max-md:gap-[12px]">
+                    <div className="h-px w-full bg-[#F0EAE2] opacity-30" />
                     <button
-                      className={`cursor-pointer font-[family-name:var(--font-roboto)] text-[clamp(1.5rem,2.5vw,3rem)] font-medium leading-none transition-colors hover:text-[#C4D99D] max-lg:text-[24px] max-md:text-[22px] ${
+                      className={`cursor-pointer text-left font-[family-name:var(--font-roboto)] text-[clamp(1.5rem,2.5vw,3rem)] font-medium leading-none transition-colors hover:text-[#C4D99D] max-lg:text-[24px] max-md:text-[22px] ${
                         isActive ? "text-[#C4D99D]" : "text-[#F0EAE2]"
                       }`}
                       onMouseEnter={() => setHoveredMarker(markerIdx)}
@@ -177,7 +172,6 @@ export default function ContactsPageContent() {
                     >
                       {ct.countries[key]}
                     </button>
-                    <div className="mt-[14px] h-px w-full bg-[#F0EAE2] opacity-30 max-lg:mt-[10px] max-md:mt-[12px]" />
                   </div>
                 );
               })}
@@ -203,8 +197,8 @@ export default function ContactsPageContent() {
                   key={i}
                   className="absolute -translate-x-1/2 -translate-y-full cursor-pointer transition-opacity duration-300"
                   style={{
-                    left: `${(m.x / MAP_W) * 100}%`,
-                    top: `${(m.y / MAP_H) * 100}%`,
+                    left: `${((m.x + MARKER_OFFSET_X) / MAP_W) * 100}%`,
+                    top: `${((m.y + MARKER_OFFSET_Y) / MAP_H) * 100}%`,
                     opacity: isVisible ? 1 : 0,
                     pointerEvents: isVisible ? "auto" : "none",
                   }}
@@ -223,8 +217,8 @@ export default function ContactsPageContent() {
                 key={`hit-${i}`}
                 className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer"
                 style={{
-                  left: `${(m.x / MAP_W) * 100}%`,
-                  top: `${(m.y / MAP_H) * 100}%`,
+                  left: `${((m.x + MARKER_OFFSET_X) / MAP_W) * 100}%`,
+                  top: `${((m.y + MARKER_OFFSET_Y) / MAP_H) * 100}%`,
                   width: 30,
                   height: 30,
                 }}

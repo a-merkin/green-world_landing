@@ -47,6 +47,27 @@
   }
 }
 
+/* Regions scrollbar — always visible, matches Figma */
+.regions-scrollbar {
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #F0EAE2 rgba(240, 234, 226, 0.4);
+}
+
+.regions-scrollbar::-webkit-scrollbar {
+  width: 3px;
+  -webkit-appearance: none;
+}
+
+.regions-scrollbar::-webkit-scrollbar-track {
+  background: rgba(240, 234, 226, 0.4);
+}
+
+.regions-scrollbar::-webkit-scrollbar-thumb {
+  background: #F0EAE2;
+  border-radius: 0;
+}
+
 /* Gradient ring: visible on left, fades to right */
 .gradient-ring {
   background: linear-gradient(to right, rgba(79, 94, 74, 0.25) 60%, transparent 95%);
