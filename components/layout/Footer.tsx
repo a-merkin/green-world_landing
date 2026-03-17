@@ -84,7 +84,7 @@ export default function Footer() {
 
           {/* Bottom: Decorative text */}
           <div className="mt-auto overflow-x-clip overflow-y-visible">
-            <div className="relative border-b border-[#62694C] pb-[0.1em] pt-5 max-lg:pt-4 text-[clamp(2.25rem,4.8vw,5.75rem)] max-lg:text-[36px]">
+            <div className="relative border-b border-[#62694C] pb-[0.1em] pt-5 max-lg:pt-4 text-[clamp(2.25rem,4.8vw,5.75rem)] max-lg:text-[28px]">
               <Image
                 src="/images/tomato-icon.png"
                 alt=""
@@ -96,7 +96,7 @@ export default function Footer() {
                 {t.footer.decorativeLines[0]}
               </p>
             </div>
-            <p className="whitespace-nowrap border-b border-[#62694C] pb-[0.1em] pt-[0.1em] font-[family-name:var(--font-inter)] text-[clamp(2.25rem,4.8vw,5.75rem)] font-normal leading-none tracking-[-0.02em] uppercase text-[#F0EAE2] max-lg:text-[36px] max-lg:tracking-[-0.72px]">
+            <p className="whitespace-nowrap border-b border-[#62694C] pb-[0.1em] pt-[0.1em] font-[family-name:var(--font-inter)] text-[clamp(2.25rem,4.8vw,5.75rem)] font-normal leading-none tracking-[-0.02em] uppercase text-[#F0EAE2] max-lg:text-[28px] max-lg:tracking-[-0.56px]">
               {t.footer.decorativeLines[1]}
             </p>
           </div>
@@ -167,7 +167,7 @@ export default function Footer() {
         </div>
 
         {/* RIGHT COLUMN — TABLET (768–1024px) */}
-        <div className="hidden w-[60%] pl-5 max-lg:grid max-md:hidden grid-cols-2 gap-x-[clamp(1.5rem,5vw,5rem)]">
+        <div className="hidden w-[60%] pl-5 max-lg:grid max-md:hidden grid-cols-[1.2fr_1fr] gap-x-[clamp(1.5rem,5vw,5rem)]">
           {/* Row 1: Location — spans both columns */}
           <div className="col-span-2 flex items-center gap-1.5 pt-[23px]">
             <Image src="/images/location-pin.svg" alt="" width={13} height={13} />
@@ -280,7 +280,7 @@ export default function Footer() {
         </div>
 
         {/* CONTACT US */}
-        <p className="mt-[60px] whitespace-nowrap text-center font-[family-name:var(--font-inter)] text-[57px] font-normal leading-none tracking-[-1.14px] uppercase text-[#C4D99D]">
+        <p className="mt-[60px] text-center font-[family-name:var(--font-inter)] text-[40px] font-normal leading-none tracking-[-0.8px] uppercase text-[#C4D99D]">
           {t.footer.contactUs}
         </p>
 
@@ -304,10 +304,10 @@ export default function Footer() {
         {/* Decorative text */}
         <div className="mt-auto pb-[74px]">
           <Image src="/images/tomato-icon.png" alt="" width={26} height={27} className="relative z-10 ml-[23px] mb-[-10px]" />
-          <p className="whitespace-nowrap font-[family-name:var(--font-inter)] text-[36px] font-normal leading-none tracking-[-0.72px] uppercase text-[#F0EAE2]">
+          <p className="font-[family-name:var(--font-inter)] text-[36px] font-normal leading-none tracking-[-0.72px] uppercase text-[#F0EAE2]">
             {t.footer.decorativeLines[0]}
           </p>
-          <p className="whitespace-nowrap font-[family-name:var(--font-inter)] text-[36px] font-normal leading-none tracking-[-0.72px] uppercase text-[#F0EAE2]">
+          <p className="font-[family-name:var(--font-inter)] text-[36px] font-normal leading-none tracking-[-0.72px] uppercase text-[#F0EAE2]">
             {t.footer.decorativeLines[1]}
           </p>
         </div>
