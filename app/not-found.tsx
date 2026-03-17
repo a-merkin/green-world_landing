@@ -30,7 +30,7 @@ export default function NotFound() {
         {/* CTA button */}
         <Link
           href="/"
-          className="mt-[17px] flex h-[45px] w-full max-w-[336px] items-center justify-center bg-[#4F5E4A] font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.04vw,1.25rem)] font-medium leading-none tracking-[-0.6px] text-[#F0EAE2] transition-opacity hover:opacity-90 max-lg:max-w-[280px] max-lg:h-[38px] max-lg:text-sm max-md:max-w-[250px] max-md:h-[45px]"
+          className="mt-[17px] flex h-[45px] w-full max-w-[336px] items-center justify-center bg-[#4F5E4A] font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.04vw,1.25rem)] font-medium leading-none tracking-[-0.6px] text-[#F0EAE2] transition-colors hover:bg-[#6C7B67] max-lg:max-w-[280px] max-lg:h-[38px] max-lg:text-sm max-md:max-w-[250px] max-md:h-[45px]"
         >
           {t.notFound.cta}
         </Link>

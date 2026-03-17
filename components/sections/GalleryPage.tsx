@@ -36,7 +36,7 @@ function GalleryArrow({
   return (
     <button
       onClick={onClick}
-      className="flex h-[52px] w-[52px] shrink-0 cursor-pointer items-center justify-center rounded-full bg-[#4F5E4A] transition-opacity hover:opacity-80 max-lg:hidden"
+      className="flex h-[52px] w-[52px] shrink-0 cursor-pointer items-center justify-center rounded-full bg-[#4F5E4A] transition-colors hover:bg-[#6C7B67] max-lg:hidden"
       aria-label={label}
     >
       <svg

@@ -42,7 +42,7 @@ function SliderArrow({
   const isNext = direction === "next";
   return (
     <button
-      className="flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border border-[#C4D99D] bg-transparent transition-opacity hover:opacity-80 max-lg:h-[38px] max-lg:w-[38px] max-md:hidden"
+      className="flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border border-[#C4D99D] bg-transparent transition-colors hover:bg-[#C4D99D]/20 max-lg:h-[38px] max-lg:w-[38px] max-md:hidden"
       aria-label={direction}
       onClick={onClick}
     >

@@ -67,7 +67,7 @@ export default function Hero() {
             {t.hero.description}
           </p>
 
-          <button className="flex h-[45px] w-full max-w-[336px] cursor-pointer items-center justify-center bg-[#4F5E4A] font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.04vw,1.25rem)] font-medium leading-none tracking-[-0.6px] text-[#F0EAE2] transition-opacity hover:opacity-90 max-lg:w-[212px] max-lg:h-[30px] max-lg:text-sm max-lg:tracking-[-0.42px] max-md:w-full max-md:max-w-none max-md:h-[45px] max-md:text-sm">
+          <button className="flex h-[45px] w-full max-w-[336px] cursor-pointer items-center justify-center bg-[#4F5E4A] font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.04vw,1.25rem)] font-medium leading-none tracking-[-0.6px] text-[#F0EAE2] transition-colors hover:bg-[#6C7B67] max-lg:w-[212px] max-lg:h-[30px] max-lg:text-sm max-lg:tracking-[-0.42px] max-md:w-full max-md:max-w-none max-md:h-[45px] max-md:text-sm">
             {t.hero.cta}
           </button>
         </div>
