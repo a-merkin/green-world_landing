@@ -21,3 +21,11 @@ body {
   color: var(--color-black);
   font-family: var(--font-inter), sans-serif;
 }
+
+/* Gradient ring: visible on left, fades to right */
+.gradient-ring {
+  background: linear-gradient(to right, rgba(79, 94, 74, 0.25) 60%, transparent 95%);
+  border-radius: 9999px;
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 1px), black calc(100% - 1px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 1px), black calc(100% - 1px));
+}
