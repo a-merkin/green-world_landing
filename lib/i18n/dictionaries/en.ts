@@ -41,9 +41,28 @@ const en: Dictionary = {
   },
   products: {
     sectionLabel: "Products",
-    name: "Cluster\ntomatoes",
-    description:
-      "The fruits are medium to large in size, usually weighing from 80 to 150 g, growing in groups on a single branch. They have a sweet flavor with a slight acidity and a more intense aroma than regular tomatoes. These tomatoes are perfect for fresh salads, sandwiches, pasta and sauces, as well as canning. The fruits ripen gradually and are harvested in whole clusters. They are easy to store and transport, yielding a large number of fruits per plant.",
+    slides: [
+      {
+        name: "Cluster\ntomatoes",
+        description:
+          "The fruits are medium to large in size, usually weighing from 80 to 150 g, growing in groups on a single branch. They have a sweet flavor with a slight acidity and a more intense aroma than regular tomatoes. These tomatoes are perfect for fresh salads, sandwiches, pasta and sauces, as well as canning. The fruits ripen gradually and are harvested in whole clusters. They are easy to store and transport, yielding a large number of fruits per plant.",
+      },
+      {
+        name: "Pink\ntomatoes",
+        description:
+          "A group of tomato varieties and hybrids characterized by fruits with a deep pink or light crimson hue. Fruits are usually large or medium-sized, weighing from 150 to 500 grams (less often larger), characterized by fleshiness, sweet taste, juicy flesh, thin tender skin and excellent flavor. Thanks to their attractive appearance, wonderful flavor and high consumer qualities, pink tomatoes have gained high popularity in the market.",
+      },
+      {
+        name: "Plum\ntomatoes",
+        description:
+          "A group of tomato varieties and hybrids with an elongated oval shape. The fruits are usually medium or small in size (50-120 g), characterized by a dense structure, thick skin and relatively low water content of the flesh. These qualities make them ideal for canning, salting, drying, drying and processing into sauces and pastes. Plum-shaped tomatoes tolerate transportation and storage well and are popular in home cooking, industrial processing and fresh vegetable trade.",
+      },
+      {
+        name: "\u00ABCherry\u00BB\ntomatoes",
+        description:
+          "A group of small-fruited tomato varieties characterized by small fruits of round or slightly elongated shape with a diameter of about 1.5-3 cm and a weight of 10 to 30 grams. Cherries are prized for their sweet flavor, juiciness and decorative appearance. They are commonly used fresh in salads, appetizers and food presentation. They are often grown both in open and protected soil and are characterized by high yields, good transportability and long shelf life.",
+      },
+    ],
     prev: "Previous",
     next: "Next",
   },

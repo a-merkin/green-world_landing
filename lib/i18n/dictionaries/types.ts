@@ -26,8 +26,7 @@ export interface Dictionary {
   };
   products: {
     sectionLabel: string;
-    name: string;
-    description: string;
+    slides: { name: string; description: string }[];
     prev: string;
     next: string;
   };
