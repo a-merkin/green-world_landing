@@ -236,7 +236,7 @@ export default function Footer() {
       </div>
 
       {/* ===== MOBILE LAYOUT (< 768px) ===== */}
-      <div className="relative hidden min-h-[644px] px-[10px] max-md:block">
+      <div className="relative hidden min-h-[644px] px-[10px] max-md:flex max-md:flex-col">
         {/* Top row: Logo + Location */}
         <div className="flex items-start justify-between pt-[40px]">
           <Image src="/images/logo-light.png" alt="Green World" width={69} height={20} />
@@ -249,7 +249,7 @@ export default function Footer() {
         </div>
 
         {/* Content row: Nav (left) + Contact details (right) */}
-        <div className="mt-[44px] flex justify-between">
+        <div className="mt-[44px] grid grid-cols-[1fr_1fr]">
           <nav className="flex flex-col gap-[11px] font-[family-name:var(--font-roboto)] text-sm leading-none text-[#C4D99D]">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} className="transition-opacity hover:opacity-70">
@@ -279,37 +279,30 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Leaf + Phone button */}
-        <div className="relative mx-auto mt-[30px] overflow-visible">
-          {/* Leaf — decorative, doesn't affect layout */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-[241px] pointer-events-none">
-            <Image
-              src="/images/leaf-decoration.svg"
-              alt=""
-              fill
-            />
-          </div>
-          <Link
-            href={`tel:${contacts.mobile.replace(/[\s()-]/g, "")}`}
-            className="relative z-10 flex size-[63px] items-center justify-center rounded-full bg-[#F0EAE2] transition-opacity hover:opacity-90"
-          >
-            <Image
-              src="/images/phone-icon.svg"
-              alt={t.footer.callAlt}
-              width={27}
-              height={27}
-              className="rotate-90"
-            />
-          </Link>
-        </div>
-
         {/* CONTACT US */}
-        <p className="mt-[100px] whitespace-nowrap text-center font-[family-name:var(--font-inter)] text-[clamp(2.5rem,15vw,3.5625rem)] font-normal leading-none tracking-[-1.5px] uppercase text-[#C4D99D]">
+        <p className="mt-[60px] whitespace-nowrap text-center font-[family-name:var(--font-inter)] text-[57px] font-normal leading-none tracking-[-1.14px] uppercase text-[#C4D99D]">
           {t.footer.contactUs}
         </p>
 
+        {/* Leaf + Phone button */}
+        <Link
+          href={`tel:${contacts.mobile.replace(/[\s()-]/g, "")}`}
+          className="relative mx-auto mt-[17px] overflow-visible flex size-[63px] items-center justify-center rounded-full bg-[#F0EAE2] transition-opacity hover:opacity-90"
+        >
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-[241px] pointer-events-none">
+            <Image src="/images/leaf-decoration.svg" alt="" fill />
+          </div>
+          <Image
+            src="/images/phone-icon.svg"
+            alt={t.footer.callAlt}
+            width={27}
+            height={27}
+            className="relative z-10 rotate-90"
+          />
+        </Link>
+
         {/* Decorative text */}
-        <div className="absolute bottom-[74px] left-[10px]">
+        <div className="mt-auto pb-[74px]">
           <Image src="/images/tomato-icon.png" alt="" width={26} height={27} className="relative z-10 ml-[23px] mb-[-10px]" />
           <p className="whitespace-nowrap font-[family-name:var(--font-inter)] text-[36px] font-normal leading-none tracking-[-0.72px] uppercase text-[#F0EAE2]">
             {t.footer.decorativeLines[0]}
