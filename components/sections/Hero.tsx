@@ -58,12 +58,12 @@ export default function Hero() {
         </div>
 
         {/* Content block — subtitle, description, CTA */}
-        <div className="-mt-[0.3vw] mx-auto flex w-[clamp(12.5rem,22vw,25rem)] flex-col items-center gap-5 max-lg:w-[212px] max-lg:gap-4 max-md:w-full max-md:gap-4 max-md:mt-[40px]">
-          <p className="font-[family-name:var(--font-display)] text-[clamp(2.2rem,3.85vw,4.625rem)] font-normal leading-[0.74] tracking-[-1.48px] text-[#4F5E4A] opacity-85 max-lg:text-[36px] max-lg:tracking-[-0.72px] max-md:text-[32px] max-md:tracking-[-0.64px] max-md:w-[176px]">
+        <div className="-mt-[0.3vw] mx-auto flex w-[clamp(12.5rem,22vw,25rem)] flex-col items-stretch gap-5 text-left max-lg:w-[212px] max-lg:gap-4 max-md:w-full max-md:gap-4 max-md:mt-[40px] max-md:items-center max-md:text-center">
+          <p className="font-[family-name:var(--font-display)] text-[clamp(2.2rem,3.85vw,4.625rem)] font-normal leading-[0.74] tracking-[-1.48px] text-[#4F5E4A] opacity-85 max-lg:text-[36px] max-lg:tracking-[-0.72px] max-md:text-[32px] max-md:tracking-[-0.64px]">
             {t.hero.subtitle}
           </p>
 
-          <p className="w-full max-w-[336px] font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.04vw,1.25rem)] font-medium leading-none tracking-[-0.6px] text-[#4F5E4A] opacity-85 max-lg:max-w-none max-lg:text-sm max-lg:tracking-[-0.42px] max-md:w-full max-md:text-center max-md:text-sm">
+          <p className="w-full max-w-[336px] font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.04vw,1.25rem)] font-medium leading-none tracking-[-0.6px] text-[#4F5E4A] opacity-85 max-lg:max-w-none max-lg:text-sm max-lg:tracking-[-0.42px] max-md:w-full max-md:text-sm">
             {t.hero.description}
           </p>
 
