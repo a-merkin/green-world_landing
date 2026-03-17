@@ -68,6 +68,17 @@ export default function ContactsPageContent() {
   const [agreed, setAgreed] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
+  const getSelectedLocation = useCallback(() => {
+    if (pinnedMarker === null) return undefined;
+    const marker = allMarkers[pinnedMarker];
+    if (!marker) return undefined;
+    if (marker.country === "russia" && marker.regionIndex !== undefined) {
+      return `Russia — ${ct.russiaRegions[marker.regionIndex]}`;
+    }
+    const countryKey = marker.country as CountryKey;
+    return ct.countries[countryKey] ?? marker.country;
+  }, [pinnedMarker, ct]);
+
   const handleSubmit = useCallback(
     async (e: React.FormEvent) => {
       e.preventDefault();
@@ -77,7 +88,7 @@ export default function ContactsPageContent() {
         const res = await fetch("/api/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...formState, formType: activeTab }),
+          body: JSON.stringify({ ...formState, formType: activeTab, location: getSelectedLocation() }),
         });
         if (!res.ok) throw new Error();
         setStatus("success");
@@ -89,7 +100,7 @@ export default function ContactsPageContent() {
         setTimeout(() => setStatus("idle"), 4000);
       }
     },
-    [formState, activeTab, agreed],
+    [formState, activeTab, agreed, getSelectedLocation],
   );
 
   const otherCountries: { key: CountryKey; markerIdx: number }[] = [
@@ -261,7 +272,7 @@ export default function ContactsPageContent() {
               <button
                 className={`flex h-[70px] flex-1 cursor-pointer items-center justify-center rounded-tl-[20px] font-[family-name:var(--font-roboto)] text-[clamp(1.125rem,1.67vw,2rem)] font-medium leading-none transition-colors max-lg:text-[24px] max-lg:h-[57px] max-md:text-[18px] max-md:h-[57px] ${
                   activeTab === "customers"
-                    ? "bg-[#4F5E4A] text-[#F0EAE2]"
+                    ? "bg-[#4F5E4A] mix-blend-multiply text-[#F0EAE2]"
                     : "bg-[#4F5E4A]/10 text-[#4F5E4A] opacity-85"
                 }`}
                 onClick={() => setActiveTab("customers")}
@@ -271,7 +282,7 @@ export default function ContactsPageContent() {
               <button
                 className={`flex h-[70px] flex-1 cursor-pointer items-center justify-center rounded-tr-[20px] font-[family-name:var(--font-roboto)] text-[clamp(1.125rem,1.67vw,2rem)] font-medium leading-none transition-colors max-lg:text-[24px] max-lg:h-[57px] max-md:text-[18px] max-md:h-[57px] ${
                   activeTab === "suppliers"
-                    ? "bg-[#4F5E4A] text-[#F0EAE2]"
+                    ? "bg-[#4F5E4A] mix-blend-multiply text-[#F0EAE2]"
                     : "bg-[#4F5E4A]/10 text-[#4F5E4A] opacity-85"
                 }`}
                 onClick={() => setActiveTab("suppliers")}
@@ -283,7 +294,7 @@ export default function ContactsPageContent() {
             {/* Form body */}
             <form
               onSubmit={handleSubmit}
-              className="rounded-b-[20px] bg-[#4F5E4A] px-[20px] pb-[30px] pt-[39px] max-lg:pt-[24px] max-lg:pb-[20px] max-md:px-[10px]"
+              className="rounded-b-[20px] bg-[#4F5E4A] mix-blend-multiply px-[20px] pb-[30px] pt-[39px] max-lg:pt-[24px] max-lg:pb-[20px] max-md:px-[10px]"
             >
               <p className="font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.04vw,1.25rem)] font-medium leading-[1.3] tracking-[-0.6px] text-[#F0EAE2] max-lg:text-base max-lg:tracking-[-0.48px] max-md:text-sm max-md:tracking-[-0.42px]">
                 {ct.form.description}
@@ -358,7 +369,7 @@ export default function ContactsPageContent() {
               <button
                 type="submit"
                 disabled={!agreed || status === "sending"}
-                className="mt-[30px] flex h-[45px] w-full cursor-pointer items-center justify-center bg-[#F0EAE2] font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.04vw,1.25rem)] font-medium leading-none tracking-[-0.6px] text-[#4F5E4A] transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 max-lg:h-[30px] max-lg:text-sm max-lg:tracking-[-0.42px] max-md:h-[45px]"
+                className="mt-[30px] flex h-[45px] w-full cursor-pointer items-center justify-center bg-[#F0EAE2] font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.04vw,1.25rem)] font-medium leading-none tracking-[-0.6px] text-[#4F5E4A] transition-colors hover:bg-[#C4D99D] disabled:cursor-not-allowed disabled:opacity-50 max-lg:h-[30px] max-lg:text-sm max-lg:tracking-[-0.42px] max-md:h-[45px]"
               >
                 {status === "sending" ? ct.form.sending : ct.form.send}
               </button>

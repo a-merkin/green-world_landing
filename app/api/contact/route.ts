@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { companyName, email, message, formType } = body;
+    const { companyName, email, message, formType, location } = body;
 
     if (!companyName || !email || !message || !formType) {
       return NextResponse.json(
@@ -20,6 +20,7 @@ export async function POST(request: Request) {
       `Form type: ${formLabel}`,
       `Company: ${companyName}`,
       `Email: ${email}`,
+      ...(location ? [`Location: ${location}`] : []),
       `Message: ${message}`,
     ].join("\n");
 
