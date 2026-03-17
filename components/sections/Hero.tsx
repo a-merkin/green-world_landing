@@ -24,14 +24,16 @@ export default function Hero() {
       <div className="relative mx-auto w-full max-w-[1920px] px-20 pt-[15.5vw] max-lg:px-5 max-lg:max-w-[768px] max-lg:pt-[156px] max-md:px-[10px] max-md:max-w-[340px] max-md:pt-[86px]">
         {/* "GREEN WORLD" — badge anchored to "L" */}
         {/* eslint-disable-next-line react/jsx-no-literals */}
-        <h1 className="whitespace-nowrap font-[family-name:var(--font-display)] text-[clamp(7rem,13vw,15.5rem)] font-normal leading-[0.82] tracking-[-0.57vw] uppercase text-[#4F5E4A] max-lg:text-[113px] max-lg:tracking-[-4.52px] max-md:text-[14.4vw] max-md:tracking-[-1.84px] max-md:text-center">{"Green wor"}<span className="relative">{"l"}<Image
-              src="/images/high-quality-badge.png"
-              alt=""
-              width={320}
-              height={165}
-              className="pointer-events-none absolute bottom-[65%] left-1/2 -translate-x-1/2 w-[clamp(5.9rem,16.7vw,20rem)] h-auto max-lg:w-[94px] max-md:w-[121px] max-md:bottom-[120%] max-md:left-[200%]"
-              priority
-            /></span>{"d"}</h1>
+        <h1 className="whitespace-nowrap font-[family-name:var(--font-display)] text-[clamp(7rem,13vw,15.5rem)] font-normal leading-[0.82] tracking-[-0.57vw] uppercase text-[#4F5E4A] max-lg:text-[113px] max-lg:tracking-[-4.52px] max-md:text-[14.4vw] max-md:tracking-[-1.84px] max-md:text-center">{"Green wor"}<span className="relative">{"l"}<span className="pointer-events-none absolute bottom-[70%] left-[13%] -translate-x-1/2 w-[clamp(10.5rem,16.7vw,20rem)] aspect-[320/165] max-lg:w-[140px] max-md:w-[121px] max-md:bottom-[120%] max-md:left-[200%]">
+              <Image
+                src="/images/high-quality-badge.png"
+                alt=""
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 121px, (max-width: 1024px) 140px, 320px"
+                priority
+              />
+            </span></span>{"d"}</h1>
 
         {/* "TOMATOES" — tomato anchored to "O" */}
         <div className="-mt-[0.3vw] ml-[23%] max-lg:ml-[23%] max-lg:-mt-[2px] max-md:ml-0 max-md:text-center max-md:-mt-[1px]">
