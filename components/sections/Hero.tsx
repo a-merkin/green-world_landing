@@ -21,10 +21,10 @@ export default function Hero() {
       </div>
 
       {/* Main hero content — fluid container */}
-      <div className="relative mx-auto w-full max-w-[1920px] px-20 pt-[15.5vw] max-lg:px-5 max-lg:max-w-[768px] max-lg:pt-[156px] max-md:px-[10px] max-md:max-w-[340px] max-md:pt-[86px]">
+      <div className="relative mx-auto w-full max-w-[1920px] px-20 pt-[15.5vw] text-center max-lg:px-5 max-lg:max-w-[768px] max-lg:pt-[156px] max-md:px-[10px] max-md:max-w-[340px] max-md:pt-[86px]">
         {/* "GREEN WORLD" — badge anchored to "L" */}
         {/* eslint-disable-next-line react/jsx-no-literals */}
-        <h1 className="whitespace-nowrap font-[family-name:var(--font-display)] text-[clamp(7rem,13vw,15.5rem)] font-normal leading-[0.82] tracking-[-0.57vw] uppercase text-[#4F5E4A] max-lg:text-[113px] max-lg:tracking-[-4.52px] max-md:text-[14.4vw] max-md:tracking-[-1.84px] max-md:text-center">{"Green wor"}<span className="relative">{"l"}<span className="pointer-events-none absolute bottom-[70%] left-[13%] -translate-x-1/2 w-[clamp(10.5rem,16.7vw,20rem)] aspect-[320/165] max-lg:w-[140px] max-md:w-[121px] max-md:bottom-[120%] max-md:left-[200%]">
+        <h1 className="whitespace-nowrap font-[family-name:var(--font-display)] text-[clamp(7rem,13vw,15.5rem)] font-normal leading-[0.82] tracking-[-0.57vw] uppercase text-[#4F5E4A] max-lg:text-[113px] max-lg:tracking-[-4.52px] max-md:text-[14.4vw] max-md:tracking-[-1.84px] ">{"Green wor"}<span className="relative">{"l"}<span className="pointer-events-none absolute bottom-[70%] left-[13%] -translate-x-1/2 w-[clamp(10.5rem,16.7vw,20rem)] aspect-[320/165] max-lg:w-[140px] max-md:w-[121px] max-md:bottom-[120%] max-md:left-[200%]">
               <Image
                 src="/images/high-quality-badge.png"
                 alt=""
@@ -36,7 +36,7 @@ export default function Hero() {
             </span></span>{"d"}</h1>
 
         {/* "TOMATOES" — tomato anchored to "O" */}
-        <div className="-mt-[0.3vw] ml-[23%] max-lg:ml-[23%] max-lg:-mt-[2px] max-md:ml-0 max-md:text-center max-md:-mt-[1px]">
+        <div className="-mt-[0.3vw] max-lg:-mt-[2px] max-md:-mt-[1px]">
           <p className="whitespace-nowrap font-[family-name:var(--font-display)] text-[clamp(4.5rem,10.4vw,12.5rem)] font-normal leading-[0.82] tracking-[-0.42vw] uppercase text-[#4F5E4A] max-lg:text-[71px] max-lg:tracking-[-2.84px] max-md:text-[11.25vw] max-md:tracking-[-1.44px]">{"t"}<span className="relative">{"o"}<span className="pointer-events-none absolute left-1/2 top-1/2 flex h-[1.45em] w-[1.7em] -translate-x-1/2 -translate-y-1/2 items-center justify-center max-lg:h-[106px] max-lg:w-[150px] max-md:hidden">
                 <Image
                   src="/images/tomato-splash.svg"
@@ -58,8 +58,8 @@ export default function Hero() {
         </div>
 
         {/* Content block — subtitle, description, CTA */}
-        <div className="-mt-[0.3vw] ml-[40%] flex w-[clamp(12.5rem,22vw,25rem)] flex-col gap-5 max-lg:ml-[calc(40%+7.8px)] max-lg:w-[212px] max-lg:gap-4 max-md:ml-0 max-md:w-full max-md:items-center max-md:text-center max-md:gap-4 max-md:mt-[40px]">
-          <p className="font-[family-name:var(--font-display)] text-[clamp(2.2rem,2.8vw,3.375rem)] font-normal leading-[0.82] tracking-[-1.08px] text-[#4F5E4A] opacity-85 max-lg:text-[36px] max-lg:leading-[0.74] max-lg:tracking-[-0.72px] max-md:text-[32px] max-md:tracking-[-0.64px] max-md:w-[176px]">
+        <div className="-mt-[0.3vw] mx-auto flex w-[clamp(12.5rem,22vw,25rem)] flex-col items-center gap-5 max-lg:w-[212px] max-lg:gap-4 max-md:w-full max-md:gap-4 max-md:mt-[40px]">
+          <p className="font-[family-name:var(--font-display)] text-[clamp(2.2rem,3.85vw,4.625rem)] font-normal leading-[0.74] tracking-[-1.48px] text-[#4F5E4A] opacity-85 max-lg:text-[36px] max-lg:tracking-[-0.72px] max-md:text-[32px] max-md:tracking-[-0.64px] max-md:w-[176px]">
             {t.hero.subtitle}
           </p>
 

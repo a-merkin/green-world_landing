@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "LTC Metropolitan W00";
+  src: url('/fonts/ltc-metropolitan.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
 @theme inline {
@@ -11,7 +19,6 @@
   --font-cormorant-infant: var(--font-cormorant-infant);
 }
 
-/* Display font — LTC Metropolitan W00 (add @font-face when font file is available) */
 :root {
   --font-display: "LTC Metropolitan W00", "Georgia", "Times New Roman", serif;
 }
