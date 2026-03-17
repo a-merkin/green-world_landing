@@ -9,13 +9,13 @@ export default function Hero() {
   return (
     <section className="relative h-[clamp(530px,52.7vw,1011px)] overflow-hidden max-lg:h-[530px] max-md:h-[560px]">
       {/* Blurred leaf shadow — decorative background */}
-      <div className="pointer-events-none absolute -left-[50%] -top-[60%] h-[180%] w-[120%] rotate-[58.66deg] opacity-44 blur-[14px] max-md:blur-[4px] max-md:opacity-43 max-md:-left-[130%] max-md:-top-[30%] max-md:h-[100%] max-md:w-[180%]">
+      <div className="pointer-events-none absolute -left-[75%] -top-[50%] h-[180%] w-[100%] rotate-[58.66deg] opacity-44 blur-[14px] max-md:blur-[4px] max-md:opacity-43 max-md:-left-[130%] max-md:-top-[30%] max-md:h-[100%] max-md:w-[180%]">
         <Image
           src="/images/leaf-blur-bg.png"
           alt=""
           fill
           className="object-contain"
-          sizes="120vw"
+          sizes="100vw"
           priority
         />
       </div>
@@ -41,7 +41,7 @@ export default function Hero() {
                   alt=""
                   width={298}
                   height={164}
-                  className="rotate-[29.39deg] w-[1.5em] h-auto max-lg:w-[102px]"
+                  className="rotate-[29.39deg] -scale-x-100 translate-x-[15%] translate-y-[20%] w-[1.5em] h-auto max-lg:w-[102px]"
                 />
               </span><span className="absolute left-1/6 top-1/2 block h-[1.45em] w-[1.45em] -translate-x-1/2 -translate-y-1/2 max-lg:h-[56px] max-lg:w-[56px] max-md:hidden">
                 <Image
