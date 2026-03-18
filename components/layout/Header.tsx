@@ -28,7 +28,7 @@ export default function Header() {
   }, [isLangOpen]);
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 flex items-start justify-between px-20 pt-[28px] max-lg:px-5 max-lg:pt-[20px] max-md:px-[10px] max-md:pt-[12px]">
+    <header className="absolute top-0 left-0 right-0 z-50 flex items-start justify-between px-20 pt-[28px] max-lg:px-5 max-lg:pt-[20px] max-md:px-[10px] max-md:pt-[14px]">
       <Link href="/">
         <Image
           src="/images/logo.png"
@@ -102,15 +102,31 @@ export default function Header() {
 
       {/* Mobile menu overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center gap-8 bg-[#F0EAE2]">
-          <button
-            onClick={() => setIsMenuOpen(false)}
-            className="absolute top-4 right-4 cursor-pointer text-2xl text-[#4F5E4A]"
-            aria-label="Close menu"
-          >
-            ✕
-          </button>
-          <nav className="flex flex-col items-center gap-6 font-[family-name:var(--font-roboto)] text-xl text-[#4F5E4A]">
+        <div className="fixed inset-0 z-[100] flex flex-col bg-[#4F5E4A]">
+          {/* Top bar with kraft background */}
+          <div className="relative flex shrink-0 items-start justify-between bg-[#F0EAE2] px-[10px] pt-[14px] pb-[14px]">
+            <Link href="/" onClick={() => setIsMenuOpen(false)}>
+              <Image
+                src="/images/logo.png"
+                alt="Green World"
+                width={69}
+                height={20}
+                priority
+              />
+            </Link>
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="cursor-pointer"
+              aria-label="Close menu"
+            >
+              <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+                <path d="M1 1L16 16M16 1L1 16" stroke="#4F5E4A" strokeWidth="2" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Nav links */}
+          <nav className="flex flex-col gap-[28px] px-[33px] pt-[28px] font-[family-name:var(--font-roboto)] text-[24px] font-normal leading-none text-[#F0EAE2]">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -121,21 +137,44 @@ export default function Header() {
                 {t.header.nav[link.key]}
               </Link>
             ))}
-          </nav>
-          <div className="flex gap-4 font-[family-name:var(--font-roboto)] text-lg text-[#4F5E4A]">
-            {locales.map((l) => (
+
+            {/* Language selector */}
+            <div ref={langRef} className="relative">
               <button
-                key={l}
-                onClick={() => {
-                  setLocale(l);
-                  setIsMenuOpen(false);
-                }}
-                className={`cursor-pointer transition-opacity hover:opacity-70 ${l === locale ? "font-medium" : "opacity-50"}`}
+                onClick={() => setIsLangOpen(!isLangOpen)}
+                className="flex cursor-pointer items-center gap-1.5 text-[24px] leading-none text-[#F0EAE2]"
               >
-                {localeLabels[l]}
+                <span>{localeLabels[locale]}</span>
+                <Image
+                  src="/images/chevron-down.svg"
+                  alt=""
+                  width={10}
+                  height={5}
+                  className={`brightness-0 invert transition-transform duration-200 ${isLangOpen ? "rotate-180" : ""}`}
+                />
               </button>
-            ))}
-          </div>
+
+              {isLangOpen && (
+                <div className="flex flex-col gap-[10px] pt-[10px] text-[24px] leading-none text-[#F0EAE2]">
+                  {locales
+                    .filter((l) => l !== locale)
+                    .map((l) => (
+                      <button
+                        key={l}
+                        onClick={() => {
+                          setLocale(l);
+                          setIsLangOpen(false);
+                          setIsMenuOpen(false);
+                        }}
+                        className="cursor-pointer text-left transition-opacity hover:opacity-70"
+                      >
+                        {localeLabels[l]}
+                      </button>
+                    ))}
+                </div>
+              )}
+            </div>
+          </nav>
         </div>
       )}
     </header>
