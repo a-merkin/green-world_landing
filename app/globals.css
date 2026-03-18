@@ -89,6 +89,34 @@
   }
 }
 
+/* Header nav link hover — pill from top of page */
+.nav-link::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  right: -15px;
+  top: -28px;
+  bottom: -20px;
+  border-radius: 0 0 20px 20px;
+  background: rgba(79, 94, 74, 0.1);
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.nav-link:hover::before {
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .nav-link::before {
+    left: -10px;
+    right: -10px;
+    top: -20px;
+    bottom: -14px;
+  }
+}
+
 /* Gradient ring: visible on left, fades to right */
 .gradient-ring {
   background: linear-gradient(to right, rgba(79, 94, 74, 0.25) 60%, transparent 95%);
