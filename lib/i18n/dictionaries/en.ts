@@ -68,9 +68,28 @@ const en: Dictionary = {
   },
   advantages: {
     sectionLabel: "Advantages",
-    words: ["Technology", "Organic", "Quality control", "Flexible range"],
-    qualityDescription:
-      "This is the foundation of our work. We strictly control every stage of production, from planting seeds to packaging products. All products undergo thorough testing for compliance with international standards, guaranteeing the high quality, freshness, and safety of our tomatoes.",
+    items: [
+      {
+        title: "Technology",
+        description:
+          "We have fully automated our production processes, incorporating advanced technologies from our partners at every stage of the production process. Climate control, automated irrigation and quality monitoring systems ensure maximum efficiency and consistent results.",
+      },
+      {
+        title: "Organic",
+        description:
+          "We produce healthy, non-GMO products in an environmentally responsible manner. We use sustainable irrigation systems, organic fertilizers in our greenhouse and carefully manage our resources to minimize environmental impact and preserve the natural balance.",
+      },
+      {
+        title: "Quality control",
+        description:
+          "This is the foundation of our work. We strictly control every stage of production, from planting seeds to packaging products. All products undergo thorough testing for compliance with international standards, guaranteeing the high quality, freshness, and safety of our tomatoes.",
+      },
+      {
+        title: "Flexible range",
+        description:
+          "The professionalism of our agronomists allows us to grow any type of tomato to meet customer requests. Thanks to our in-depth expertise and state-of-the-art technology, we customize production to your unique requirements, offering products that meet your exact expectations.",
+      },
+    ],
   },
   gallery: {
     sectionLabel: "Gallery",

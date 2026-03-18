@@ -32,8 +32,7 @@ export interface Dictionary {
   };
   advantages: {
     sectionLabel: string;
-    words: string[];
-    qualityDescription: string;
+    items: { title: string; description: string }[];
   };
   gallery: {
     sectionLabel: string;
