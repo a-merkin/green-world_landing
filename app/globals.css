@@ -68,6 +68,27 @@
   border-radius: 0;
 }
 
+/* Gallery slider — responsive padding & drag position */
+.gallery-slider {
+  --gallery-pad: 80px;
+  --gallery-slide: clamp(22rem, 45.3vw, 54.375rem);
+  padding-left: var(--gallery-pad);
+}
+
+@media (max-width: 1024px) {
+  .gallery-slider {
+    --gallery-pad: 20px;
+    --gallery-slide: 359px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-slider {
+    --gallery-pad: 10px;
+    --gallery-slide: 90vw;
+  }
+}
+
 /* Gradient ring: visible on left, fades to right */
 .gradient-ring {
   background: linear-gradient(to right, rgba(79, 94, 74, 0.25) 60%, transparent 95%);
