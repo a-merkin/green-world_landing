@@ -90,15 +90,17 @@ export default function Footer() {
                 alt=""
                 width={76}
                 height={79}
-                className="absolute z-10 left-[0.8em] bottom-[58%] w-[0.83em] h-auto"
+                className="absolute z-10 left-[0.75em] bottom-[41%] w-[0.83em] h-auto"
               />
-              <p className="whitespace-nowrap font-[family-name:var(--font-inter)] text-[1em] font-normal leading-none tracking-[-0.02em] uppercase text-[#F0EAE2] max-lg:tracking-[-0.72px]">
+              <p className="translate-y-[0.22em] whitespace-nowrap font-[family-name:var(--font-inter)] text-[1em] font-normal leading-none tracking-[-0.02em] uppercase text-[#F0EAE2] max-lg:tracking-[-0.72px]">
                 {t.footer.decorativeLines[0]}
               </p>
             </div>
-            <p className="whitespace-nowrap border-b border-[#62694C] pb-[0.1em] pt-[0.1em] font-[family-name:var(--font-inter)] text-[clamp(2.25rem,4.8vw,5.75rem)] font-normal leading-none tracking-[-0.02em] uppercase text-[#F0EAE2] max-lg:text-[28px] max-lg:tracking-[-0.56px]">
-              {t.footer.decorativeLines[1]}
-            </p>
+            <div className="border-b border-[#62694C]">
+              <p className="translate-y-[0.12em] whitespace-nowrap font-[family-name:var(--font-inter)] text-[clamp(2.25rem,4.8vw,5.75rem)] font-normal leading-none tracking-[-0.02em] uppercase text-[#F0EAE2] max-lg:text-[28px] max-lg:tracking-[-0.56px]">
+                {t.footer.decorativeLines[1]}
+              </p>
+            </div>
           </div>
         </div>
 

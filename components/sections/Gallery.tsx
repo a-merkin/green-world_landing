@@ -61,6 +61,7 @@ export default function Gallery() {
                   fill
                   className="pointer-events-none select-none object-cover"
                   draggable={false}
+                  unoptimized
                   sizes="(max-width: 768px) 90vw, (max-width: 1024px) 359px, 45vw"
                 />
               </div>
