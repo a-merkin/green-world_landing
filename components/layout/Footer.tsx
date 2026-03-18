@@ -249,7 +249,7 @@ export default function Footer() {
         </div>
 
         {/* Content row: Nav (left) + Contact details (right) */}
-        <div className="mt-[44px] grid grid-cols-[1fr_1fr]">
+        <div className="mt-[38px] grid grid-cols-[1fr_1fr]">
           <nav className="flex flex-col gap-[11px] font-[family-name:var(--font-roboto)] text-sm leading-none text-[#C4D99D]">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} className="transition-opacity hover:opacity-70">
@@ -258,7 +258,7 @@ export default function Footer() {
             ))}
           </nav>
 
-          <div className="flex flex-col gap-[20px]">
+          <div className="flex flex-col gap-[10px]">
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <p className="font-[family-name:var(--font-roboto)] text-sm leading-none text-[#C4D99D]">{t.footer.labels.mobile}</p>
@@ -280,7 +280,7 @@ export default function Footer() {
         </div>
 
         {/* CONTACT US */}
-        <p className="mt-[60px] text-center font-[family-name:var(--font-inter)] text-[40px] font-normal leading-none tracking-[-0.8px] uppercase text-[#C4D99D]">
+        <p className="mt-[21px] whitespace-nowrap text-center font-[family-name:var(--font-inter)] text-[15.2vw] font-normal leading-none tracking-[-1.14px] uppercase text-[#C4D99D]">
           {t.footer.contactUs}
         </p>
 
@@ -302,26 +302,26 @@ export default function Footer() {
         </Link>
 
         {/* Decorative text */}
-        <div className="mt-auto pb-[74px]">
+        <div className="mt-auto pb-[4px]">
           <Image src="/images/tomato-icon.png" alt="" width={26} height={27} className="relative z-10 ml-[23px] mb-[-10px]" />
-          <p className="font-[family-name:var(--font-inter)] text-[36px] font-normal leading-none tracking-[-0.72px] uppercase text-[#F0EAE2]">
+          <p className="whitespace-nowrap font-[family-name:var(--font-roboto)] text-[36px] font-normal leading-none tracking-[-0.72px] uppercase text-[#F0EAE2]" style={{ fontVariationSettings: "'wdth' 85" }}>
             {t.footer.decorativeLines[0]}
           </p>
-          <p className="font-[family-name:var(--font-inter)] text-[36px] font-normal leading-none tracking-[-0.72px] uppercase text-[#F0EAE2]">
+          <p className="whitespace-nowrap font-[family-name:var(--font-roboto)] text-[36px] font-normal leading-none tracking-[-0.72px] uppercase text-[#F0EAE2]" style={{ fontVariationSettings: "'wdth' 85" }}>
             {t.footer.decorativeLines[1]}
           </p>
         </div>
       </div>
 
       {/* ===== COPYRIGHT BAR ===== */}
-      <div className="relative mx-20 flex items-center border-t border-[#62694C] py-5 max-lg:mx-5 max-md:mx-[10px]">
-        <p className="font-[family-name:var(--font-roboto)] text-base leading-none text-[#F0EAE2] opacity-70 max-lg:text-sm">
+      <div className="relative mx-20 flex items-center border-t border-[#62694C] py-5 max-lg:mx-5 max-md:mx-[10px] max-md:flex-wrap max-md:py-[18px]">
+        <p className="font-[family-name:var(--font-roboto)] text-base leading-none text-[#F0EAE2] opacity-70 max-lg:text-sm max-md:w-full">
           © Copyright GREENWORLD.
         </p>
-        <p className="absolute left-1/2 -translate-x-1/2 font-[family-name:var(--font-inter)] text-base leading-none tracking-[-0.32px] text-[#C4D99D] opacity-70 max-lg:text-sm max-md:static max-md:translate-x-0 max-md:ml-2 max-md:font-[family-name:var(--font-roboto)] max-md:tracking-normal">
+        <p className="absolute left-1/2 -translate-x-1/2 font-[family-name:var(--font-inter)] text-base leading-none tracking-[-0.32px] text-[#C4D99D] opacity-70 max-lg:text-sm max-md:static max-md:translate-x-0 max-md:mt-[6px] max-md:font-[family-name:var(--font-roboto)] max-md:tracking-normal">
           {t.footer.copyright}
         </p>
-        <p className="ml-auto font-[family-name:var(--font-roboto)] text-base leading-none text-[#C4D99D] opacity-70 max-lg:text-sm">
+        <p className="ml-auto font-[family-name:var(--font-roboto)] text-base leading-none text-[#C4D99D] opacity-70 max-lg:text-sm max-md:mt-[6px]">
           2025
         </p>
       </div>

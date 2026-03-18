@@ -60,7 +60,7 @@ export default function Partners() {
         </div>
 
         {/* Tablet/Mobile: horizontal scrollable row */}
-        <div className="mt-[20px] hidden overflow-x-auto max-lg:flex max-lg:gap-[14px] max-md:gap-[6px]">
+        <div className="mt-[20px] hidden overflow-x-auto max-lg:flex max-lg:gap-[14px] max-md:mt-[24px] max-md:gap-[6px]">
           {allPartners.map((partner) => (
             <div
               key={partner.alt}
@@ -80,7 +80,7 @@ export default function Partners() {
         </div>
 
         {/* Description */}
-        <p className="ml-auto mt-[20px] w-full max-w-[870px] text-justify font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.09vw,1.3125rem)] font-normal leading-[1.15] text-[#333] max-lg:ml-0 max-lg:max-w-none max-lg:text-sm max-md:text-base">
+        <p className="ml-auto mt-[20px] w-full max-w-[870px] text-justify font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.09vw,1.3125rem)] font-normal leading-[1.15] text-[#333] max-lg:ml-0 max-lg:max-w-none max-lg:text-sm max-md:mt-[16px] max-md:text-base">
           {t.partners.description
             .split(/(\{growGroup\}|\{richel\}|\{stolze\})/)
             .map((part, i) => {

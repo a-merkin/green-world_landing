@@ -85,7 +85,7 @@
 @media (max-width: 768px) {
   .gallery-slider {
     --gallery-pad: 10px;
-    --gallery-slide: 90vw;
+    --gallery-slide: 290px;
   }
 }
 
@@ -120,6 +120,14 @@
 /* Gradient ring: visible on left, fades to right */
 .gradient-ring {
   background: linear-gradient(to right, rgba(79, 94, 74, 0.25) 60%, transparent 95%);
+  border-radius: 9999px;
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 1px), black calc(100% - 1px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 1px), black calc(100% - 1px));
+}
+
+/* Gradient ring reversed: visible on right, fades to left */
+.gradient-ring-reversed {
+  background: linear-gradient(to left, rgba(79, 94, 74, 0.25) 60%, transparent 95%);
   border-radius: 9999px;
   -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 1px), black calc(100% - 1px));
   mask: radial-gradient(farthest-side, transparent calc(100% - 1px), black calc(100% - 1px));

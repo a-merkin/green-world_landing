@@ -142,7 +142,7 @@ export default function Products() {
           </h3>
 
           {/* Description */}
-          <p className="mt-[27px] font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.09vw,1.3125rem)] font-normal leading-[1.15] text-[#C4D99D] max-lg:mt-[16px] max-lg:text-sm max-md:text-[15px]">
+          <p className="mt-[27px] font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.09vw,1.3125rem)] font-normal leading-[1.15] text-[#C4D99D] max-lg:mt-[16px] max-lg:text-sm max-md:mt-[11px] max-md:text-[15px]">
             {slide.description}
           </p>
         </div>

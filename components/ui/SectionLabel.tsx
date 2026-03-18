@@ -6,7 +6,7 @@ interface SectionLabelProps {
 function Barcode({ light }: { light?: boolean }) {
   const color = light ? "bg-[#C4D99D]" : "bg-[#333]";
   return (
-    <span className="relative inline-block h-[13px] w-[22px]">
+    <span className="relative inline-block h-[13px] w-[22px] max-md:h-[10px]">
       <span className={`absolute inset-y-0 left-0 w-[2px] ${color}`} />
       <span className={`absolute inset-y-0 left-[3px] w-[2px] ${color}`} />
       <span className={`absolute inset-y-0 left-[7px] w-[3px] ${color}`} />

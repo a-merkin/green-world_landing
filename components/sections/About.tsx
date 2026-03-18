@@ -47,7 +47,7 @@ export default function About() {
             </div>
 
             {/* Mobile-only: tinted greenhouse photo */}
-            <div className="relative hidden overflow-hidden max-md:mt-[20px] max-md:block max-md:h-[245px] max-md:w-full">
+            <div className="relative hidden overflow-hidden max-md:mt-[13px] max-md:block max-md:h-[245px] max-md:w-full">
               <Image
                 src="/images/about-greenhouse.jpg"
                 alt=""
@@ -59,7 +59,7 @@ export default function About() {
             </div>
 
             {/* Mobile-only: Main photo */}
-            <div className="relative hidden overflow-hidden max-md:mt-[20px] max-md:block max-md:h-[321px] max-md:w-full">
+            <div className="relative hidden overflow-hidden max-md:mt-[17px] max-md:block max-md:h-[321px] max-md:w-full">
               <Image
                 src="/images/about-main.jpg"
                 alt="Green World greenhouse"
@@ -70,12 +70,12 @@ export default function About() {
             </div>
 
             {/* Subtitle */}
-            <p className="mt-[20px] font-[family-name:var(--font-roboto)] text-[clamp(1rem,1.15vw,1.375rem)] font-medium leading-none text-[#333] max-lg:text-base max-md:text-[19px]">
+            <p className="mt-[20px] font-[family-name:var(--font-roboto)] text-[clamp(1rem,1.15vw,1.375rem)] font-medium leading-none text-[#333] max-lg:text-base max-md:mt-[18px] max-md:text-[19px]">
               {t.about.subtitle}
             </p>
 
             {/* Features list + small photo */}
-            <div className="mt-[18px] flex gap-5 max-lg:mt-[14px] max-lg:flex-col">
+            <div className="mt-[18px] flex gap-5 max-lg:mt-[14px] max-lg:flex-col max-md:mt-[10px]">
               {/* Features */}
               <ul className="flex-1 min-w-0 font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.09vw,1.3125rem)] font-normal leading-[1.15] text-[#333] text-justify max-lg:w-full max-lg:text-sm max-md:text-base">
                 {t.about.features.map((feature) => (
@@ -99,7 +99,7 @@ export default function About() {
             </div>
 
             {/* CTA button */}
-            <button className="mt-[20px] flex h-[45px] w-full max-w-[336px] cursor-pointer items-center justify-center bg-[#4F5E4A] font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.04vw,1.25rem)] font-medium leading-none tracking-[-0.6px] text-[#F0EAE2] transition-colors hover:bg-[#6C7B67] max-lg:max-w-[212px] max-lg:h-[30px] max-lg:text-sm max-lg:tracking-[-0.42px] max-md:max-w-none max-md:h-[45px]">
+            <button className="mt-[20px] flex h-[45px] w-full max-w-[336px] cursor-pointer items-center justify-center bg-[#4F5E4A] font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.04vw,1.25rem)] font-medium leading-none tracking-[-0.6px] text-[#F0EAE2] transition-colors hover:bg-[#6C7B67] max-lg:max-w-[212px] max-lg:h-[30px] max-lg:text-sm max-lg:tracking-[-0.42px] max-md:mt-[30px] max-md:max-w-none max-md:h-[45px]">
               {t.about.cta}
             </button>
           </div>

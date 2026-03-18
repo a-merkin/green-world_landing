@@ -29,7 +29,7 @@ export default function Gallery() {
 
       {/* Photo slider — left-padded, bleeds to right viewport edge */}
       <div
-        className="gallery-slider relative mt-[30px] max-lg:mt-[20px]"
+        className="gallery-slider relative mt-[30px] max-lg:mt-[20px] max-md:mt-[24px]"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -38,7 +38,10 @@ export default function Gallery() {
             swiperRef.current = swiper;
           }}
           slidesPerView="auto"
-          spaceBetween={20}
+          spaceBetween={10}
+          breakpoints={{
+            768: { spaceBetween: 20 },
+          }}
           centeredSlides
           centeredSlidesBounds
           slideToClickedSlide
@@ -49,7 +52,7 @@ export default function Gallery() {
           {photos.map((photo) => (
             <SwiperSlide
               key={photo.src}
-              className="!h-[clamp(15rem,30.5vw,36.625rem)] !w-[clamp(22rem,45.3vw,54.375rem)] max-lg:!h-[241px] max-lg:!w-[359px] max-md:!h-[60vw] max-md:!w-[90vw]"
+              className="!h-[clamp(15rem,30.5vw,36.625rem)] !w-[clamp(22rem,45.3vw,54.375rem)] max-lg:!h-[241px] max-lg:!w-[359px] max-md:!h-[195px] max-md:!w-[290px]"
             >
               <div className="relative h-full w-full">
                 <Image
@@ -84,7 +87,7 @@ export default function Gallery() {
       <div className="mx-auto w-full max-w-[1920px] px-20 max-lg:max-w-[768px] max-lg:px-5 max-md:max-w-none max-md:px-[10px]">
         <Link
           href="/gallery"
-          className="mx-auto mt-[30px] flex h-[45px] w-full max-w-[336px] items-center justify-center bg-[#4F5E4A] font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.04vw,1.25rem)] font-medium leading-none tracking-[-0.6px] text-[#F0EAE2] transition-colors hover:bg-[#6C7B67] max-lg:h-[30px] max-lg:max-w-[212px] max-lg:text-sm max-lg:tracking-[-0.42px] max-md:mx-0 max-md:h-[45px] max-md:max-w-none"
+          className="mx-auto mt-[30px] flex h-[45px] w-full max-w-[336px] items-center justify-center bg-[#4F5E4A] font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.04vw,1.25rem)] font-medium leading-none tracking-[-0.6px] text-[#F0EAE2] transition-colors hover:bg-[#6C7B67] max-lg:h-[30px] max-lg:max-w-[212px] max-lg:text-sm max-lg:tracking-[-0.42px] max-md:mx-0 max-md:mt-[20px] max-md:h-[45px] max-md:max-w-none"
         >
           {t.gallery.cta}
         </Link>

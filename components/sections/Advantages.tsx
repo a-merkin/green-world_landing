@@ -25,7 +25,7 @@ export default function Advantages() {
       </div>
 
       {/* Words stack — full width, centered text */}
-      <div className="mt-[28px] flex flex-col items-center gap-[28px] max-lg:gap-[12px] max-md:gap-[12px]">
+      <div className="mt-[28px] flex flex-col items-center gap-[28px] max-lg:gap-[12px] max-md:mt-[23px] max-md:gap-[12px]">
         {t.advantages.items.map((item, i) => {
           const isActive = activeIndex === i;
           const isHighlighted = i === HIGHLIGHT_INDEX;
