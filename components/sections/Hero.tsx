@@ -61,16 +61,16 @@ export default function Hero() {
             {"t"}
             <span className="relative">
               {"o"}
-              <span className="pointer-events-none absolute left-1/2 top-1/2 flex h-[1.45em] w-[1.7em] -translate-x-1/2 -translate-y-1/2 items-center justify-center max-lg:h-[106px] max-lg:w-[150px] max-md:h-[1.45em] max-md:w-[1.7em]">
+              <span className="pointer-events-none absolute left-1/2 top-1/2 flex h-[1.45em] w-[1.7em] -translate-x-1/2 -translate-y-1/2 items-center justify-center">
                 <Image
                   src="/images/tomato-splash.svg"
                   alt=""
                   width={298}
                   height={164}
-                  className="h-auto w-[1.5em] -scale-x-100 rotate-[29.39deg] translate-x-[15%] translate-y-[20%] max-lg:w-[102px] max-md:w-[1.5em]"
+                  className="h-auto w-[1.5em] -scale-x-100 rotate-[29.39deg] translate-x-[15%] translate-y-[20%]"
                 />
               </span>
-              <span className="absolute left-1/6 top-1/2 block h-[1.45em] w-[1.45em] -translate-x-1/2 -translate-y-1/2 max-lg:h-[56px] max-lg:w-[56px] max-md:h-[1.45em] max-md:w-[1.45em]">
+              <span className="absolute left-1/6 top-1/2 block h-[1.45em] w-[1.45em] -translate-x-1/2 -translate-y-1/2">
                 <Image
                   src="/images/tomato-main.png"
                   alt="Tomato"
