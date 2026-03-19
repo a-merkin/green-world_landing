@@ -48,17 +48,12 @@ const az: Dictionary = {
           "Meyvələr orta və iri ölçülü, adətən çəkisi 80-150 qr arasındadır və bir budaqda salxım şəklində böyüyür. Onlar şirin, bir az turş dadı və adi pomidorlardan daha zəngin ətirlidirlər. Bu pomidorlar təzə salatlar, sendviçlər, makaron və souslar və konservlər üçün idealdır. Meyvələr tədricən yetişir və salxımlar əmələ gətirir. Onların saxlanması və daşınması asandır və bir bitkidən çoxlu sayda meyvələr verir.",
       },
       {
-        name: "Çəhrayı\npomidorlar",
+        name: "Premium çəhrayı\npomidorlar",
         description:
           "Dərin çəhrayı və ya açıq tünd qırmızı rəngli meyvələri ilə xarakterizə edilən pomidor sort və hibridlər qrupu. Meyvələr adətən iri və ya orta ölçülü, 150-500 qr ağırlığında olur, ətli, şirin dadlı, şirəli ətli, nazik zərif qabıqlı və mükəmməl dadı ilə seçilir. Cəlbedici görünüşü, gözəl dadı və yüksək istehlak keyfiyyətləri sayəsində çəhrayı pomidorlar bazarda yüksək populyarlıq qazanıb.",
       },
       {
-        name: "Gavalı\npomidorlar",
-        description:
-          "Uzunsov oval formada pomidor sort və hibridlər qrupu. Meyvələr adətən orta və ya kiçik ölçülü (50-120 qr), sıx strukturlu, qalın qabıqlı və nisbətən aşağı su tərkibli olur. Bu keyfiyyətlər onları konservləşdirmə, duzlama, qurutma və sous və pastalara emal üçün ideal edir. Gavalı formalı pomidorlar daşınma və saxlanmaya yaxşı dözür.",
-      },
-      {
-        name: "\u00ABÇerri\u00BB\npomidorlar",
+        name: "Mini pomidorlar\n(çeri)",
         description:
           "Kiçik meyvəli pomidor sortları qrupu, diametri təxminən 1,5-3 sm və çəkisi 10-30 qr olan kiçik, yumru və ya bir qədər uzunsov formalı meyvələri ilə xarakterizə olunur. Çerrilər şirin dadı, şirəliliyi və dekorativ görünüşü ilə qiymətləndirilir. Onlar adətən təzə şəkildə salatlarda, qəlyanaltılarda və yeməklərin təqdimində istifadə olunur. Yüksək məhsuldarlıq, yaxşı daşınma qabiliyyəti və uzun saxlama müddəti ilə xarakterizə olunur.",
       },
@@ -113,32 +108,31 @@ const az: Dictionary = {
     title: "haqqımızda",
     mission: {
       label: "Missiya",
-      heading: "Biz ölkənin ərzaq təhlükəsizliyinə töhfə verməyə, yerli və beynəlxalq bazarları təmiz,",
-      text: "yüksək keyfiyyətli pomidorlarla təmin etməyə çalışırıq. Məqsədimiz qlobal standartlara və müştəri gözləntilərinə cavab verən premium növ tərəvəzlər istehsal etməkdir.",
+      heading: "Məqsədimiz ölkənin ərzaq təhlükəsizliyinə töhfə vermək, daxili bazarı və ixrac tərəfdaşlarımızı ekoloji cəhətdən təmiz və yüksək keyfiyyətli məhsullarla təmin etməkdir.",
+      text: "\"GREEN WORLD\" istehlakçıların gözləntilərinə cavab verən premium səviyyəli məhsulları yetişdirməyi qarşısına məqsəd qoyur.",
     },
     greenhouse: {
       label: "İstixana",
-      heading: "Müəssisəmiz iki aparıcı Avropa şirkəti — RICHEL (Fransa) və STOLZE (Niderland) tərəfindən inşa edilmişdir.",
-      details: "RICHEL isti və quru iqlim şəraitində səmərəli işləmək üçün layihələndirilmiş müasir, yüksək həcmli istixana konstruksiyası təmin edib.\nSTOLZE isitmə, ventilyasiya və suvarma daxil olmaqla mühəndislik sistemlərini təchiz edib.\nBütün proseslər PRIVA iqlim nəzarəti sistemi vasitəsilə tam avtomatlaşdırılıb, ideal yetişdirmə şəraiti və maksimum məhsuldarlıq 24/7 təmin olunur.",
+      heading: "İstixanamız Avropanın iki aparıcı şirkəti — RICHEL (Fransa) və STOLZE (Niderland) tərəfindən inşa olunub.",
+      details: "RICHEL yüksək və dayanıqlı konstruksiyaya malik müasir istixana modeli təqdim edib.\nİstilik, ventilyasiya və damcı suvarma sistemləri STOLZE tərəfindən quraşdırılıb.\nBütün proseslər dünyanın qabaqcıl avtomatlaşdırma sistemlərindən biri olan PRIVA vasitəsilə idarə olunur və bu da ideal mikroiqlim və maksimum məhsuldarlıq yaradır.",
       richel: "RICHEL",
       stolze: "STOLZE",
       priva: "PRIVA",
     },
     products: {
       label: "Məhsullar",
-      heading: "Biz bir neçə kateqoriya pomidor yetişdiririk:",
-      text: "bunlar salxım pomidorlar, premium çəhrayı pomidorlar, gavalı pomidorlar və mini pomidorlardır (çerri). Bütün sortlar yerli və ixrac bazarlarında yüksək tələbata malikdir. Planlaşdırılan genişləndirmə ilə partnyorların ehtiyaclarına əsasən çeşidi və ixrac həcmlərini artırmağı nəzərdə tuturuq.",
+      heading: "Hazırda biz pomidorların bir neçə növünü yetişdiririk:",
+      text: "Tələbat yüksəkdir və istehsal genişləndikcə çeşid və ixrac həcmlərini artırmağı planlaşdırırıq.",
       cards: [
         { name: "Salxım pomidorlar" },
-        { name: "Çəhrayı pomidorlar" },
-        { name: "Gavalı pomidorlar" },
-        { name: "\u00ABÇerri\u00BB pomidorlar" },
+        { name: "Premium çəhrayı pomidorlar" },
+        { name: "Mini pomidorlar (çeri)" },
       ],
     },
     experts: {
-      label: "Mütəxəssislər",
+      label: "Mütəxəssislərimiz",
       heading: "Peşəkar yanaşma",
-      text: "Aqronomlarımız uzunillik təcrübəyə malikdir və mütəmadi olaraq Niderlandda, İspaniyada və digər Avropa ölkələrində təlim keçirlər. Beynəlxalq ekspertlər monitorinq, qiymətləndirmə və texniki məsləhətləşmə üçün ildə bir neçə dəfə müəssisəni ziyarət edirlər.",
+      text: "Təsərrüfatımızda çalışan aqronomlar uzun illik təcrübəyə malikdir və mütəmadi olaraq Niderland, İspaniya və digər Avropa ölkələrində təlimlər keçir. Hər il bir neçə dəfə beynəlxalq ekspertlər tərəfindən monitorinq və məsləhət dəstəyi təmin olunur.",
     },
   },
   contactsPage: {

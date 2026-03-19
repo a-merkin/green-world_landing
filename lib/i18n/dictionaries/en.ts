@@ -18,15 +18,15 @@ const en: Dictionary = {
   },
   about: {
     sectionLabel: "Paradise place",
-    text: "is a modern greenhouse complex located on the Absheron Peninsula, in the settlement of Zira. We specialize in growing premium-quality tomatoes. Zira has long been renowned for its natural conditions, making it an ideal zone for vegetable farming — for many decades, a large vegetable and dairy state farm operated here, supplying produce to the entire region.",
-    subtitle: "What makes our products unique?",
+    text: "is a modern greenhouse complex located in the settlement of Zira on the Absheron Peninsula. We specialize in growing premium-quality tomatoes. Zira has long been known for its favorable climate and fertile soils, making it one of the most distinguished agricultural zones in the region.",
+    subtitle: "What Makes Our Tomatoes Unique?",
     features: [
-      "Fresh ionized Caspian air and bright Baku sunshine;",
-      "Water from underground sources, additionally purified by reverse osmosis;",
-      "Greenhouse built to modern European standards under the supervision of French and Dutch engineers;",
-      "No GMO and use of only certified, eco-friendly fertilizers;",
-      "Natural pollination by bees without the use of hormonal preparations;",
-      "Biological plant protection products, safe for humans",
+      "The clean Caspian breeze and strong Baku sunlight",
+      "Water sourced from underground wells and purified through reverse osmosis",
+      "A state-of-the-art greenhouse built under the supervision of French and Dutch engineers",
+      "No GMO; only certified, environmentally friendly fertilizers",
+      "Natural pollination by bees without hormonal stimulants",
+      "Biological plant protection methods safe for human health",
     ],
     cta: "Learn more",
   },
@@ -48,17 +48,12 @@ const en: Dictionary = {
           "The fruits are medium to large in size, usually weighing from 80 to 150 g, growing in groups on a single branch. They have a sweet flavor with a slight acidity and a more intense aroma than regular tomatoes. These tomatoes are perfect for fresh salads, sandwiches, pasta and sauces, as well as canning. The fruits ripen gradually and are harvested in whole clusters. They are easy to store and transport, yielding a large number of fruits per plant.",
       },
       {
-        name: "Pink\ntomatoes",
+        name: "Premium pink\ntomatoes",
         description:
           "A group of tomato varieties and hybrids characterized by fruits with a deep pink or light crimson hue. Fruits are usually large or medium-sized, weighing from 150 to 500 grams (less often larger), characterized by fleshiness, sweet taste, juicy flesh, thin tender skin and excellent flavor. Thanks to their attractive appearance, wonderful flavor and high consumer qualities, pink tomatoes have gained high popularity in the market.",
       },
       {
-        name: "Plum\ntomatoes",
-        description:
-          "A group of tomato varieties and hybrids with an elongated oval shape. The fruits are usually medium or small in size (50-120 g), characterized by a dense structure, thick skin and relatively low water content of the flesh. These qualities make them ideal for canning, salting, drying, drying and processing into sauces and pastes. Plum-shaped tomatoes tolerate transportation and storage well and are popular in home cooking, industrial processing and fresh vegetable trade.",
-      },
-      {
-        name: "\u00ABCherry\u00BB\ntomatoes",
+        name: "Cherry and\nmini tomatoes",
         description:
           "A group of small-fruited tomato varieties characterized by small fruits of round or slightly elongated shape with a diameter of about 1.5-3 cm and a weight of 10 to 30 grams. Cherries are prized for their sweet flavor, juiciness and decorative appearance. They are commonly used fresh in salads, appetizers and food presentation. They are often grown both in open and protected soil and are characterized by high yields, good transportability and long shelf life.",
       },
@@ -113,8 +108,8 @@ const en: Dictionary = {
     title: "about  us",
     mission: {
       label: "Mission",
-      heading: "We aim to contribute to the country's food security while supplying both local and international markets with clean,",
-      text: "high-quality tomatoes. Our goal is to consistently produce premium sort of vegetables that meets global standards and customer expectations.",
+      heading: "We aim to contribute to the country's food security while supplying both local and international markets with clean, high-quality tomatoes.",
+      text: "Our goal is to consistently produce premium sort of vegetables that meets global standards and customer expectations.",
     },
     greenhouse: {
       label: "Greenhouse",
@@ -127,12 +122,11 @@ const en: Dictionary = {
     products: {
       label: "Products",
       heading: "We grow several categories of tomatoes:",
-      text: "these are cluster tomatoes, premium pink tomatoes, plum tomatoes and mini tomatoes (cherry). All varieties enjoy strong demand in local and export markets. With planned expansion, we intend to broaden our assortment and export volumes based on partner needs.",
+      text: "All varieties enjoy strong demand in local and export markets. With planned expansion, we intend to broaden our assortment and export volumes based on partner needs.",
       cards: [
         { name: "Cluster tomatoes" },
-        { name: "Pink tomatoes" },
-        { name: "Plum tomatoes" },
-        { name: "\u00ABCherry\u00BB tomatoes" },
+        { name: "Premium pink tomatoes" },
+        { name: "Cherry and mini tomatoes" },
       ],
     },
     experts: {

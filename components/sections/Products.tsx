@@ -19,12 +19,6 @@ const SLIDE_DATA = [
     rotation: 0,
   },
   {
-    image: "/images/products-plum.png",
-    imageW: 565,
-    imageH: 433,
-    rotation: 0,
-  },
-  {
     image: "/images/products-cherry.png",
     imageW: 476,
     imageH: 324,

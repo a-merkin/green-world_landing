@@ -104,13 +104,6 @@ export default function AboutPageContent() {
       rotation: 0,
     },
     {
-      plateImg: "/images/about-page/card-plate-plum.svg",
-      tomatoImg: "/images/about-page/card-plum.png",
-      tomatoW: 230,
-      tomatoH: 176,
-      rotation: 0,
-    },
-    {
       plateImg: "/images/about-page/card-plate-cherry.svg",
       tomatoImg: "/images/about-page/card-cherry.png",
       tomatoW: 260,
