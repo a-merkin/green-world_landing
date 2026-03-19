@@ -60,7 +60,7 @@
   z-index: 0;
 }
 
-.header-fixed > * {
+.header-fixed > *:not(.mobile-menu-overlay) {
   position: relative;
   z-index: 1;
 }

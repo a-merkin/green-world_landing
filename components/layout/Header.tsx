@@ -102,7 +102,7 @@ export default function Header() {
 
       {/* Mobile menu overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-[100] flex flex-col bg-[#4F5E4A]">
+        <div className="mobile-menu-overlay fixed inset-0 z-[100] flex flex-col bg-[#4F5E4A]">
           {/* Top bar with kraft background */}
           <div className="relative flex shrink-0 items-start justify-between bg-[#F0EAE2] px-[10px] pt-[14px] pb-[14px]">
             <Link href="/" onClick={() => setIsMenuOpen(false)}>
