@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import Link from "next/link";
 import { navLinks } from "@/lib/constants";
@@ -114,11 +115,11 @@ export default function Header() {
         <span className="block h-[3px] w-[22px] bg-[#4F5E4A]" />
       </button>
 
-      {/* Mobile menu overlay */}
-      {isMenuOpen && (
+      {/* Mobile menu overlay — rendered via portal to escape header's stacking context */}
+      {isMenuOpen && createPortal(
         <div className="mobile-menu-overlay fixed inset-0 z-[100] flex flex-col bg-[#4F5E4A]">
           {/* Top bar with kraft background */}
-          <div className="relative flex shrink-0 items-start justify-between bg-[#F0EAE2] px-[10px] pt-[14px] pb-[14px]">
+          <div className="header-fixed relative flex shrink-0 items-start justify-between bg-[#F0EAE2] px-[10px] pt-[14px] pb-[14px]">
             <Link href="/" onClick={() => setIsMenuOpen(false)}>
               <Image
                 src="/images/logo.png"
@@ -168,7 +169,7 @@ export default function Header() {
             )}
 
             {/* Language selector */}
-            <div ref={langRef} className="relative">
+            <div className="relative">
               <button
                 onClick={() => setIsLangOpen(!isLangOpen)}
                 className="flex cursor-pointer items-center gap-1.5 text-[24px] leading-none text-[#F0EAE2]"
@@ -204,7 +205,8 @@ export default function Header() {
               )}
             </div>
           </nav>
-        </div>
+        </div>,
+        document.body
       )}
     </header>
   );
