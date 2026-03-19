@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useTranslation } from "@/lib/i18n/useTranslation";
 
 export default function Hero() {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
 
   return (
     <section className="relative h-[clamp(530px,52.7vw,1011px)] overflow-hidden max-lg:h-[530px] max-md:h-auto">
@@ -87,7 +87,7 @@ export default function Hero() {
 
         {/* Content block — subtitle, description, CTA */}
         <div className="-mt-[0.3vw] mx-auto flex w-[clamp(12.5rem,22vw,25rem)] flex-col items-stretch gap-5 text-left max-lg:w-[212px] max-lg:gap-4 max-md:mt-[12vw] max-md:w-full max-md:items-center max-md:gap-0 max-md:text-center">
-          <p className="font-[family-name:var(--font-display)] text-[clamp(2.2rem,3.85vw,4.625rem)] font-normal leading-[0.74] tracking-[-1.48px] text-[#4F5E4A] opacity-85 max-lg:text-[36px] max-lg:tracking-[-0.72px] max-md:max-w-[55vw] max-md:text-[32px] max-md:tracking-[-0.64px]">
+          <p className={`whitespace-pre-line font-[family-name:var(--font-display)] font-normal leading-[0.74] text-[#4F5E4A] opacity-85 ${locale === "ru" ? "w-max text-[64px] tracking-[-1.28px] max-lg:text-[48px] max-lg:tracking-[-0.96px] max-md:w-auto max-md:text-[32px] max-md:tracking-[-0.64px]" : "text-[clamp(2.2rem,3.85vw,4.625rem)] tracking-[-1.48px] max-lg:text-[36px] max-lg:tracking-[-0.72px] max-md:text-[32px] max-md:tracking-[-0.64px]"} max-md:max-w-[55vw]`}>
             {t.hero.subtitle}
           </p>
 

@@ -6,6 +6,15 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "KazukiReiwa";
+  src: url('/fonts/kazukireiwa-cyrillic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F;
+}
+
 @import "tailwindcss";
 
 @theme inline {
@@ -21,6 +30,10 @@
 
 :root {
   --font-display: "LTC Metropolitan W00", "Georgia", "Times New Roman", serif;
+}
+
+:root:lang(ru) {
+  --font-display: "KazukiReiwa", "LTC Metropolitan W00", "Georgia", "Times New Roman", serif;
 }
 
 @layer base {
