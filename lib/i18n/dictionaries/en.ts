@@ -211,7 +211,7 @@ const en: Dictionary = {
     cta: "Main page",
   },
   footer: {
-    decorativeLines: ["Fresh Juisy", "Organic & Tasty"],
+    decorativeLines: ["Fresh Juicy", "Organic & Tasty"],
     contactUs: "Contact us",
     callAlt: "Call us",
     labels: {
