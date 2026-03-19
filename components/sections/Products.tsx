@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import Image from "next/image";
 import { useTranslation } from "@/lib/i18n/useTranslation";
 import SectionLabel from "@/components/ui/SectionLabel";
@@ -78,13 +78,35 @@ export default function Products() {
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
   }, [slides.length]);
 
+  // Touch swipe support for mobile
+  const touchStart = useRef<number | null>(null);
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStart.current = e.touches[0].clientX;
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      if (touchStart.current === null) return;
+      const diff = touchStart.current - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) goNext();
+        else goPrev();
+      }
+      touchStart.current = null;
+    },
+    [goNext, goPrev]
+  );
+
   const slide = slides[current];
   const data = SLIDE_DATA[current];
 
   return (
     <section
       id="products"
-      className="relative h-[clamp(455px,44.4vw,852px)] overflow-hidden bg-[#4F5E4A] max-lg:h-[455px] max-md:h-[624px]"
+      className="relative h-[clamp(455px,44.4vw,852px)] overflow-hidden bg-[#4F5E4A] max-lg:h-[455px] max-md:h-auto max-md:min-h-[624px] max-md:pb-[30px]"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       {/* Window shadow overlay */}
       <div className="pointer-events-none absolute inset-0">
@@ -156,7 +178,8 @@ export default function Products() {
         </div>
 
         {/* Mobile swipe dots */}
-        <div className="absolute bottom-[20px] left-1/2 hidden -translate-x-1/2 gap-2 max-md:flex">
+        {/* Swipe dots — tablet only */}
+        <div className="absolute bottom-[20px] left-1/2 hidden -translate-x-1/2 gap-2 max-lg:flex max-md:hidden">
           {slides.map((_, i) => (
             <button
               key={i}
