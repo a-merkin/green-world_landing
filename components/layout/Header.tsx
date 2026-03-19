@@ -42,15 +42,29 @@ export default function Header() {
 
       {/* Desktop / Tablet nav */}
       <nav className="flex gap-[60px] font-[family-name:var(--font-roboto)] text-base leading-none text-[#4F5E4A] max-lg:gap-[30px] max-lg:text-sm max-md:hidden">
-        {navLinks.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className="nav-link relative"
-          >
-            {t.header.nav[link.key]}
-          </Link>
-        ))}
+        {navLinks.map((link) =>
+          link.href.startsWith("#") ? (
+            <a
+              key={link.href}
+              href={link.href}
+              className="nav-link relative cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById(link.href.slice(1))?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              {t.header.nav[link.key]}
+            </a>
+          ) : (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="nav-link relative"
+            >
+              {t.header.nav[link.key]}
+            </Link>
+          )
+        )}
       </nav>
 
       {/* Desktop / Tablet language dropdown */}
@@ -127,16 +141,31 @@ export default function Header() {
 
           {/* Nav links */}
           <nav className="flex flex-col gap-[28px] px-[33px] pt-[28px] font-[family-name:var(--font-roboto)] text-[24px] font-normal leading-none text-[#F0EAE2]">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsMenuOpen(false)}
-                className="transition-opacity hover:opacity-70"
-              >
-                {t.header.nav[link.key]}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.href.startsWith("#") ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="cursor-pointer transition-opacity hover:opacity-70"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsMenuOpen(false);
+                    document.getElementById(link.href.slice(1))?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  {t.header.nav[link.key]}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="transition-opacity hover:opacity-70"
+                >
+                  {t.header.nav[link.key]}
+                </Link>
+              )
+            )}
 
             {/* Language selector */}
             <div ref={langRef} className="relative">

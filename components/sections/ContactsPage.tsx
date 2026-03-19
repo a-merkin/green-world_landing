@@ -114,7 +114,7 @@ export default function ContactsPageContent() {
     <section className="relative min-h-screen overflow-hidden">
       <div className="relative">
         {/* ─── Title ─── */}
-        <h1 className="mx-auto mt-[161px] w-full max-w-[1920px] px-20 font-[family-name:var(--font-cormorant-infant)] text-[clamp(5rem,6.77vw,8.125rem)] font-medium uppercase leading-[0.85] tracking-[-0.07em] text-[#333] opacity-70 max-lg:px-5 max-lg:mt-[102px] max-lg:text-[83px] max-lg:tracking-[-4.15px] max-md:px-[10px] max-md:mt-[57px] max-md:text-[35px] max-md:tracking-[-2.45px] max-md:text-center">
+        <h1 className="mx-auto mt-[161px] w-full max-w-[1920px] px-20 font-[family-name:var(--font-cormorant-infant)] text-[clamp(5rem,6.77vw,8.125rem)] font-medium uppercase leading-[0.85] tracking-[-0.07em] text-[#333] opacity-70 max-lg:px-5 max-lg:mt-[102px] max-lg:text-[83px] max-lg:tracking-[-4.15px] max-md:px-[10px] max-md:mt-[57px] max-md:text-[35px] max-md:tracking-[-2.45px] text-center">
           {ct.title}
         </h1>
 

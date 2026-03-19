@@ -161,7 +161,7 @@ export default function AboutPageContent() {
           <div className="flex gap-[20px] max-md:flex-col max-md:gap-[8px]">
             {/* Left column — label */}
             <div className="w-[39%] max-w-[692px] shrink-0 max-md:w-full max-md:max-w-none">
-              <SectionLabel text={ap.mission.label} />
+              <SectionLabel text={ap.mission.label} noBarcode noUppercase fontWeight="font-medium" />
             </div>
             {/* Right column — heading text */}
             <p className="flex-1 min-w-0 font-[family-name:var(--font-roboto)] text-[clamp(1.4rem,1.98vw,2.375rem)] font-medium leading-none text-[#333] text-justify max-lg:text-[23px] max-md:text-[19px]">
@@ -182,7 +182,7 @@ export default function AboutPageContent() {
           <div className="flex gap-[20px] max-md:flex-col max-md:gap-[8px]">
             {/* Left column — label */}
             <div className="w-[39%] max-w-[692px] shrink-0 max-md:w-full max-md:max-w-none">
-              <SectionLabel text={ap.greenhouse.label} />
+              <SectionLabel text={ap.greenhouse.label} noBarcode noUppercase fontWeight="font-medium" />
             </div>
             {/* Right column — heading + details */}
             <div className="flex-1 min-w-0">
@@ -234,7 +234,7 @@ export default function AboutPageContent() {
           <div className="flex gap-[20px] max-md:flex-col max-md:gap-[8px]">
             {/* Left column — label */}
             <div className="w-[39%] max-w-[692px] shrink-0 max-md:w-full max-md:max-w-none">
-              <SectionLabel text={ap.products.label} />
+              <SectionLabel text={ap.products.label} noBarcode noUppercase fontWeight="font-medium" />
             </div>
             {/* Right column — heading + description */}
             <div className="flex-1 min-w-0">
@@ -271,7 +271,7 @@ export default function AboutPageContent() {
           <div className="flex gap-[20px] max-md:flex-col max-md:gap-[8px]">
             {/* Left column — label */}
             <div className="w-[39%] max-w-[692px] shrink-0 max-md:w-full max-md:max-w-none">
-              <SectionLabel text={ap.experts.label} />
+              <SectionLabel text={ap.experts.label} noBarcode noUppercase fontWeight="font-medium" />
             </div>
             {/* Right column — heading + description */}
             <div className="flex-1 min-w-0">

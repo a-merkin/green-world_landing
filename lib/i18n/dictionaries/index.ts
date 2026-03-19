@@ -6,6 +6,6 @@ import az from "./az";
 export type { Dictionary };
 export type Locale = "en" | "ru" | "az";
 
-export const defaultLocale: Locale = "en";
+export const defaultLocale: Locale = "az";
 export const locales: Locale[] = ["en", "ru", "az"];
 export const dictionaries: Record<Locale, Dictionary> = { en, ru, az };

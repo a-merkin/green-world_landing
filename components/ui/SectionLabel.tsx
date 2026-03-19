@@ -1,6 +1,9 @@
 interface SectionLabelProps {
   text: string;
   light?: boolean;
+  noBarcode?: boolean;
+  noUppercase?: boolean;
+  fontWeight?: "font-semibold" | "font-medium";
 }
 
 function Barcode({ light }: { light?: boolean }) {
@@ -17,13 +20,14 @@ function Barcode({ light }: { light?: boolean }) {
   );
 }
 
-export default function SectionLabel({ text, light }: SectionLabelProps) {
+export default function SectionLabel({ text, light, noBarcode, noUppercase, fontWeight = "font-semibold" }: SectionLabelProps) {
   const textColor = light ? "text-[#C4D99D]" : "text-[#333]";
+  const caseClass = noUppercase ? "" : "uppercase";
 
   return (
     <div className="flex items-center gap-[6px]">
-      <Barcode light={light} />
-      <span className={`font-[family-name:var(--font-roboto)] text-[18px] font-semibold uppercase leading-none tracking-normal max-lg:text-sm ${textColor}`}>
+      {!noBarcode && <Barcode light={light} />}
+      <span className={`font-[family-name:var(--font-roboto)] text-[18px] ${fontWeight} ${caseClass} leading-none tracking-normal max-lg:text-sm ${textColor}`}>
         {text}
       </span>
     </div>
