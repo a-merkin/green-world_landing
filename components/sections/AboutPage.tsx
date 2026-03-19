@@ -178,50 +178,90 @@ export default function AboutPageContent() {
            GREENHOUSE section
            ══════════════════════════════════════════════════ */}
         <div className="mt-[120px] max-lg:mt-[80px] max-md:mt-[50px]">
-          {/* Row: Label on the left, heading + details on the right */}
-          <div className="flex gap-[20px] max-md:flex-col max-md:gap-[8px]">
-            {/* Left column — label */}
-            <div className="w-[39%] max-w-[692px] shrink-0 max-md:w-full max-md:max-w-none">
-              <SectionLabel text={ap.greenhouse.label} noBarcode noUppercase fontWeight="font-medium" />
+          {/* Desktop / Tablet layout */}
+          <div className="max-md:hidden">
+            {/* Row: Label on the left, heading + details on the right */}
+            <div className="flex gap-[20px]">
+              <div className="w-[39%] max-w-[692px] shrink-0">
+                <SectionLabel text={ap.greenhouse.label} noBarcode noUppercase fontWeight="font-medium" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="max-w-[692px] font-[family-name:var(--font-roboto)] text-[clamp(1.25rem,1.67vw,2rem)] font-medium leading-none text-[#333] text-justify max-lg:text-[20px]">
+                  {ap.greenhouse.heading.split(/(RICHEL|STOLZE)/).map((part, j) =>
+                    ["RICHEL", "STOLZE"].includes(part) ? (
+                      <span key={j} className="font-bold">{part}</span>
+                    ) : (
+                      <span key={j}>{part}</span>
+                    )
+                  )}
+                </p>
+                <div className="mt-[19px] max-w-[692px]">
+                  <GreenhouseDetails text={ap.greenhouse.details} />
+                </div>
+              </div>
             </div>
-            {/* Right column — heading + details */}
-            <div className="flex-1 min-w-0">
-              <p className="max-w-[692px] font-[family-name:var(--font-roboto)] text-[clamp(1.25rem,1.67vw,2rem)] font-medium leading-none text-[#333] text-justify max-lg:text-[20px] max-md:text-[19px] max-md:max-w-none">
-                {ap.greenhouse.heading.split(/(RICHEL|STOLZE)/).map((part, j) =>
-                  ["RICHEL", "STOLZE"].includes(part) ? (
-                    <span key={j} className="font-bold">{part}</span>
-                  ) : (
-                    <span key={j}>{part}</span>
-                  )
-                )}
-              </p>
-              <div className="mt-[19px] max-w-[692px] max-md:max-w-none">
-                <GreenhouseDetails text={ap.greenhouse.details} />
+            {/* Photos row */}
+            <div className="mt-[17px] flex gap-[20px]">
+              <div className="relative w-[29%] max-w-[514px] shrink-0 aspect-[514/424] overflow-hidden max-lg:w-[39%] max-lg:aspect-[285/186]">
+                <Image
+                  src="/images/about-page/greenhouse-left.jpg"
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 39vw, 514px"
+                />
+              </div>
+              <div className="relative flex-1 min-w-0 aspect-[1048/599] overflow-hidden max-lg:aspect-[433/283]">
+                <Image
+                  src="/images/about-page/greenhouse-right.jpg"
+                  alt="Greenhouse interior"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 60vw, 1048px"
+                />
               </div>
             </div>
           </div>
 
-          {/* Photos row */}
-          <div className="mt-[17px] flex gap-[20px] max-md:flex-col">
-            {/* Left smaller photo */}
-            <div className="relative w-[29%] max-w-[514px] shrink-0 aspect-[514/424] overflow-hidden max-lg:w-[39%] max-lg:aspect-[285/186] max-md:w-full max-md:aspect-[300/184] max-md:max-w-none">
-              <Image
-                src="/images/about-page/greenhouse-left.jpg"
-                alt=""
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 39vw, 514px"
-              />
-            </div>
-            {/* Right larger photo */}
-            <div className="relative flex-1 min-w-0 aspect-[1048/599] overflow-hidden max-lg:aspect-[433/283] max-md:aspect-[300/184]">
+          {/* Mobile layout — interleaved text and photos per Figma */}
+          <div className="hidden max-md:flex max-md:flex-col">
+            <SectionLabel text={ap.greenhouse.label} noBarcode noUppercase fontWeight="font-medium" />
+            <p className="mt-[8px] font-[family-name:var(--font-roboto)] text-[19px] font-medium leading-none text-[#333] text-justify">
+              {ap.greenhouse.heading.split(/(RICHEL|STOLZE)/).map((part, j) =>
+                ["RICHEL", "STOLZE"].includes(part) ? (
+                  <span key={j} className="font-bold">{part}</span>
+                ) : (
+                  <span key={j}>{part}</span>
+                )
+              )}
+            </p>
+            {/* Photo 1 — plants */}
+            <div className="relative mt-[17px] aspect-[300/184] w-full overflow-hidden">
               <Image
                 src="/images/about-page/greenhouse-right.jpg"
                 alt="Greenhouse interior"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 1048px"
+                sizes="100vw"
               />
+            </div>
+            {/* Details paragraphs 1+2 (RICHEL, STOLZE) */}
+            <div className="mt-[13px]">
+              <GreenhouseDetails text={ap.greenhouse.details.split("\n").slice(0, 2).join("\n")} />
+            </div>
+            {/* Photo 2 — equipment */}
+            <div className="relative mt-[13px] aspect-[300/317] w-full overflow-hidden">
+              <Image
+                src="/images/about-page/greenhouse-left.jpg"
+                alt=""
+                fill
+                className="object-cover"
+                sizes="100vw"
+              />
+            </div>
+            {/* Details paragraph 3 (PRIVA) */}
+            <div className="mt-[13px]">
+              <GreenhouseDetails text={ap.greenhouse.details.split("\n").slice(2).join("\n")} />
             </div>
           </div>
         </div>
