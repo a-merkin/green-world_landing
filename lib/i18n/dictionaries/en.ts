@@ -13,7 +13,7 @@ const en: Dictionary = {
   hero: {
     subtitle: "Juicy Fresh Organic & Tasty",
     description:
-      "We know how to grow truly high-quality vegetables and carefully deliver them to our customers",
+      "Our team knows how to grow really high quality vegetables and carefully deliver them to our client",
     cta: "Order now",
   },
   about: {
@@ -28,7 +28,7 @@ const en: Dictionary = {
       "Natural pollination by bees without hormonal stimulants",
       "Biological plant protection methods safe for human health",
     ],
-    cta: "Learn more",
+    cta: "More",
   },
   achievements: {
     sectionLabel: "Achievements",
