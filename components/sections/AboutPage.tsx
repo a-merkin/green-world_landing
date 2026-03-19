@@ -135,7 +135,7 @@ export default function AboutPageContent() {
             />
           </div>
           {/* Right photo — fills remaining space */}
-          <div className="relative flex-1 min-w-0 aspect-[1048/610] overflow-hidden max-lg:aspect-[433/252] max-md:aspect-[300/174]">
+          <div className="relative flex-1 min-w-0 aspect-[1048/600] overflow-hidden max-lg:aspect-[433/252] max-md:aspect-[300/174]">
             <Image
               src="/images/about-page/hero-right.jpg"
               alt="Our greenhouse"
@@ -193,18 +193,20 @@ export default function AboutPageContent() {
                 </div>
               </div>
             </div>
-            {/* Photos row */}
-            <div className="mt-[17px] flex gap-[20px]">
-              <div className="relative w-[29%] max-w-[514px] shrink-0 aspect-[514/424] overflow-hidden max-lg:w-[39%] max-lg:aspect-[285/186]">
-                <Image
-                  src="/images/about-page/greenhouse-left.jpg"
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 39vw, 514px"
-                />
+            {/* Photos row — same 39%/flex-1 split as hero and experts */}
+            <div className="mt-[17px] flex items-start gap-[20px]">
+              <div className="w-[39%] max-w-[692px] shrink-0 max-lg:w-[39%]">
+                <div className="relative w-[74.3%] max-w-[514px] aspect-[514/424] overflow-hidden max-lg:w-full max-lg:aspect-[285/186]">
+                  <Image
+                    src="/images/about-page/greenhouse-left.jpg"
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 39vw, 514px"
+                  />
+                </div>
               </div>
-              <div className="relative flex-1 min-w-0 aspect-[1048/599] overflow-hidden max-lg:aspect-[433/283]">
+              <div className="relative flex-1 min-w-0 aspect-[1048/600] overflow-hidden max-lg:aspect-[433/283]">
                 <Image
                   src="/images/about-page/greenhouse-right.jpg"
                   alt="Greenhouse interior"
@@ -330,12 +332,12 @@ export default function AboutPageContent() {
               />
             </div>
             {/* Right photo */}
-            <div className="relative flex-1 min-w-0 aspect-[1048/579] overflow-hidden max-lg:aspect-[433/248] max-md:aspect-[300/154]">
+            <div className="relative flex-1 min-w-0 aspect-[1048/600] overflow-hidden max-lg:aspect-[433/248] max-md:aspect-[300/154]">
               <Image
                 src="/images/about-page/experts-right.jpg"
                 alt="Greenhouse team"
                 fill
-                className="object-cover"
+                className="object-cover object-[center_65%]"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 1048px"
               />
             </div>
