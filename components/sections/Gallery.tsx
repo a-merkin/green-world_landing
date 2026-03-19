@@ -42,8 +42,6 @@ export default function Gallery() {
           breakpoints={{
             768: { spaceBetween: 20 },
           }}
-          centeredSlides
-          centeredSlidesBounds
           slideToClickedSlide
           grabCursor
           style={{ overflow: "hidden" }}
@@ -71,7 +69,7 @@ export default function Gallery() {
 
         {/* Drag indicator — between 1st and 2nd slide, hidden on mobile */}
         <div
-          className={`pointer-events-none absolute top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 max-md:hidden ${isHovered ? "opacity-0" : "opacity-100"}`}
+          className={`pointer-events-none absolute top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 max-lg:hidden ${isHovered ? "opacity-0" : "opacity-100"}`}
           style={{
             left: "calc(var(--gallery-pad) + var(--gallery-slide) + 10px)",
           }}

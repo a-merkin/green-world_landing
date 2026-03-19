@@ -28,7 +28,7 @@ export default function Header() {
   }, [isLangOpen]);
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 flex items-start justify-between px-20 pt-[28px] max-lg:px-5 max-lg:pt-[20px] max-md:px-[10px] max-md:pt-[14px]">
+    <header className="header-fixed fixed top-0 left-0 right-0 z-50 flex items-start justify-between bg-[#F0EAE2] px-20 pt-[28px] pb-[12px] max-lg:px-5 max-lg:pt-[20px] max-lg:pb-[10px] max-md:px-[10px] max-md:pt-[14px] max-md:pb-[8px]">
       <Link href="/">
         <Image
           src="/images/logo.png"

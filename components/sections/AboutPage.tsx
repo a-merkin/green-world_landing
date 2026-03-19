@@ -24,7 +24,7 @@ function ProductCard({
   rotation: number;
 }) {
   return (
-    <div className="relative flex h-[438px] flex-1 min-w-0 flex-col items-center overflow-hidden rounded-[24px] max-lg:h-[184px] max-md:h-[315px] max-md:w-full max-md:flex-none">
+    <div className="relative flex aspect-square flex-1 min-w-0 flex-col items-center overflow-hidden rounded-[24px] max-lg:aspect-auto max-lg:h-[184px] max-md:h-[315px] max-md:w-full max-md:flex-none">
       {/* Dark green background with mix-blend-multiply */}
       <div className="absolute inset-0 bg-[#4F5E4A] mix-blend-multiply rounded-[24px]" />
 
@@ -36,8 +36,8 @@ function ProductCard({
           <div
             className="relative"
             style={{
-              width: tomatoW,
-              height: tomatoH,
+              width: `${(tomatoW / 342) * 100}%`,
+              aspectRatio: `${tomatoW} / ${tomatoH}`,
               transform: `rotate(${rotation}deg)`,
               filter:
                 "drop-shadow(0px 16px 35px rgba(0,0,0,0.21)) drop-shadow(0px 64px 64px rgba(0,0,0,0.18))",
@@ -113,8 +113,8 @@ export default function AboutPageContent() {
     {
       plateImg: "/images/about-page/card-plate-cherry.svg",
       tomatoImg: "/images/about-page/card-cherry.png",
-      tomatoW: 202,
-      tomatoH: 137,
+      tomatoW: 260,
+      tomatoH: 176,
       rotation: 0,
     },
   ];

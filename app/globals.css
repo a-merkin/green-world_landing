@@ -47,6 +47,24 @@
   }
 }
 
+/* Fixed header kraft texture overlay */
+.header-fixed::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/kraft-bg-seamless.jpg');
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.header-fixed > * {
+  position: relative;
+  z-index: 1;
+}
+
 /* Regions scrollbar — always visible, matches Figma */
 .regions-scrollbar {
   overflow-y: scroll;

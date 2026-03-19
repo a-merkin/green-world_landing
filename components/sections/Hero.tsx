@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section className="relative h-[clamp(530px,52.7vw,1011px)] overflow-hidden max-lg:h-[530px] max-md:h-auto">
       {/* Blurred leaf shadow — decorative background */}
-      <div className="pointer-events-none absolute -left-[75%] -top-[50%] h-[180%] w-[100%] rotate-[58.66deg] opacity-44 blur-[14px] max-md:-left-[130%] max-md:-top-[30%] max-md:h-[100%] max-md:w-[180%] max-md:blur-[4px] max-md:opacity-43">
+      <div className="pointer-events-none absolute -left-[75%] -top-[50%] z-[60] h-[180%] w-[100%] rotate-[58.66deg] opacity-44 blur-[14px] max-md:-left-[130%] max-md:-top-[30%] max-md:h-[100%] max-md:w-[180%] max-md:blur-[4px] max-md:opacity-43">
         <Image
           src="/images/leaf-blur-bg.png"
           alt=""
