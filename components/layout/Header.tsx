@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { navLinks } from "@/lib/constants";
@@ -15,6 +16,17 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const scrollToHash = (hash: string) => {
+    const id = hash.replace("#", "");
+    if (pathname === "/") {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push(`/${hash}`);
+    }
+  };
 
   /* Close dropdown on outside click */
   useEffect(() => {
@@ -51,7 +63,7 @@ export default function Header() {
               className="nav-link relative cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById(link.href.slice(1))?.scrollIntoView({ behavior: "smooth" });
+                scrollToHash(link.href);
               }}
             >
               {t.header.nav[link.key]}
@@ -151,7 +163,7 @@ export default function Header() {
                   onClick={(e) => {
                     e.preventDefault();
                     setIsMenuOpen(false);
-                    document.getElementById(link.href.slice(1))?.scrollIntoView({ behavior: "smooth" });
+                    scrollToHash(link.href);
                   }}
                 >
                   {t.header.nav[link.key]}
