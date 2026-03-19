@@ -24,7 +24,17 @@ export default function Header() {
     if (pathname === "/") {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     } else {
-      router.push(`/${hash}`);
+      router.push("/");
+      let attempts = 0;
+      const waitAndScroll = () => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        } else if (attempts++ < 100) {
+          requestAnimationFrame(waitAndScroll);
+        }
+      };
+      requestAnimationFrame(waitAndScroll);
     }
   };
 
