@@ -260,9 +260,9 @@ export default function Footer() {
             ))}
           </nav>
 
-          <div className="flex flex-col gap-[10px]">
+          <div className="flex flex-col gap-[10px] ml-auto items-start">
             <div>
-              <div className="flex items-center gap-2 mb-1">
+              <div className="flex items-center justify-between mb-1">
                 <p className="font-[family-name:var(--font-roboto)] text-sm leading-none text-[#C4D99D]">{t.footer.labels.mobile}</p>
                 <a href={`https://wa.me/${contacts.mobile.replace(/[\s()-+]/g, "")}`} target="_blank" rel="noopener noreferrer">
                   <Image src="/images/whatsapp.svg" alt="WhatsApp" width={18} height={18} />
