@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "@/lib/i18n/useTranslation";
 
 /* ────────────────────────────────────────────────────────────
@@ -65,10 +65,24 @@ export default function GalleryPageContent() {
   const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
   const [showAll, setShowAll] = useState(false);
+  const thumbsRef = useRef<HTMLDivElement>(null);
+  const thumbRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const goTo = useCallback((index: number) => {
     setActiveIndex((index + photos.length) % photos.length);
   }, []);
+
+  // Auto-scroll thumbnails to keep active item visible
+  useEffect(() => {
+    const activeThumb = thumbRefs.current[activeIndex];
+    if (!activeThumb) return;
+
+    activeThumb.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "nearest",
+    });
+  }, [activeIndex]);
 
   const goPrev = useCallback(() => goTo(activeIndex - 1), [activeIndex, goTo]);
   const goNext = useCallback(() => goTo(activeIndex + 1), [activeIndex, goTo]);
@@ -104,7 +118,7 @@ export default function GalleryPageContent() {
           </div>
 
           {/* Thumbnail strip with navigation arrows */}
-          <div className="mt-[20px] flex items-center gap-[14px] max-lg:gap-[12px]">
+          <div className="mt-[20px] flex w-full items-center gap-[14px] max-lg:gap-[12px]">
             {/* Left arrow — hidden on tablet */}
             <GalleryArrow
               direction="prev"
@@ -112,10 +126,11 @@ export default function GalleryPageContent() {
               label={t.galleryPage.prev}
             />
 
-            {/* Thumbnails — scrollable when overflowing */}
-            <div className="flex flex-1 min-w-0 items-center gap-[14px] overflow-x-auto max-lg:gap-[12px]">
+            {/* Thumbnails — centered */}
+            <div ref={thumbsRef} className="flex flex-1 min-w-0 items-center gap-[14px] overflow-x-auto scroll-smooth scrollbar-hide max-lg:gap-[12px]">
               {photos.map((photo, index) => (
                 <button
+                  ref={(el) => { thumbRefs.current[index] = el; }}
                   key={photo.src}
                   onClick={() => setActiveIndex(index)}
                   className={`relative shrink-0 cursor-pointer overflow-hidden transition-all h-[80px] w-[132px] max-lg:h-[86px] max-lg:w-[136px] ${

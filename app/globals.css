@@ -125,6 +125,15 @@
   mask: radial-gradient(farthest-side, transparent calc(100% - 1px), black calc(100% - 1px));
 }
 
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Gradient ring reversed: visible on right, fades to left */
 .gradient-ring-reversed {
   background: linear-gradient(to left, rgba(79, 94, 74, 0.25) 60%, transparent 95%);
