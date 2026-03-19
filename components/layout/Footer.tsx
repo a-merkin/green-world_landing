@@ -239,29 +239,29 @@ export default function Footer() {
 
       {/* ===== MOBILE LAYOUT (< 768px) ===== */}
       <div className="relative hidden min-h-[644px] px-[10px] max-md:flex max-md:flex-col">
-        {/* Top row: Logo + Location */}
-        <div className="flex items-start justify-between pt-[40px]">
-          <Image src="/images/logo-light.png" alt="Green World" width={69} height={20} />
-          <div className="flex items-center gap-1.5">
-            <Image src="/images/location-pin.svg" alt="" width={13} height={13} />
-            <span className="font-[family-name:var(--font-roboto)] text-sm leading-none text-[#C4D99D]">
-              {t.footer.address}
-            </span>
+        {/* Two-column grid: Nav left, Logo+Location+Contacts right */}
+        <div className="grid grid-cols-[1fr_auto] pt-[40px]">
+          {/* Left column: Logo + Nav */}
+          <div className="flex flex-col">
+            <Image src="/images/logo-light.png" alt="Green World" width={69} height={20} />
+            <nav className="mt-[38px] flex flex-col gap-[11px] font-[family-name:var(--font-roboto)] text-sm leading-none text-[#C4D99D]">
+              {navLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="transition-opacity hover:opacity-70">
+                  {t.header.nav[link.key]}
+                </Link>
+              ))}
+            </nav>
           </div>
-        </div>
 
-        {/* Content row: Nav (left) + Contact details (right) */}
-        <div className="mt-[38px] grid grid-cols-[1fr_1fr]">
-          <nav className="flex flex-col gap-[11px] font-[family-name:var(--font-roboto)] text-sm leading-none text-[#C4D99D]">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="transition-opacity hover:opacity-70">
-                {t.header.nav[link.key]}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="flex flex-col gap-[10px] ml-auto items-start">
-            <div>
+          {/* Right column: Location + Contacts */}
+          <div className="flex flex-col items-start gap-[10px]">
+            <div className="flex items-center gap-1.5">
+              <Image src="/images/location-pin.svg" alt="" width={13} height={13} />
+              <span className="font-[family-name:var(--font-roboto)] text-sm leading-none text-[#C4D99D]">
+                {t.footer.address}
+              </span>
+            </div>
+            <div className="mt-[28px]">
               <div className="flex items-center justify-between mb-1">
                 <p className="font-[family-name:var(--font-roboto)] text-sm leading-none text-[#C4D99D]">{t.footer.labels.mobile}</p>
                 <a href={`https://wa.me/${contacts.mobile.replace(/[\s()-+]/g, "")}`} target="_blank" rel="noopener noreferrer">
