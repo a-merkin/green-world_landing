@@ -29,7 +29,7 @@ function ProductCard({
       <div className="absolute inset-0 bg-[#4F5E4A] mix-blend-multiply rounded-[24px]" />
 
       {/* Concentric circles plate + tomato centered on it */}
-      <div className="relative mt-[24px] aspect-square w-[81.6%] max-lg:mt-[8px]">
+      <div className="relative mt-[24px] aspect-square w-[81.6%] max-lg:mt-[8px] max-md:max-w-[266px]">
         <Image src={plateImg} alt="" fill sizes="(max-width: 768px) 266px, (max-width: 1024px) 148px, 342px" />
         {/* Tomato photo — centered on the plate */}
         <div className="absolute inset-0 flex items-center justify-center">
