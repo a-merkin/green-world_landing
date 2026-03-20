@@ -16,6 +16,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
+  const mobileLangRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const router = useRouter();
 
@@ -42,7 +43,10 @@ export default function Header() {
   useEffect(() => {
     if (!isLangOpen) return;
     const handler = (e: MouseEvent) => {
-      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+      const target = e.target as Node;
+      const inDesktop = langRef.current?.contains(target);
+      const inMobile = mobileLangRef.current?.contains(target);
+      if (!inDesktop && !inMobile) {
         setIsLangOpen(false);
       }
     };
@@ -191,7 +195,7 @@ export default function Header() {
             )}
 
             {/* Language selector */}
-            <div className="relative">
+            <div ref={mobileLangRef} className="relative">
               <button
                 onClick={() => setIsLangOpen(!isLangOpen)}
                 className="flex cursor-pointer items-center gap-1.5 text-[24px] leading-none text-[#F0EAE2]"
