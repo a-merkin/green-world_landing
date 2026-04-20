@@ -21,7 +21,7 @@ export default function Header() {
   const router = useRouter();
 
   const scrollToHash = (hash: string) => {
-    const id = hash.replace("#", "");
+    const id = hash.includes("#") ? hash.split("#")[1] : hash.replace("#", "");
     if (pathname === "/") {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     } else {
@@ -37,6 +37,12 @@ export default function Header() {
       };
       requestAnimationFrame(waitAndScroll);
     }
+  };
+
+  const handleHomeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname !== "/") return;
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   /* Close dropdown on outside click */
@@ -70,7 +76,7 @@ export default function Header() {
       {/* Desktop / Tablet nav */}
       <nav className="flex gap-[60px] font-[family-name:var(--font-roboto)] text-base leading-none text-[#4F5E4A] max-lg:gap-[30px] max-lg:text-sm max-md:hidden">
         {navLinks.map((link) =>
-          link.href.startsWith("#") ? (
+          link.href.includes("#") ? (
             <a
               key={link.href}
               href={link.href}
@@ -79,6 +85,15 @@ export default function Header() {
                 e.preventDefault();
                 scrollToHash(link.href);
               }}
+            >
+              {t.header.nav[link.key]}
+            </a>
+          ) : link.href === "/" ? (
+            <a
+              key={link.href}
+              href={link.href}
+              className="nav-link relative cursor-pointer"
+              onClick={handleHomeClick}
             >
               {t.header.nav[link.key]}
             </a>
@@ -169,7 +184,7 @@ export default function Header() {
           {/* Nav links */}
           <nav className="flex flex-col gap-[28px] px-[33px] pt-[28px] font-[family-name:var(--font-roboto)] text-[24px] font-normal leading-none text-[#F0EAE2]">
             {navLinks.map((link) =>
-              link.href.startsWith("#") ? (
+              link.href.includes("#") ? (
                 <a
                   key={link.href}
                   href={link.href}
@@ -178,6 +193,18 @@ export default function Header() {
                     e.preventDefault();
                     setIsMenuOpen(false);
                     scrollToHash(link.href);
+                  }}
+                >
+                  {t.header.nav[link.key]}
+                </a>
+              ) : link.href === "/" ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="cursor-pointer transition-opacity hover:opacity-70"
+                  onClick={(e) => {
+                    setIsMenuOpen(false);
+                    handleHomeClick(e);
                   }}
                 >
                   {t.header.nav[link.key]}

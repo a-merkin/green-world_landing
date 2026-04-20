@@ -3,6 +3,7 @@ import type { Dictionary } from "./types";
 const az: Dictionary = {
   header: {
     nav: {
+      home: "Əsas",
       about: "Haqqımızda",
       products: "Məhsullar",
       gallery: "Qalereya",
@@ -11,14 +12,14 @@ const az: Dictionary = {
     localeSwitcherLabel: "Az",
   },
   hero: {
-    subtitle: "Təzə Şirəli Organik & Dadlı",
+    subtitle: "Organik & Dadlı",
     description:
       "Biz həqiqətən yüksək keyfiyyətli tərəvəz yetişdirməyi və diqqətlə müştəriyə çatdırmağı bilirik",
     cta: "Sifariş verin",
   },
   about: {
-    sectionLabel: "Cənnət yeri",
-    text: "müasir texnologiyalara əsaslanan istixana təsərrüfatıdır və Abşeron yarımadasının Zirə qəsəbəsində yerləşir. Şirkətimiz yüksək keyfiyyətli pomidorların yetişdirilməsi üzrə ixtisaslaşıb. Zirə minilliklərdir ki, tərəvəzçilik üçün ideal iqlim şəraiti ilə seçilir və uzun illər ərzində regionu kənd təsərrüfatı məhsulları ilə təmin edən iri sovxozun yerləşdiyi ərazi olub.",
+    sectionLabel: "İdeal yer",
+    text: "müasir texnologiyalara əsaslanan istixana təsərrüfatıdır və Abşeron yarımadasının Zirə qəsəbəsində yerləşir. Şirkətimiz yüksək keyfiyyətli pomidorların yetişdirilməsi üzrə ixtisaslaşıb. Zirə tərəvəzçilik üçün ideal iqlim şəraiti ilə seçilir və uzun illər ərzində regionu kənd təsərrüfatı məhsulları ilə təmin edən iri sovxozun yerləşdiyi ərazi olub.",
     subtitle: "Nə üçün məhsullarımız fərqlidir?",
     features: [
       "Xüsusi Abşeron iqlimi, dəniz havası və güclü günəş işığı;",
@@ -108,31 +109,32 @@ const az: Dictionary = {
     title: "haqqımızda",
     mission: {
       label: "Missiya",
-      heading: "Məqsədimiz ölkənin ərzaq təhlükəsizliyinə töhfə vermək, daxili bazarı və ixrac tərəfdaşlarımızı ekoloji cəhətdən təmiz və yüksək keyfiyyətli məhsullarla təmin etməkdir.",
-      text: "\"GREEN WORLD\" istehlakçıların gözləntilərinə cavab verən premium səviyyəli məhsulları yetişdirməyi qarşısına məqsəd qoyur.",
+      heading: "Son illərdə dövlət iqtisadiyyatın qeyri-neft sektorunun inkişafı istiqamətində səmərəli tədbirlər həyata keçirir, xüsusən,",
+      text: "kənd təsərrüfatı üçün əlverişli şərait yaradılıb. Biz ölkəmizin ərzaq təhlükəsizliyinə töhfə vermək istəyirik. Bundan əlavə, fəaliyyətimizin məqsədi həm ölkəmizdə, həm də xaricdə ən tələbkar müştəriləri qane edən yüksək keyfiyyətli, ekoloji təmiz məhsullar yetişdirməkdir.",
     },
     greenhouse: {
       label: "İstixana",
-      heading: "İstixanamız Avropanın iki aparıcı şirkəti — RICHEL (Fransa) və STOLZE (Niderland) tərəfindən inşa olunub.",
-      details: "RICHEL yüksək və dayanıqlı konstruksiyaya malik müasir istixana modeli təqdim edib.\nİstilik, ventilyasiya və damcı suvarma sistemləri STOLZE tərəfindən quraşdırılıb.\nBütün proseslər dünyanın qabaqcıl avtomatlaşdırma sistemlərindən biri olan PRIVA vasitəsilə idarə olunur və bu da ideal mikroiqlim və maksimum məhsuldarlıq yaradır.",
+      heading: "İstixanamızın tikintisi üçün bu sahədə iki aparıcı Avropa şirkəti seçildi: fransız «RICHEL» və holland «STOLZE».",
+      details: "60 illik təcrübəyə malik «RICHEL» şirkəti bizə istixanalar üçün ən yeni konstruksiya modellərindən birini — Richel 12.8-i təklif etdi; tavan hündürlüyü 11 metrə qədər, pavilyonlar arası məsafəsi isə 12,8 metrdir. Bu soyuq, isti və quraq bölgələrdə həcm və məhsuldarlıq arasında ən yaxşı kompromisdir. Qalan avadanlıqlar isə 50 ildən çox müddətdir ki, hər sifarişin fərdi xüsusiyyətlərini nəzərə alaraq istixana avadanlıqları üçün ən yaxşı mühəndislik həllərini təqdim edən «STOLZE» şirkəti tərəfindən təchiz edilib.\nSuvarma, istilik və ventilyasiya prosesləri kompüterləşdirilmiş «PRIVA» sistemi tərəfindən tam avtomatik idarə olunur — aqronomlar yalnız proqramın dəqiq icra edəcəyi effektiv strategiya seçməlidirlər. Bu, bitkilərimiz üçün ideal böyümə şəraiti yaratmaq və məhsuldarlığı maksimum artırmaq imkanı verir.",
       richel: "RICHEL",
       stolze: "STOLZE",
       priva: "PRIVA",
     },
     products: {
       label: "Məhsullar",
-      heading: "Hazırda biz pomidorların bir neçə növünü yetişdiririk:",
-      text: "Tələbat yüksəkdir və istehsal genişləndikcə çeşid və ixrac həcmlərini artırmağı planlaşdırırıq.",
+      heading: "Hazırda biz pomidorun bir neçə növünü yetişdiririk.",
+      text: "Bunlar salxım pomidorlar, çəhrayı pomidorlar, slivalı pomidorlar və hamının sevimlisi «çeri»dir. Bütün bu növlər bazarda yaxşı tanınıb və alıcıların rəğbətini qazanıb. Hazırda ixrac məhsullarımızın əsasını salxım pomidorlar təşkil etsə də, istixana sahəsinin genişlənməsi ilə gələcəkdə müştərilərimizin istəklərinə uyğun olaraq digər pomidor növlərini də ixrac həcmlərində təqdim edə biləcəyik.",
       cards: [
         { name: "Salxım pomidorlar" },
-        { name: "Premium çəhrayı pomidorlar" },
-        { name: "Mini pomidorlar (çeri)" },
+        { name: "Çəhrayı pomidorlar" },
+        { name: "Slivalı pomidorlar" },
+        { name: "«Çeri» pomidorlar" },
       ],
     },
     experts: {
       label: "Mütəxəssislərimiz",
-      heading: "Peşəkar yanaşma",
-      text: "Təsərrüfatımızda çalışan aqronomlar uzun illik təcrübəyə malikdir və mütəmadi olaraq Niderland, İspaniya və digər Avropa ölkələrində təlimlər keçir. Hər il bir neçə dəfə beynəlxalq ekspertlər tərəfindən monitorinq və məsləhət dəstəyi təmin olunur.",
+      heading: "Bitkilərimiz daimi nəzarət altındadır.",
+      text: "Aqronomlarımız uzun illik təcrübəyə malikdir və hər il Hollandiya, İspaniya və digər Avropa ölkələrində təcrübə proqramlarından keçir. Eyni zamanda, ildə bir neçə dəfə biz aparıcı Hollandiya mütəxəssislərini monitorinq və məsləhət dəstəyi üçün dəvət edirik. Bütün bu tədbirlər ən tələbkar müştərilərimizin istəklərini qarşılamağa yönəldilib.",
     },
   },
   contactsPage: {
@@ -185,6 +187,7 @@ const az: Dictionary = {
       forCustomers: "Müştərilər üçün",
       forSuppliers: "Təchizatçılar üçün",
       description: "Suallarınız, təklifləriniz varsa və ya sifariş vermək istəyirsinizsə, formanı doldurun. Əməkdaşlığa şad olarıq.",
+      recipientLabel: "Müraciətlər üçün e-poçt",
       companyName: "şirkət adı",
       email: "e-poçt",
       message: "mesaj",
@@ -193,6 +196,7 @@ const az: Dictionary = {
       send: "Göndər",
       sending: "Göndərilir...",
       successMessage: "Mesajınız uğurla göndərildi!",
+      spamBlockedMessage: "Sorğu antispam qorunması tərəfindən bloklandı. Şübhəli keçidləri və ya reklam mətnini silib yenidən cəhd edin.",
       errorMessage: "Xəta baş verdi. Yenidən cəhd edin.",
     },
     baku: "Bakı",
@@ -205,7 +209,7 @@ const az: Dictionary = {
     cta: "Əsas səhifə",
   },
   footer: {
-    decorativeLines: ["Təzə şirəli", "Organik & Dadlı"],
+    decorativeLines: ["Organik & Dadlı"],
     contactUs: "Bizə yazın",
     callAlt: "Zəng edin",
     labels: {

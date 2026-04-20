@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { contacts } from "@/lib/constants";
 import { useTranslation } from "@/lib/i18n/useTranslation";
 
 /* ─── All marker positions from Figma (x,y on 1404×698 map) ─── */
@@ -64,9 +65,9 @@ export default function ContactsPageContent() {
   const [hoveredMarker, setHoveredMarker] = useState<number | null>(null);
   const [pinnedMarker, setPinnedMarker] = useState<number | null>(null);
   const [activeTab, setActiveTab] = useState<"customers" | "suppliers">("customers");
-  const [formState, setFormState] = useState({ companyName: "", email: "", message: "" });
+  const [formState, setFormState] = useState({ companyName: "", email: "", message: "", website: "" });
   const [agreed, setAgreed] = useState(false);
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "spam" | "error">("idle");
 
   const getSelectedLocation = useCallback(() => {
     if (pinnedMarker === null) return undefined;
@@ -90,10 +91,15 @@ export default function ContactsPageContent() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ ...formState, formType: activeTab, location: getSelectedLocation() }),
         });
+        const data = await res.json();
         if (!res.ok) throw new Error();
-        setStatus("success");
-        setFormState({ companyName: "", email: "", message: "" });
-        setAgreed(false);
+        if (data.category === "spam") {
+          setStatus("spam");
+        } else {
+          setStatus("success");
+          setFormState({ companyName: "", email: "", message: "", website: "" });
+          setAgreed(false);
+        }
         setTimeout(() => setStatus("idle"), 4000);
       } catch {
         setStatus("error");
@@ -168,7 +174,7 @@ export default function ContactsPageContent() {
 
             {/* Other countries */}
             <div className="mt-[14px] flex flex-col gap-[14px] px-5 pb-[14px] max-lg:mt-[10px] max-lg:gap-[10px] max-lg:px-3 max-lg:pb-[12px] max-md:gap-[12px]">
-              {otherCountries.map(({ key, markerIdx }, i) => {
+              {otherCountries.map(({ key, markerIdx }) => {
                 const isActive = hoveredMarker === markerIdx || pinnedMarker === markerIdx;
                 return (
                   <div key={key} className="flex flex-col gap-[14px] max-lg:gap-[10px] max-md:gap-[12px]">
@@ -299,6 +305,12 @@ export default function ContactsPageContent() {
               <p className="font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.04vw,1.25rem)] font-medium leading-[1.3] tracking-[-0.6px] text-[#F0EAE2] max-lg:text-base max-lg:tracking-[-0.48px] max-md:text-sm max-md:tracking-[-0.42px]">
                 {ct.form.description}
               </p>
+              <p className="mt-[12px] font-[family-name:var(--font-roboto)] text-sm leading-[1.3] text-[#C4D99D] max-md:text-[13px]">
+                {ct.form.recipientLabel}:{" "}
+                <a href={`mailto:${contacts.email}`} className="border-b border-[#C4D99D]/60 transition-opacity hover:opacity-80">
+                  {contacts.email}
+                </a>
+              </p>
 
               {/* Fields */}
               <div className="mt-[30px] flex flex-col gap-0 max-lg:mt-[20px]">
@@ -328,16 +340,28 @@ export default function ContactsPageContent() {
                   />
                 </div>
 
+                <div className="hidden" aria-hidden="true">
+                  <label htmlFor="website">Website</label>
+                  <input
+                    id="website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={formState.website}
+                    onChange={(e) => setFormState({ ...formState, website: e.target.value })}
+                  />
+                </div>
+
                 <div className="mt-[15px]">
                   <label className="block font-[family-name:var(--font-roboto)] text-base leading-none text-[#F0EAE2] opacity-70 max-lg:text-sm">
                     {ct.form.message}
                   </label>
-                  <input
-                    type="text"
+                  <textarea
                     required
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                    className="mt-[9px] w-full border-b border-[#F0EAE2]/40 bg-transparent pb-[12px] font-[family-name:var(--font-roboto)] text-base text-[#F0EAE2] outline-none transition-colors focus:border-[#C4D99D] max-lg:text-sm"
+                    rows={4}
+                    className="mt-[9px] w-full resize-none border-b border-[#F0EAE2]/40 bg-transparent pb-[12px] font-[family-name:var(--font-roboto)] text-base text-[#F0EAE2] outline-none transition-colors focus:border-[#C4D99D] max-lg:text-sm"
                   />
                 </div>
               </div>
@@ -377,6 +401,11 @@ export default function ContactsPageContent() {
               {status === "success" && (
                 <p className="mt-3 text-center font-[family-name:var(--font-roboto)] text-sm text-[#C4D99D]">
                   {ct.form.successMessage}
+                </p>
+              )}
+              {status === "spam" && (
+                <p className="mt-3 text-center font-[family-name:var(--font-roboto)] text-sm text-amber-200">
+                  {ct.form.spamBlockedMessage}
                 </p>
               )}
               {status === "error" && (

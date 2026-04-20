@@ -3,6 +3,7 @@ import type { Dictionary } from "./types";
 const en: Dictionary = {
   header: {
     nav: {
+      home: "Home",
       about: "About Us",
       products: "Products",
       gallery: "Gallery",
@@ -11,13 +12,13 @@ const en: Dictionary = {
     localeSwitcherLabel: "En",
   },
   hero: {
-    subtitle: "Juicy Fresh Organic & Tasty",
+    subtitle: "Organic & Tasty",
     description:
       "Our team knows how to grow really high quality vegetables and carefully deliver them to our client",
     cta: "Order now",
   },
   about: {
-    sectionLabel: "Paradise place",
+    sectionLabel: "Prime location",
     text: "is a modern greenhouse complex located in the settlement of Zira on the Absheron Peninsula. We specialize in growing premium-quality tomatoes. Zira has long been known for its favorable climate and fertile soils, making it one of the most distinguished agricultural zones in the region.",
     subtitle: "What Makes Our Tomatoes Unique?",
     features: [
@@ -105,34 +106,35 @@ const en: Dictionary = {
     stolze: "STOLZE",
   },
   aboutPage: {
-    title: "about  us",
+    title: "about us",
     mission: {
       label: "Mission",
-      heading: "We aim to contribute to the country's food security while supplying both local and international markets with clean, high-quality tomatoes.",
-      text: "Our goal is to consistently produce premium sort of vegetables that meets global standards and customer expectations.",
+      heading: "In recent years, the state has taken effective measures to develop the non-oil sector of the economy, in particular,",
+      text: "favorable conditions have been created for agriculture. We want to contribute to the food security of our country. Moreover, the aim of our activity is to grow high quality, ecologically clean products that satisfy the most demanding customers both in our country and abroad.",
     },
     greenhouse: {
       label: "Greenhouse",
-      heading: "Our facility was built by two leading European companies — RICHEL (France) and STOLZE (Netherlands).",
-      details: "RICHEL provided a modern, high-volume greenhouse structure designed to perform efficiently in both hot and dry climates.\nSTOLZE supplied the engineering systems, including heating, ventilation and irrigation.\nAll processes are fully automated through the PRIVA climate control system, ensuring ideal growing conditions and maximum yield 24/7.",
+      heading: "For the construction of our greenhouse were chosen two leading European companies in this industry: french «RICHEL» and dutch «STOLZE».",
+      details: "«RICHEL», a company with 60 years of experience, offered us one of its latest models of construction for greenhouses Richel 12.8, with a height of up to 11 meters 'in the ridge' and a distance of 12.8 meters between the spans. This is the best compromise between volume and performance in both cold, hot and arid regions. The rest of the equipment was supplied by «STOLZE», which for over 50 years has been providing the best engineering solutions for designing greenhouse equipment, taking into account the individual characteristics of each order.\nAll irrigation, heating and ventilation processes are carried out automatically by the computerized system «PRIVA», the agronomists only have to choose an effective strategy, which the program will strictly follow. This gives us the opportunity to create ideal growing conditions for our plants throughout the day and maximize yields.",
       richel: "RICHEL",
       stolze: "STOLZE",
       priva: "PRIVA",
     },
     products: {
       label: "Products",
-      heading: "We grow several categories of tomatoes:",
-      text: "All varieties enjoy strong demand in local and export markets. With planned expansion, we intend to broaden our assortment and export volumes based on partner needs.",
+      heading: "Currently, we grow several types of tomatoes.",
+      text: "These are tomatoes on the branch, pink tomatoes, plum tomatoes and everyone's favorite «cherry». All these varieties are very well established in the market and have come to the buyers' liking. Despite the fact that at the moment the basis of our export products are tomatoes on the branch, in the future, as the area of greenhouse farm will be increased, we will be able to provide other varieties of tomatoes in export volumes, referring to the wishes of our customers.",
       cards: [
-        { name: "Cluster tomatoes" },
-        { name: "Premium pink tomatoes" },
-        { name: "Cherry and mini tomatoes" },
+        { name: "Tomatoes on a branch" },
+        { name: "Pink tomatoes" },
+        { name: "Plum tomatoes" },
+        { name: "«Cherry» tomatoes" },
       ],
     },
     experts: {
       label: "Experts",
-      heading: "Professional approach",
-      text: "Our agronomists have many years of experience and regularly undergo training in the Netherlands, Spain and other European countries. International experts visit the facility several times a year to provide monitoring, evaluation and technical consulting.",
+      heading: "Our plants are under close supervision.",
+      text: "Our agronomists have many years of experience and undergo annual internships in Holland, Spain and other European countries. At the same time, several times a year we invite leading Dutch specialists for monitoring and consulting support. All these measures are aimed at satisfying the wishes of our most demanding customers.",
     },
   },
   contactsPage: {
@@ -185,6 +187,7 @@ const en: Dictionary = {
       forCustomers: "For customers",
       forSuppliers: "For suppliers",
       description: "If you have any questions, suggestions or to place an order, please fill out the form. We will be happy to cooperate.",
+      recipientLabel: "Email for inquiries",
       companyName: "company name",
       email: "email",
       message: "message",
@@ -193,6 +196,7 @@ const en: Dictionary = {
       send: "Send",
       sending: "Sending...",
       successMessage: "Your message has been sent successfully!",
+      spamBlockedMessage: "Your request was blocked by anti-spam protection. Remove suspicious links or promotional text and try again.",
       errorMessage: "Something went wrong. Please try again.",
     },
     baku: "Baku",
@@ -205,7 +209,7 @@ const en: Dictionary = {
     cta: "Main page",
   },
   footer: {
-    decorativeLines: ["Fresh Juicy", "Organic & Tasty"],
+    decorativeLines: ["Organic & Tasty"],
     contactUs: "Contact us",
     callAlt: "Call us",
     labels: {

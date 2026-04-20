@@ -37,7 +37,6 @@ export default function Hero() {
         </div>
 
         {/* "GREEN WORLD" — badge anchored to "L" on desktop */}
-        {/* eslint-disable-next-line react/jsx-no-literals */}
         <h1 className="whitespace-nowrap font-[family-name:var(--font-display)] text-[clamp(7rem,13vw,15.5rem)] font-normal leading-[0.82] tracking-[-0.57vw] uppercase text-[#4F5E4A] max-lg:text-[113px] max-lg:tracking-[-4.52px] max-md:text-[14.4vw] max-md:tracking-[-0.57vw]">
           {"Green wor"}
           <span className="relative">
@@ -68,15 +67,15 @@ export default function Hero() {
                   alt=""
                   width={298}
                   height={164}
-                  className="h-auto w-[1.5em] -scale-x-100 rotate-[29.39deg] translate-x-[15%] translate-y-[20%]"
+                  className="h-auto w-[1.5em] -scale-x-100 rotate-[29deg] translate-x-[15%] translate-y-[10%]"
                 />
               </span>
-              <span className="absolute left-1/6 top-1/2 block h-[1.45em] w-[1.45em] -translate-x-1/2 -translate-y-1/2">
+              <span className="absolute left-[10%] top-1/2 block h-[2.35em] w-[2.35em] -translate-x-1/2 -translate-y-1/2">
                 <Image
                   src="/images/tomato-main.png"
                   alt="Tomato"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="(max-width: 768px) 40px, (max-width: 1024px) 56px, 290px"
                   priority
                 />

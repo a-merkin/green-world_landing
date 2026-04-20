@@ -30,7 +30,7 @@ export default function About() {
           {/* Right: Text content */}
           <div className="flex flex-1 min-w-0 flex-col">
             {/* Description — "GREEN WORLD" bold + rest */}
-            <p className="font-[family-name:var(--font-roboto)] text-[clamp(1.4rem,1.875vw,2.25rem)] font-medium leading-none tracking-normal text-[#333] text-justify max-lg:text-[23px] max-md:text-[19px]">
+            <p className="font-[family-name:var(--font-roboto)] text-[clamp(1.4rem,1.875vw,2.25rem)] font-medium leading-none tracking-normal text-[#333] text-pretty max-lg:text-[23px] max-md:text-[19px]">
               <span className="font-bold">GREEN WORLD </span>
               {t.about.text}
             </p>
@@ -78,7 +78,7 @@ export default function About() {
             {/* Features list + small photo */}
             <div className="mt-[18px] flex gap-5 max-lg:mt-[14px] max-lg:flex-col max-md:mt-[10px]">
               {/* Features */}
-              <ul className="flex-1 min-w-0 font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.09vw,1.3125rem)] font-normal leading-[1.15] text-[#333] text-justify max-lg:w-full max-lg:text-sm max-md:text-base">
+              <ul className="flex-1 min-w-0 font-[family-name:var(--font-roboto)] text-[clamp(0.875rem,1.09vw,1.3125rem)] font-normal leading-[1.2] text-[#333] text-pretty max-lg:w-full max-lg:text-sm max-md:text-base">
                 {t.about.features.map((feature) => (
                   <li key={feature} className="mb-[10px] last:mb-0 max-lg:mb-[5px]">
                     • {feature}

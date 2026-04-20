@@ -41,6 +41,7 @@ function ContactItem({
 
 export default function Footer() {
   const { t } = useTranslation();
+  const decorativeLines = t.footer.decorativeLines.filter(Boolean);
 
   return (
     <footer
@@ -67,9 +68,9 @@ export default function Footer() {
               alt="Green World"
               width={124}
               height={36}
-              className="max-lg:w-[90px] max-lg:h-auto"
+              className="max-lg:h-auto max-lg:w-[90px] [filter:contrast(1.15)_brightness(1.08)_saturate(0.92)]"
             />
-            <nav className="flex flex-col items-end gap-[11px] font-[family-name:var(--font-inter)] text-base leading-none tracking-[-0.32px] text-[#C4D99D] max-lg:font-[family-name:var(--font-roboto)] max-lg:text-sm max-lg:tracking-normal">
+            <nav className="flex flex-col items-end gap-[11px] font-[family-name:var(--font-roboto)] text-base leading-none text-[#C4D99D] max-lg:text-sm">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -90,17 +91,19 @@ export default function Footer() {
                 alt=""
                 width={76}
                 height={79}
-                className="absolute z-10 left-[0.75em] bottom-[41%] w-[0.83em] h-auto"
+                className="absolute bottom-[39%] left-[1em] z-10 h-auto w-[0.72em]"
               />
               <p className="translate-y-[0.22em] whitespace-nowrap font-[family-name:var(--font-inter)] text-[1em] font-normal leading-none tracking-[-0.02em] uppercase text-[#F0EAE2] max-lg:tracking-[-0.72px]">
-                {t.footer.decorativeLines[0]}
+                {decorativeLines[0]}
               </p>
             </div>
-            <div className="border-b border-[#62694C]">
-              <p className="translate-y-[0.12em] whitespace-nowrap font-[family-name:var(--font-inter)] text-[clamp(2.25rem,4.8vw,5.75rem)] font-normal leading-none tracking-[-0.02em] uppercase text-[#F0EAE2] max-lg:text-[28px] max-lg:tracking-[-0.56px]">
-                {t.footer.decorativeLines[1]}
-              </p>
-            </div>
+            {decorativeLines.slice(1).map((line) => (
+              <div key={line} className="border-b border-[#62694C]">
+                <p className="translate-y-[0.12em] whitespace-nowrap font-[family-name:var(--font-inter)] text-[clamp(2.25rem,4.8vw,5.75rem)] font-normal leading-none tracking-[-0.02em] uppercase text-[#F0EAE2] max-lg:text-[28px] max-lg:tracking-[-0.56px]">
+                  {line}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -243,7 +246,13 @@ export default function Footer() {
         <div className="grid grid-cols-[1fr_auto] pt-[40px]">
           {/* Left column: Logo + Nav */}
           <div className="flex flex-col">
-            <Image src="/images/logo-light.png" alt="Green World" width={69} height={20} />
+            <Image
+              src="/images/logo-light.png"
+              alt="Green World"
+              width={69}
+              height={20}
+              className="[filter:contrast(1.15)_brightness(1.08)_saturate(0.92)]"
+            />
             <nav className="mt-[38px] flex flex-col gap-[11px] font-[family-name:var(--font-roboto)] text-sm leading-none text-[#C4D99D]">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href} className="transition-opacity hover:opacity-70">
@@ -305,13 +314,12 @@ export default function Footer() {
 
         {/* Decorative text */}
         <div className="mt-auto pb-[4px]">
-          <Image src="/images/tomato-icon.png" alt="" width={26} height={27} className="relative z-10 ml-[23px] mb-[-10px]" />
-          <p className="whitespace-nowrap font-[family-name:var(--font-roboto)] text-[36px] font-normal leading-none tracking-[-0.72px] uppercase text-[#F0EAE2]" style={{ fontVariationSettings: "'wdth' 85" }}>
-            {t.footer.decorativeLines[0]}
-          </p>
-          <p className="whitespace-nowrap font-[family-name:var(--font-roboto)] text-[36px] font-normal leading-none tracking-[-0.72px] uppercase text-[#F0EAE2]" style={{ fontVariationSettings: "'wdth' 85" }}>
-            {t.footer.decorativeLines[1]}
-          </p>
+          <Image src="/images/tomato-icon.png" alt="" width={26} height={27} className="relative z-10 mb-[-8px] ml-[34px] w-[18px] h-auto" />
+          {decorativeLines.map((line) => (
+            <p key={line} className="whitespace-nowrap font-[family-name:var(--font-roboto)] text-[36px] font-normal leading-none tracking-[-0.72px] uppercase text-[#F0EAE2]" style={{ fontVariationSettings: "'wdth' 85" }}>
+              {line}
+            </p>
+          ))}
         </div>
       </div>
 

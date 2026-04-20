@@ -23,14 +23,14 @@ export const LocaleContext = createContext<LocaleContextValue>({
 const STORAGE_KEY = "gw-locale";
 
 export default function LocaleProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(defaultLocale);
-
-  useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY) as Locale | null;
-    if (stored && stored in dictionaries) {
-      setLocaleState(stored);
+  const [locale, setLocaleState] = useState<Locale>(() => {
+    if (typeof window === "undefined") {
+      return defaultLocale;
     }
-  }, []);
+
+    const stored = localStorage.getItem(STORAGE_KEY) as Locale | null;
+    return stored && stored in dictionaries ? stored : defaultLocale;
+  });
 
   useEffect(() => {
     document.documentElement.lang = locale;

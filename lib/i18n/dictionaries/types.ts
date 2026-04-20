@@ -1,6 +1,7 @@
 export interface Dictionary {
   header: {
     nav: {
+      home: string;
       about: string;
       products: string;
       gallery: string;
@@ -93,6 +94,7 @@ export interface Dictionary {
       forCustomers: string;
       forSuppliers: string;
       description: string;
+      recipientLabel: string;
       companyName: string;
       email: string;
       message: string;
@@ -101,6 +103,7 @@ export interface Dictionary {
       send: string;
       sending: string;
       successMessage: string;
+      spamBlockedMessage: string;
       errorMessage: string;
     };
     baku: string;
