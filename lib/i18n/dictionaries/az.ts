@@ -109,21 +109,21 @@ const az: Dictionary = {
     title: "haqqımızda",
     mission: {
       label: "Missiya",
-      heading: "Son illərdə dövlət iqtisadiyyatın qeyri-neft sektorunun inkişafı istiqamətində səmərəli tədbirlər həyata keçirir, xüsusən,",
-      text: "kənd təsərrüfatı üçün əlverişli şərait yaradılıb. Biz ölkəmizin ərzaq təhlükəsizliyinə töhfə vermək istəyirik. Bundan əlavə, fəaliyyətimizin məqsədi həm ölkəmizdə, həm də xaricdə ən tələbkar müştəriləri qane edən yüksək keyfiyyətli, ekoloji təmiz məhsullar yetişdirməkdir.",
+      heading: "Biz yerli və beynəlxalq bazarları təmiz,",
+      text: "yüksək keyfiyyətli pomidorlarla təmin edərək ölkənin ərzaq təhlükəsizliyinə töhfə verməyi hədəfləyirik. Məqsədimiz qlobal standartlara və müştəri gözləntilərinə cavab verən premium keyfiyyətli tərəvəzləri davamlı şəkildə yetişdirməkdir.",
     },
     greenhouse: {
       label: "İstixana",
-      heading: "İstixanamızın tikintisi üçün bu sahədə iki aparıcı Avropa şirkəti seçildi: fransız «RICHEL» və holland «STOLZE».",
-      details: "60 illik təcrübəyə malik «RICHEL» şirkəti bizə istixanalar üçün ən yeni konstruksiya modellərindən birini — Richel 12.8-i təklif etdi; tavan hündürlüyü 11 metrə qədər, pavilyonlar arası məsafəsi isə 12,8 metrdir. Bu soyuq, isti və quraq bölgələrdə həcm və məhsuldarlıq arasında ən yaxşı kompromisdir. Qalan avadanlıqlar isə 50 ildən çox müddətdir ki, hər sifarişin fərdi xüsusiyyətlərini nəzərə alaraq istixana avadanlıqları üçün ən yaxşı mühəndislik həllərini təqdim edən «STOLZE» şirkəti tərəfindən təchiz edilib.\nSuvarma, istilik və ventilyasiya prosesləri kompüterləşdirilmiş «PRIVA» sistemi tərəfindən tam avtomatik idarə olunur — aqronomlar yalnız proqramın dəqiq icra edəcəyi effektiv strategiya seçməlidirlər. Bu, bitkilərimiz üçün ideal böyümə şəraiti yaratmaq və məhsuldarlığı maksimum artırmaq imkanı verir.",
+      heading: "İstixanamız Avropanın iki aparıcı şirkəti — RICHEL (Fransa) və STOLZE (Niderland) tərəfindən inşa edilib.",
+      details: "RICHEL isti və quraq iqlim şəraitində səmərəli işləyəcək müasir, yüksək həcmli istixana konstruksiyasını təqdim etdi.\nSTOLZE istilik, ventilyasiya və suvarma daxil olmaqla mühəndislik sistemlərini təchiz etdi.\nBütün proseslər PRIVA iqlim idarəetmə sistemi vasitəsilə tam avtomatlaşdırılıb — bu da ideal böyümə şəraiti və ilboyu maksimum məhsuldarlıq təmin edir.",
       richel: "RICHEL",
       stolze: "STOLZE",
       priva: "PRIVA",
     },
     products: {
       label: "Məhsullar",
-      heading: "Hazırda biz pomidorun bir neçə növünü yetişdiririk.",
-      text: "Bunlar salxım pomidorlar, çəhrayı pomidorlar, slivalı pomidorlar və hamının sevimlisi «çeri»dir. Bütün bu növlər bazarda yaxşı tanınıb və alıcıların rəğbətini qazanıb. Hazırda ixrac məhsullarımızın əsasını salxım pomidorlar təşkil etsə də, istixana sahəsinin genişlənməsi ilə gələcəkdə müştərilərimizin istəklərinə uyğun olaraq digər pomidor növlərini də ixrac həcmlərində təqdim edə biləcəyik.",
+      heading: "Biz pomidorun bir neçə kateqoriyasını yetişdiririk:",
+      text: "bunlar salxım pomidorlar, premium çəhrayı pomidorlar, slivalı pomidorlar və mini-pomidorlardır (çeri). Bütün növlər daxili və ixrac bazarlarında yüksək tələbatla istifadə olunur. Planlaşdırılan genişlənmə ilə biz partnyor tələblərinə əsaslanaraq çeşidimizi və ixrac həcmlərimizi artırmağı planlaşdırırıq.",
       cards: [
         { name: "Salxım pomidorlar" },
         { name: "Çəhrayı pomidorlar" },
@@ -133,8 +133,8 @@ const az: Dictionary = {
     },
     experts: {
       label: "Mütəxəssislərimiz",
-      heading: "Bitkilərimiz daimi nəzarət altındadır.",
-      text: "Aqronomlarımız uzun illik təcrübəyə malikdir və hər il Hollandiya, İspaniya və digər Avropa ölkələrində təcrübə proqramlarından keçir. Eyni zamanda, ildə bir neçə dəfə biz aparıcı Hollandiya mütəxəssislərini monitorinq və məsləhət dəstəyi üçün dəvət edirik. Bütün bu tədbirlər ən tələbkar müştərilərimizin istəklərini qarşılamağa yönəldilib.",
+      heading: "Peşəkar yanaşma",
+      text: "Aqronomlarımız uzun illik təcrübəyə malikdir və mütəmadi olaraq Niderland, İspaniya və digər Avropa ölkələrində təlimlər keçir. Beynəlxalq ekspertlər ildə bir neçə dəfə təsərrüfatımıza gələrək monitorinq, qiymətləndirmə və texniki məsləhət təmin edirlər.",
     },
   },
   contactsPage: {

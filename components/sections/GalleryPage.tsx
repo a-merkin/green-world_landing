@@ -96,7 +96,7 @@ export default function GalleryPageContent() {
         {/* ══════════════════════════════════════════════════
            Title
            ══════════════════════════════════════════════════ */}
-        <h1 className="font-[family-name:var(--font-cormorant-infant)] text-[clamp(6rem,7.8vw,9.375rem)] font-medium leading-none tracking-[-10.5px] uppercase text-[#333] max-lg:text-[96px] max-lg:tracking-[-6.72px] max-md:text-[65px] max-md:tracking-[-4.55px]">
+        <h1 className="font-[family-name:var(--font-roboto)] text-[clamp(6rem,7.8vw,9.375rem)] font-medium leading-none tracking-normal uppercase text-[#333] max-lg:text-[96px] max-md:text-[65px]">
           {t.galleryPage.title}
         </h1>
 

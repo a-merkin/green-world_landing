@@ -87,6 +87,8 @@ function GreenhouseDetails({ text }: { text: string }) {
 export default function AboutPageContent() {
   const { t } = useTranslation();
   const ap = t.aboutPage;
+  const aboutMenuLabelClass =
+    "font-normal text-[#333] opacity-70 text-[clamp(1.05rem,1.2vw,1.35rem)] max-lg:text-[16px] max-md:text-[18px]";
   const sectionHeadingClass =
     "font-[family-name:var(--font-roboto)] text-[clamp(1.4rem,1.98vw,2.375rem)] font-medium leading-[0.98] text-[#333] text-pretty max-lg:text-[23px] max-md:text-[19px]";
   const bodyTextClass =
@@ -129,7 +131,7 @@ export default function AboutPageContent() {
         {/* ══════════════════════════════════════════════════
            HERO: Title + two photos
            ══════════════════════════════════════════════════ */}
-        <h1 className="font-[family-name:var(--font-cormorant-infant)] text-[clamp(6rem,7.8vw,9.375rem)] font-medium leading-none tracking-[-0.07em] uppercase text-[#333] max-lg:text-[96px] max-lg:tracking-[-6.72px] max-md:text-[65px] max-md:tracking-[-4.55px]">
+        <h1 className="font-[family-name:var(--font-roboto)] text-[clamp(6rem,7.8vw,9.375rem)] font-medium leading-none tracking-normal uppercase text-[#333] max-lg:text-[96px] max-md:text-[65px]">
           {ap.title}
         </h1>
 
@@ -165,7 +167,7 @@ export default function AboutPageContent() {
           <div className="flex gap-[20px] max-md:flex-col max-md:gap-[8px]">
             {/* Left column — label */}
             <div className="w-[39%] max-w-[692px] shrink-0 max-md:w-full max-md:max-w-none">
-              <SectionLabel text={ap.mission.label} noBarcode noUppercase fontWeight="font-medium" textClassName="text-[clamp(1.4rem,1.98vw,2.375rem)] max-lg:text-[23px] max-md:text-[19px]" />
+              <SectionLabel text={ap.mission.label} noBarcode noUppercase fontWeight="font-medium" textClassName={aboutMenuLabelClass} />
             </div>
             {/* Right column — heading text */}
             <p className={`flex-1 min-w-0 ${sectionHeadingClass}`}>
@@ -184,10 +186,10 @@ export default function AboutPageContent() {
         <div className="mt-[120px] max-lg:mt-[80px] max-md:mt-[50px]">
           {/* Desktop / Tablet layout */}
           <div className="max-md:hidden">
-            {/* Row: Label on the left, heading on the right */}
+            {/* Row: Label on the left, heading + details on the right */}
             <div className="flex gap-[20px]">
               <div className="w-[39%] max-w-[692px] shrink-0">
-                <SectionLabel text={ap.greenhouse.label} noBarcode noUppercase fontWeight="font-medium" textClassName="text-[clamp(1.4rem,1.98vw,2.375rem)] max-lg:text-[23px] max-md:text-[19px]" />
+                <SectionLabel text={ap.greenhouse.label} noBarcode noUppercase fontWeight="font-medium" textClassName={aboutMenuLabelClass} />
               </div>
               <div className="flex-1 min-w-0">
                 <p className={`max-w-[692px] ${sectionHeadingClass}`}>
@@ -199,36 +201,31 @@ export default function AboutPageContent() {
                     )
                   )}
                 </p>
+                <div className="mt-[19px] max-w-[692px]">
+                  <GreenhouseDetails text={ap.greenhouse.details} />
+                </div>
               </div>
             </div>
-            {/* 4-column row per Figma: big photo | text col1 | text col2 | small photo */}
+            {/* Photos row — small left (514x424) + big right (1048x599) per Figma */}
             <div className="mt-[17px] flex items-start gap-[20px]">
-              {/* Big photo — plants */}
-              <div className="relative w-[39%] max-w-[692px] shrink-0 aspect-[692/399] overflow-hidden">
+              <div className="w-[39%] max-w-[692px] shrink-0 max-lg:w-[39%]">
+                <div className="relative w-[74.3%] max-w-[514px] aspect-[514/424] overflow-hidden max-lg:w-full max-lg:aspect-[285/186]">
+                  <Image
+                    src="/images/about-page/greenhouse-left.jpg"
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 39vw, 514px"
+                  />
+                </div>
+              </div>
+              <div className="relative flex-1 min-w-0 aspect-[1048/600] overflow-hidden max-lg:aspect-[433/283]">
                 <Image
                   src="/images/about-page/greenhouse-right.jpg"
                   alt="Greenhouse interior"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 39vw, 692px"
-                />
-              </div>
-              {/* Text col 1 — RICHEL + STOLZE */}
-              <div className="flex-1 min-w-0">
-                <GreenhouseDetails text={ap.greenhouse.details.split("\n")[0] ?? ""} />
-              </div>
-              {/* Text col 2 — PRIVA */}
-              <div className="flex-1 min-w-0">
-                <GreenhouseDetails text={ap.greenhouse.details.split("\n")[1] ?? ""} />
-              </div>
-              {/* Small photo — equipment */}
-              <div className="relative w-[19%] max-w-[336px] shrink-0 aspect-[336/399] overflow-hidden">
-                <Image
-                  src="/images/about-page/greenhouse-left.jpg"
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 19vw, 336px"
+                  sizes="(max-width: 1024px) 60vw, 1048px"
                 />
               </div>
             </div>
@@ -236,7 +233,7 @@ export default function AboutPageContent() {
 
           {/* Mobile layout — interleaved text and photos per Figma */}
           <div className="hidden max-md:flex max-md:flex-col">
-            <SectionLabel text={ap.greenhouse.label} noBarcode noUppercase fontWeight="font-medium" textClassName="text-[19px]" />
+            <SectionLabel text={ap.greenhouse.label} noBarcode noUppercase fontWeight="font-medium" textClassName={aboutMenuLabelClass} />
             <p className={`mt-[8px] ${sectionHeadingClass}`}>
               {ap.greenhouse.heading.split(/(RICHEL|STOLZE)/).map((part, j) =>
                 ["RICHEL", "STOLZE"].includes(part) ? (
@@ -256,9 +253,9 @@ export default function AboutPageContent() {
                 sizes="100vw"
               />
             </div>
-            {/* Paragraph 1 — RICHEL + STOLZE */}
+            {/* Details paragraphs 1+2 (RICHEL, STOLZE) */}
             <div className="mt-[13px]">
-              <GreenhouseDetails text={ap.greenhouse.details.split("\n")[0] ?? ""} />
+              <GreenhouseDetails text={ap.greenhouse.details.split("\n").slice(0, 2).join("\n")} />
             </div>
             {/* Photo 2 — equipment */}
             <div className="relative mt-[13px] aspect-[300/317] w-full overflow-hidden">
@@ -270,9 +267,9 @@ export default function AboutPageContent() {
                 sizes="100vw"
               />
             </div>
-            {/* Paragraph 2 — PRIVA */}
+            {/* Details paragraph 3 (PRIVA) */}
             <div className="mt-[13px]">
-              <GreenhouseDetails text={ap.greenhouse.details.split("\n")[1] ?? ""} />
+              <GreenhouseDetails text={ap.greenhouse.details.split("\n").slice(2).join("\n")} />
             </div>
           </div>
         </div>
@@ -285,7 +282,7 @@ export default function AboutPageContent() {
           <div className="flex gap-[20px] max-md:flex-col max-md:gap-[8px]">
             {/* Left column — label */}
             <div className="w-[39%] max-w-[692px] shrink-0 max-md:w-full max-md:max-w-none">
-              <SectionLabel text={ap.products.label} noBarcode noUppercase fontWeight="font-medium" textClassName="text-[clamp(1.4rem,1.98vw,2.375rem)] max-lg:text-[23px] max-md:text-[19px]" />
+              <SectionLabel text={ap.products.label} noBarcode noUppercase fontWeight="font-medium" textClassName={aboutMenuLabelClass} />
             </div>
             {/* Right column — heading + description */}
             <div className="flex-1 min-w-0">
@@ -322,7 +319,7 @@ export default function AboutPageContent() {
           <div className="flex gap-[20px] max-md:flex-col max-md:gap-[8px]">
             {/* Left column — label */}
             <div className="w-[39%] max-w-[692px] shrink-0 max-md:w-full max-md:max-w-none">
-              <SectionLabel text={ap.experts.label} noBarcode noUppercase fontWeight="font-medium" textClassName="text-[clamp(1.4rem,1.98vw,2.375rem)] max-lg:text-[23px] max-md:text-[19px]" />
+              <SectionLabel text={ap.experts.label} noBarcode noUppercase fontWeight="font-medium" textClassName={aboutMenuLabelClass} />
             </div>
             {/* Right column — heading + description */}
             <div className="flex-1 min-w-0">

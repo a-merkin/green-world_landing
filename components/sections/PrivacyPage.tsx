@@ -2,7 +2,7 @@ export default function PrivacyPageContent() {
   return (
     <section className="mx-auto w-full max-w-[1920px] px-20 pt-[161px] pb-[155px] max-lg:px-5 max-lg:pt-[102px] max-lg:pb-[80px] max-md:px-[10px] max-md:pt-[57px] max-md:pb-[60px]">
       {/* Page title */}
-      <h1 className="font-[family-name:var(--font-cormorant-infant)] text-[clamp(5rem,6.77vw,8.125rem)] font-medium leading-[0.85] tracking-[-0.07em] uppercase text-[#333] opacity-70 mb-[120px] max-lg:text-[83px] max-lg:tracking-[-4.15px] max-lg:mb-[60px] max-md:text-[35px] max-md:tracking-[-2.45px] max-md:mb-[30px]">
+      <h1 className="font-[family-name:var(--font-roboto)] text-[clamp(5rem,6.77vw,8.125rem)] font-medium leading-[0.85] tracking-normal uppercase text-[#333] opacity-70 mb-[120px] max-lg:text-[83px] max-lg:mb-[60px] max-md:text-[35px] max-md:mb-[30px]">
         Privacy Policy
       </h1>
 

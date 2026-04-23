@@ -84,7 +84,7 @@ export default function Footer() {
           </div>
 
           {/* Bottom: Decorative text */}
-          <div className="mt-auto overflow-x-clip overflow-y-visible">
+          <div className="mt-auto -mr-5 overflow-x-clip overflow-y-visible">
             <div className="relative border-b border-[#62694C] pb-[0.1em] pt-5 max-lg:pt-4 text-[clamp(2.25rem,4.8vw,5.75rem)] max-lg:text-[28px]">
               <Image
                 src="/images/tomato-icon.png"
