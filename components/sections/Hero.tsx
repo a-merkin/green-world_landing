@@ -70,7 +70,7 @@ export default function Hero() {
                   className="h-auto w-[1.5em] -scale-x-100 rotate-[29deg] translate-x-[15%] translate-y-[10%] max-md:w-[1.28em] max-md:rotate-[23deg] max-md:translate-x-[12%] max-md:translate-y-[12%]"
                 />
               </span>
-              <span className="absolute left-[10%] top-1/2 block h-[2.35em] w-[2.35em] -translate-x-1/2 -translate-y-1/2 max-md:left-[15%] max-md:top-[45%] max-md:h-[2em] max-md:w-[2em]">
+              <span className="absolute left-[10%] top-1/2 block h-[2.35em] w-[2.35em] -translate-x-1/2 -translate-y-1/2 max-md:left-[17%] max-md:top-[47%] max-md:h-[2.2em] max-md:w-[2.2em]">
                 <Image
                   src="/images/tomato-main.png"
                   alt="Tomato"
